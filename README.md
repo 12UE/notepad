@@ -1,7 +1,8 @@
 # Notepad反编译
 
 #### 介绍
-尝试将WindowsXP的记事本程序反编译出C++项目
+尝试将WindowsXP的记事本程序反编译出C++项目, 使用到的软件为
+IDA Pro7.5, Ollydbg, Visual Studio 2013.
 
 #### 软件架构
 软件架构说明
