@@ -6,288 +6,8 @@
 
 #include <windows.h>
 #include "defs.h"
+#include "notepad.h"
 
-
-//-------------------------------------------------------------------------
-// Function declarations
-
-#define __thiscall __cdecl // Test compile in C mode
-
-// LSTATUS __stdcall RegQueryValueExW(HKEY hKey, LPCWSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData);
-// LSTATUS __stdcall RegCloseKey(HKEY hKey);
-// LSTATUS __stdcall RegCreateKeyW(HKEY hKey, LPCWSTR lpSubKey, PHKEY phkResult);
-// BOOL __stdcall IsTextUnicode(const void *lpv, int iSize, LPINT lpiResult);
-// LSTATUS __stdcall RegQueryValueExA(HKEY hKey, LPCSTR lpValueName, LPDWORD lpReserved, LPDWORD lpType, LPBYTE lpData, LPDWORD lpcbData);
-// LSTATUS __stdcall RegOpenKeyExA(HKEY hKey, LPCSTR lpSubKey, DWORD ulOptions, REGSAM samDesired, PHKEY phkResult);
-// LSTATUS __stdcall RegSetValueExW(HKEY hKey, LPCWSTR lpValueName, DWORD Reserved, DWORD dwType, const BYTE *lpData, DWORD cbData);
-// HWND __stdcall CreateStatusWindowW(LONG style, LPCWSTR lpszText, HWND hwndParent, UINT wID);
-// int __stdcall EndPage(HDC hdc);
-// int __stdcall AbortDoc(HDC hdc);
-// int __stdcall EndDoc(HDC hdc);
-// BOOL __stdcall DeleteDC(HDC hdc);
-// int __stdcall StartPage(HDC hdc);
-// BOOL __stdcall GetTextExtentPoint32W(HDC hdc, LPCWSTR lpString, int c, LPSIZE psizl);
-// HDC __stdcall CreateDCW(LPCWSTR pwszDriver, LPCWSTR pwszDevice, LPCWSTR pszPort, const DEVMODEW *pdm);
-// int __stdcall SetAbortProc(HDC hdc, ABORTPROC proc);
-// int __stdcall GetTextFaceW(HDC hdc, int c, LPWSTR lpName);
-// BOOL __stdcall TextOutW(HDC hdc, int x, int y, LPCWSTR lpString, int c);
-// int __stdcall StartDocW(HDC hdc, const DOCINFOW *lpdi);
-// int __stdcall EnumFontsW(HDC hdc, LPCWSTR lpLogfont, FONTENUMPROCW lpProc, LPARAM lParam);
-// HGDIOBJ __stdcall GetStockObject(int i);
-// int __stdcall GetObjectW(HANDLE h, int c, LPVOID pv);
-// int __stdcall GetDeviceCaps(HDC hdc, int index);
-// HFONT __stdcall CreateFontIndirectW(const LOGFONTW *lplf);
-// BOOL __stdcall DeleteObject(HGDIOBJ ho);
-// BOOL __stdcall GetTextMetricsW(HDC hdc, LPTEXTMETRICW lptm);
-// int __stdcall SetBkMode(HDC hdc, int mode);
-// BOOL __stdcall LPtoDP(HDC hdc, LPPOINT lppt, int c);
-// BOOL __stdcall SetWindowExtEx(HDC hdc, int x, int y, LPSIZE lpsz);
-// BOOL __stdcall SetViewportExtEx(HDC hdc, int x, int y, LPSIZE lpsz);
-// int __stdcall SetMapMode(HDC hdc, int iMode);
-// HGDIOBJ __stdcall SelectObject(HDC hdc, HGDIOBJ h);
-// DWORD __stdcall GetCurrentThreadId();
-// DWORD __stdcall GetTickCount();
-// BOOL __stdcall QueryPerformanceCounter(LARGE_INTEGER *lpPerformanceCount);
-// void __stdcall GetLocalTime(LPSYSTEMTIME lpSystemTime);
-// LCID __stdcall GetUserDefaultLCID();
-// int __stdcall GetDateFormatW(LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpDate, LPCWSTR lpFormat, LPWSTR lpDateStr, int cchDate);
-// int __stdcall GetTimeFormatW(LCID Locale, DWORD dwFlags, const SYSTEMTIME *lpTime, LPCWSTR lpFormat, LPWSTR lpTimeStr, int cchTime);
-// LPVOID __stdcall GlobalLock(HGLOBAL hMem);
-// BOOL __stdcall GlobalUnlock(HGLOBAL hMem);
-// BOOL __stdcall GetFileInformationByHandle(HANDLE hFile, LPBY_HANDLE_FILE_INFORMATION lpFileInformation);
-// HANDLE __stdcall CreateFileMappingW(HANDLE hFile, LPSECURITY_ATTRIBUTES lpFileMappingAttributes, DWORD flProtect, DWORD dwMaximumSizeHigh, DWORD dwMaximumSizeLow, LPCWSTR lpName);
-// void __stdcall GetSystemTimeAsFileTime(LPFILETIME lpSystemTimeAsFileTime);
-// BOOL __stdcall TerminateProcess(HANDLE hProcess, UINT uExitCode);
-// HANDLE __stdcall GetCurrentProcess();
-// LPTOP_LEVEL_EXCEPTION_FILTER __stdcall SetUnhandledExceptionFilter(LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter);
-// HMODULE __stdcall LoadLibraryA(LPCSTR lpLibFileName);
-// HMODULE __stdcall GetModuleHandleA(LPCSTR lpModuleName);
-// void __stdcall GetStartupInfoA(LPSTARTUPINFOA lpStartupInfo);
-// HGLOBAL __stdcall GlobalFree(HGLOBAL hMem);
-// int __stdcall GetLocaleInfoW(LCID Locale, LCTYPE LCType, LPWSTR lpLCData, int cchData);
-// HLOCAL __stdcall LocalFree(HLOCAL hMem);
-// HLOCAL __stdcall LocalAlloc(UINT uFlags, SIZE_T uBytes);
-// int __stdcall lstrlenW(LPCWSTR lpString);
-// BOOL __stdcall LocalUnlock(HLOCAL hMem);
-// int __stdcall CompareStringW(LCID Locale, DWORD dwCmpFlags, PCNZWCH lpString1, int cchCount1, PCNZWCH lpString2, int cchCount2);
-// LPVOID __stdcall LocalLock(HLOCAL hMem);
-// int __stdcall FoldStringW(DWORD dwMapFlags, LPCWCH lpSrcStr, int cchSrc, LPWSTR lpDestStr, int cchDest);
-// BOOL __stdcall CloseHandle(HANDLE hObject);
-// LPWSTR __stdcall lstrcpyW(LPWSTR lpString1, LPCWSTR lpString2);
-// BOOL __stdcall ReadFile(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToRead, LPDWORD lpNumberOfBytesRead, LPOVERLAPPED lpOverlapped);
-// HANDLE __stdcall CreateFileW(LPCWSTR lpFileName, DWORD dwDesiredAccess, DWORD dwShareMode, LPSECURITY_ATTRIBUTES lpSecurityAttributes, DWORD dwCreationDisposition, DWORD dwFlagsAndAttributes, HANDLE hTemplateFile);
-// int __stdcall lstrcmpiW(LPCWSTR lpString1, LPCWSTR lpString2);
-// DWORD __stdcall GetCurrentProcessId();
-// FARPROC __stdcall GetProcAddress(HMODULE hModule, LPCSTR lpProcName);
-// LPWSTR __stdcall GetCommandLineW();
-// LPWSTR __stdcall lstrcatW(LPWSTR lpString1, LPCWSTR lpString2);
-// BOOL __stdcall FindClose(HANDLE hFindFile);
-// HANDLE __stdcall FindFirstFileW(LPCWSTR lpFileName, LPWIN32_FIND_DATAW lpFindFileData);
-// DWORD __stdcall GetFileAttributesW(LPCWSTR lpFileName);
-// int __stdcall lstrcmpW(LPCWSTR lpString1, LPCWSTR lpString2);
-// int __stdcall MulDiv(int nNumber, int nNumerator, int nDenominator);
-// LPWSTR __stdcall lstrcpynW(LPWSTR lpString1, LPCWSTR lpString2, int iMaxLength);
-// SIZE_T __stdcall LocalSize(HLOCAL hMem);
-// DWORD __stdcall GetLastError();
-// BOOL __stdcall WriteFile(HANDLE hFile, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped);
-// void __stdcall SetLastError(DWORD dwErrCode);
-// int __stdcall WideCharToMultiByte(UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, LPCCH lpDefaultChar, LPBOOL lpUsedDefaultChar);
-// HLOCAL __stdcall LocalReAlloc(HLOCAL hMem, SIZE_T uBytes, UINT uFlags);
-// DWORD __stdcall FormatMessageW(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPWSTR lpBuffer, DWORD nSize, va_list *Arguments);
-// LANGID __stdcall GetUserDefaultUILanguage();
-// BOOL __stdcall SetEndOfFile(HANDLE hFile);
-// BOOL __stdcall DeleteFileW(LPCWSTR lpFileName);
-// UINT __stdcall GetACP();
-// BOOL __stdcall UnmapViewOfFile(LPCVOID lpBaseAddress);
-// int __stdcall MultiByteToWideChar(UINT CodePage, DWORD dwFlags, LPCCH lpMultiByteStr, int cbMultiByte, LPWSTR lpWideCharStr, int cchWideChar);
-// LPVOID __stdcall MapViewOfFile(HANDLE hFileMappingObject, DWORD dwDesiredAccess, DWORD dwFileOffsetHigh, DWORD dwFileOffsetLow, SIZE_T dwNumberOfBytesToMap);
-// LONG __stdcall UnhandledExceptionFilter(struct _EXCEPTION_POINTERS *ExceptionInfo);
-// void __stdcall DragFinish(HDROP hDrop);
-// UINT __stdcall DragQueryFileW(HDROP hDrop, UINT iFile, LPWSTR lpszFile, UINT cch);
-// void __stdcall DragAcceptFiles(HWND hWnd, BOOL fAccept);
-// INT __stdcall ShellAboutW(HWND hWnd, LPCWSTR szApp, LPCWSTR szOtherStuff, HICON hIcon);
-// BOOL __stdcall GetClientRect(HWND hWnd, LPRECT lpRect);
-// HCURSOR __stdcall SetCursor(HCURSOR hCursor);
-// int __stdcall ReleaseDC(HWND hWnd, HDC hDC);
-// HDC __stdcall GetDC(HWND hWnd);
-// INT_PTR __stdcall DialogBoxParamW(HINSTANCE hInstance, LPCWSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
-// HWND __stdcall SetActiveWindow(HWND hWnd);
-// HKL __stdcall GetKeyboardLayout(DWORD idThread);
-// LRESULT __stdcall DefWindowProcW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// BOOL __stdcall DestroyWindow(HWND hWnd);
-// BOOL __stdcall MessageBeep(UINT uType);
-// BOOL __stdcall ShowWindow(HWND hWnd, int nCmdShow);
-// HWND __stdcall GetForegroundWindow();
-// BOOL __stdcall IsIconic(HWND hWnd);
-// BOOL __stdcall GetWindowPlacement(HWND hWnd, WINDOWPLACEMENT *lpwndpl);
-// LPWSTR __stdcall CharUpperW(LPWSTR lpsz);
-// int __stdcall LoadStringW(HINSTANCE hInstance, UINT uID, LPWSTR lpBuffer, int cchBufferMax);
-// HACCEL __stdcall LoadAcceleratorsW(HINSTANCE hInstance, LPCWSTR lpTableName);
-// HMENU __stdcall GetSystemMenu(HWND hWnd, BOOL bRevert);
-// ATOM __stdcall RegisterClassExW(const WNDCLASSEXW *);
-// HANDLE __stdcall LoadImageW(HINSTANCE hInst, LPCWSTR name, UINT type, int cx, int cy, UINT fuLoad);
-// HCURSOR __stdcall LoadCursorW(HINSTANCE hInstance, LPCWSTR lpCursorName);
-// BOOL __stdcall SetWindowPlacement(HWND hWnd, const WINDOWPLACEMENT *lpwndpl);
-// HWND __stdcall CreateWindowExW(DWORD dwExStyle, LPCWSTR lpClassName, LPCWSTR lpWindowName, DWORD dwStyle, int X, int Y, int nWidth, int nHeight, HWND hWndParent, HMENU hMenu, HINSTANCE hInstance, LPVOID lpParam);
-// HWND __stdcall GetDesktopWindow();
-// HWND __stdcall GetFocus();
-// HICON __stdcall LoadIconW(HINSTANCE hInstance, LPCWSTR lpIconName);
-// BOOL __stdcall SetWindowTextW(HWND hWnd, LPCWSTR lpString);
-// void __stdcall PostQuitMessage(int nExitCode);
-// UINT __stdcall RegisterWindowMessageW(LPCWSTR lpString);
-// BOOL __stdcall UpdateWindow(HWND hWnd);
-// int __stdcall SetScrollPos(HWND hWnd, int nBar, int nPos, BOOL bRedraw);
-// LPWSTR __stdcall CharLowerW(LPWSTR lpsz);
-// BOOL __stdcall PeekMessageW(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax, UINT wRemoveMsg);
-// BOOL __stdcall EnableWindow(HWND hWnd, BOOL bEnable);
-// int __stdcall DrawTextExW(HDC hdc, LPWSTR lpchText, int cchText, LPRECT lprc, UINT format, LPDRAWTEXTPARAMS lpdtp);
-// HWND __stdcall CreateDialogParamW(HINSTANCE hInstance, LPCWSTR lpTemplateName, HWND hWndParent, DLGPROC lpDialogFunc, LPARAM dwInitParam);
-// int __stdcall GetWindowTextW(HWND hWnd, LPWSTR lpString, int nMaxCount);
-// int __stdcall GetSystemMetrics(int nIndex);
-// BOOL __stdcall MoveWindow(HWND hWnd, int X, int Y, int nWidth, int nHeight, BOOL bRepaint);
-// BOOL __stdcall InvalidateRect(HWND hWnd, const RECT *lpRect, BOOL bErase);
-// BOOL __stdcall WinHelpW(HWND hWndMain, LPCWSTR lpszHelp, UINT uCommand, ULONG_PTR dwData);
-// int __stdcall GetDlgCtrlID(HWND hWnd);
-// HWND __stdcall ChildWindowFromPoint(HWND hWndParent, POINT Point);
-// BOOL __stdcall ScreenToClient(HWND hWnd, LPPOINT lpPoint);
-// BOOL __stdcall GetCursorPos(LPPOINT lpPoint);
-// LRESULT __stdcall SendDlgItemMessageW(HWND hDlg, int nIDDlgItem, UINT Msg, WPARAM wParam, LPARAM lParam);
-// LRESULT __stdcall SendMessageW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// LPWSTR __stdcall CharNextW(LPCWSTR lpsz);
-// DWORD __stdcall CheckMenuItem(HMENU hMenu, UINT uIDCheckItem, UINT uCheck);
-// BOOL __stdcall CloseClipboard();
-// BOOL __stdcall IsClipboardFormatAvailable(UINT format);
-// BOOL __stdcall OpenClipboard(HWND hWndNewOwner);
-// UINT __stdcall GetMenuState(HMENU hMenu, UINT uId, UINT uFlags);
-// BOOL __stdcall EnableMenuItem(HMENU hMenu, UINT uIDEnableItem, UINT uEnable);
-// HMENU __stdcall GetSubMenu(HMENU hMenu, int nPos);
-// HMENU __stdcall GetMenu(HWND hWnd);
-// int __stdcall MessageBoxW(HWND hWnd, LPCWSTR lpText, LPCWSTR lpCaption, UINT uType);
-// LONG __stdcall SetWindowLongW(HWND hWnd, int nIndex, LONG dwNewLong);
-// LONG __stdcall GetWindowLongW(HWND hWnd, int nIndex);
-// HWND __stdcall GetDlgItem(HWND hDlg, int nIDDlgItem);
-// HWND __stdcall SetFocus(HWND hWnd);
-// BOOL __stdcall SetDlgItemTextW(HWND hDlg, int nIDDlgItem, LPCWSTR lpString);
-// int wsprintfW(LPWSTR, LPCWSTR, ...);
-// UINT __stdcall GetDlgItemTextW(HWND hDlg, int nIDDlgItem, LPWSTR lpString, int cchMax);
-// BOOL __stdcall EndDialog(HWND hDlg, INT_PTR nResult);
-// HWND __stdcall GetParent(HWND hWnd);
-// BOOL __stdcall UnhookWinEvent(HWINEVENTHOOK hWinEventHook);
-// LRESULT __stdcall DispatchMessageW(const MSG *lpMsg);
-// BOOL __stdcall TranslateMessage(const MSG *lpMsg);
-// int __stdcall TranslateAcceleratorW(HWND hWnd, HACCEL hAccTable, LPMSG lpMsg);
-// BOOL __stdcall IsDialogMessageW(HWND hDlg, LPMSG lpMsg);
-// BOOL __stdcall PostMessageW(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM lParam);
-// BOOL __stdcall GetMessageW(LPMSG lpMsg, HWND hWnd, UINT wMsgFilterMin, UINT wMsgFilterMax);
-// HWINEVENTHOOK __stdcall SetWinEventHook(DWORD eventMin, DWORD eventMax, HMODULE hmodWinEventProc, WINEVENTPROC pfnWinEventProc, DWORD idProcess, DWORD idThread, DWORD dwFlags);
-// BOOL __stdcall PageSetupDlgW(LPPAGESETUPDLGW);
-// HWND __stdcall FindTextW(LPFINDREPLACEW);
-// HRESULT __stdcall PrintDlgExW(LPPRINTDLGEXW pPD);
-// BOOL __stdcall ChooseFontW(LPCHOOSEFONTW);
-// __int16 __stdcall GetFileTitleW(LPCWSTR, LPWSTR Buf, WORD cchSize);
-// BOOL __stdcall GetOpenFileNameW(LPOPENFILENAMEW);
-// HWND __stdcall ReplaceTextW(LPFINDREPLACEW);
-// DWORD __stdcall CommDlgExtendedError();
-// BOOL __stdcall GetSaveFileNameW(LPOPENFILENAMEW);
-// void __cdecl __noreturn exit(int Code);
-// void __cdecl c_exit();
-// __time32_t __cdecl time(__time32_t *const Time);
-// struct tm *__cdecl localtime(const __time32_t *const Time);
-// void __cdecl cexit();
-// int __cdecl iswctype(wint_t C, wctype_t Type);
-// int __cdecl wtol(const wchar_t *String);
-// int __cdecl wcsncmp(const wchar_t *String1, const wchar_t *String2, size_t MaxCount);
-// int snwprintf(wchar_t *Buffer, size_t BufferCount, const wchar_t *Format, ...);
-// void __cdecl __noreturn exit(int Code);
-// int __cdecl _getmainargs(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD); weak
-// void __cdecl _setusermatherr(_UserMathErrorFunctionPointer UserMathErrorFunction);
-// int *__cdecl _p__commode();
-// int *__cdecl _p__fmode();
-// void __cdecl _set_app_type(_crt_app_type Type);
-// wchar_t *__cdecl wcsncpy(wchar_t *Destination, const wchar_t *Source, size_t Count);
-HGLOBAL sub_1001929();
-LONG __thiscall sub_100195D(void *this);
-BOOL __stdcall sub_10019E0(int nWidth, int a2);
-int __stdcall sub_1001A28(HWND hDlg, int, HWND hWnd, int); // idb
-LRESULT __stdcall sub_1001B99(int a1);
-const WCHAR *__stdcall sub_1001BE8(LPCWSTR lpsz);
-HWND __stdcall sub_1001C42(int a1);
-void __stdcall pfnWinEventProc(HWINEVENTHOOK hWinEventHook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD idEventThread, DWORD dwmsEventTime); // idb
-const WCHAR *__stdcall sub_1001D2B(LPCWSTR lpsz);
-DWORD __stdcall sub_1001D73(HWND hWndNewOwner);
-int __stdcall sub_1001F02(_WORD *a1, _WORD *a2, _WORD *a3);
-int __stdcall sub_1001F70(HWND hWnd, LPCWSTR lpCaption, LPCWSTR lpText, LPCWSTR lpString, UINT uType); // idb
-DWORD sub_1001FF0();
-void *__stdcall sub_100207F(int a1);
-INT_PTR __stdcall DialogFunc(HWND, UINT, WPARAM, LPARAM); // idb
-int __stdcall sub_100239D(void *lpv, int iSize); // idb
-int __stdcall sub_1002409(_WORD *a1, int a2, _WORD *a3);
-int __stdcall sub_1002452(HWND hDlg, int, HWND hWnd, int); // idb
-BOOL __stdcall sub_100270F(int a1);
-WPARAM __stdcall sub_1002936(HINSTANCE hInstance, int a2, int a3, int nCmdShow);
-BOOL __stdcall sub_1002A55(LPCWSTR lpString1);
-int __stdcall sub_1002B87(HWND hWnd, __int16, int); // idb
-int sub_100337E();
-void __stdcall sub_10033DC(HDROP hDrop, HWND hWnd);
-LRESULT __stdcall sub_1003429(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM a4);
-LSTATUS __stdcall sub_100393A(HKEY hKey, LPCWSTR lpValueName, BYTE Data);
-LSTATUS __stdcall sub_100395E(HKEY hKey, LPCWSTR lpValueName, LPCWSTR lpString);
-int __stdcall sub_100398D(HKEY hKey, LPCWSTR lpValueName, int); // idb
-LSTATUS __stdcall sub_10039E2(HKEY hKey, LPCWSTR lpValueName, int a3, LPBYTE lpData, DWORD cbData);
-LSTATUS sub_1003A39();
-LSTATUS sub_1003C92();
-// int __usercall sub_1003F4C@<eax>(unsigned __int16 *a1@<eax>, unsigned __int16 *a2@<ecx>);
-LPCWSTR __stdcall sub_1003F99(LPWSTR lpString1, LPCWSTR lpString2);
-WCHAR *__stdcall sub_1004047(HINSTANCE hInstance);
-int __stdcall sub_10040BA(HINSTANCE hInstance); // idb
-_WORD *__stdcall sub_100417A(_WORD *a1);
-int __stdcall sub_100419E(unsigned __int16 *a1);
-int __stdcall sub_10042F9(int, int nCmdShow); // idb
-int __stdcall sub_1004458(LPWSTR lpString1); // idb
-int __stdcall Proc(const LOGFONTW *, const TEXTMETRICW *, DWORD, LPARAM); // idb
-// BOOL __usercall sub_10044D7@<eax>(HINSTANCE a1@<esi>);
-int __stdcall sub_1004565(HINSTANCE hInstance, int, int, int nCmdShow); // idb
-void __stdcall sub_1004B65(_WORD *a1, _BYTE *a2, int a3);
-int __stdcall sub_1004B99(HANDLE hFile, UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar); // idb
-LRESULT sub_1004C49();
-LRESULT sub_1004CAB();
-LRESULT __stdcall sub_1004CFF(int a1);
-unsigned int __stdcall sub_1004DCD(LPCWSTR lpString);
-int __stdcall sub_1004E20(LPCWSTR lpString); // idb
-int __stdcall sub_1004EAE(HWND hWnd, LPCWSTR lpFileName, LPCWCH lpWideCharStr); // idb
-int __stdcall sub_1005179(LPCWSTR lpString, int); // idb
-const WCHAR *__stdcall sub_100580B(LPCWSTR a1, int a2, LPCWSTR lpString, int a4);
-unsigned int __stdcall sub_10058B8(wchar_t *String1, LPCWSTR lpString, int a3);
-int __stdcall sub_100594C(LPCWSTR lpString); // idb
-int __stdcall sub_1005B41(DWORD dwStyle); // idb
-BOOL __stdcall proc(HDC, int); // idb
-int __stdcall sub_1005E0C(HDC hdc); // idb
-int sub_1005E6D();
-BOOL sub_1005F3C();
-int __stdcall sub_1005F63(HWND hDlg, int, HWND hWnd, int); // idb
-int *__stdcall sub_1006091(wchar_t *a1);
-int sub_1006428();
-int sub_10064F3();
-INT_PTR __stdcall sub_10065CB(HWND, UINT, WPARAM, LPARAM); // idb
-int __stdcall sub_1006657(HDC hdc, int y); // idb
-int __stdcall sub_1006773(HDC); // idb
-int __stdcall sub_1006DF7(int a1);
-int __stdcall sub_1006E4B(int a1);
-LRESULT __stdcall sub_1006F10(int a1);
-int __stdcall sub_1007059(int a1, int a2);
-BOOL __stdcall sub_10070B1(void *lpv, int iSize);
-int sub_10070D4();
-// BOOL __usercall sub_1007147@<eax>(BOOL result@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<ebp>, int a6@<edi>, int a7@<esi>);
-int __stdcall sub_100725F(LPBYTE lpData); // idb
-int __stdcall sub_10072C3(int a1, int a2, int a3, int a4);
-// BOOL __stdcall ClosePrinter(HANDLE hPrinter);
-// BOOL __stdcall GetPrinterDriverW(HANDLE hPrinter, LPWSTR pEnvironment, DWORD Level, LPBYTE pDriverInfo, DWORD cbBuf, LPDWORD pcbNeeded);
-// BOOL __stdcall OpenPrinterW(LPWSTR pPrinterName, LPHANDLE phPrinter, LPPRINTER_DEFAULTSW pDefault);
-int start();
-// void __cdecl initterm(_PVFV *First, _PVFV *Last);
-unsigned int sub_10075DD();
-int __cdecl UserMathErrorFunction();
-// unsigned int __cdecl controlfp(unsigned int NewValue, unsigned int Mask);
 
 //-------------------------------------------------------------------------
 // Data declarations
@@ -1000,12 +720,12 @@ HGLOBAL sub_1001929()
 }
 
 //----- (0100195D) --------------------------------------------------------
-LONG __thiscall sub_100195D(void *this)
+LONG __thiscall sub_100195D(void *self)
 {
   LONG result; // eax
   void *LCData; // [esp+0h] [ebp-4h] BYREF
 
-  LCData = this;
+  LCData = self;
   stru_100A4A0.lpfnPageSetupHook = (LPPAGESETUPHOOK)sub_1005F63;
   stru_100A4A0.lpPageSetupTemplateName = (LPCWSTR)12;
   GetLocaleInfoW(0x400u, 0xDu, (LPWSTR)&LCData, 2);
@@ -1725,51 +1445,52 @@ LABEL_18:
 // 100A528: using guessed type int dword_100A528;
 
 //----- (01002936) --------------------------------------------------------
-WPARAM __stdcall sub_1002936(HINSTANCE hInstance, int a2, int a3, int nCmdShow)
+int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
 {
-  const WCHAR *v4; // edi
-  HMODULE v5; // eax
-  FARPROC RegisterPenApp; // eax
-  const WCHAR *v7; // eax
-  DWORD v8; // eax
-  HWINEVENTHOOK v9; // ebx
-  struct tagMSG Msg; // [esp+8h] [ebp-20h] BYREF
-  void (__stdcall *v12)(_DWORD, _DWORD); // [esp+24h] [ebp-4h]
+	const WCHAR *v4; // edi
+	HMODULE v5; // eax
+	FARPROC RegisterPenApp; // eax
+	const WCHAR *v7; // eax
+	DWORD v8; // eax
+	HWINEVENTHOOK v9; // ebx
+	struct tagMSG Msg; // [esp+8h] [ebp-20h] BYREF
+	void(__stdcall *v12)(_DWORD, _DWORD); // [esp+24h] [ebp-4h]
 
-  v4 = GetCommandLineW();
-  v5 = (HMODULE)GetSystemMetrics(41);
-  RegisterPenApp = GetProcAddress(v5, "RegisterPenApp");
-  v12 = (void (__stdcall *)(_DWORD, _DWORD))RegisterPenApp;
-  if ( RegisterPenApp )
-    ((void (__stdcall *)(int, int))RegisterPenApp)(1, 1);
-  v7 = sub_1001BE8(v4);
-  if ( sub_1004565(hInstance, a2, (int)v7, nCmdShow) )
-  {
-    v8 = GetCurrentProcessId();
-    v9 = SetWinEventHook(0x800Bu, 0x800Bu, 0, pfnWinEventProc, v8, 0, 0);
-    while ( GetMessageW(&Msg, 0, 0, 0) )
-    {
-      if ( Msg.message == 80 )
-        PostMessageW(hWndParent, 0x8001u, 0, 0);
-      if ( (!hDlg || !IsDialogMessageW(hDlg, &Msg)) && !TranslateAcceleratorW(hWndParent, hAccTable, &Msg) )
-      {
-        TranslateMessage(&Msg);
-        DispatchMessageW(&Msg);
-      }
-    }
-    sub_1001929();
-    LocalFree(hMem);
-    if ( v9 )
-      UnhookWinEvent(v9);
-  }
-  else
-  {
-    Msg.wParam = 0;
-  }
-  if ( v12 )
-    v12(1, 0);
-  return Msg.wParam;
+	v4 = GetCommandLineW();
+	v5 = (HMODULE)GetSystemMetrics(41);
+	RegisterPenApp = GetProcAddress(v5, "RegisterPenApp");
+	v12 = (void(__stdcall *)(_DWORD, _DWORD))RegisterPenApp;
+	if (RegisterPenApp)
+		((void(__stdcall *)(int, int))RegisterPenApp)(1, 1);
+	v7 = sub_1001BE8(v4);
+	if (sub_1004565(hInstance, (int)hPrevInstance, (int)v7, nCmdShow))
+	{
+		v8 = GetCurrentProcessId();
+		v9 = SetWinEventHook(0x800Bu, 0x800Bu, 0, pfnWinEventProc, v8, 0, 0);
+		while (GetMessageW(&Msg, 0, 0, 0))
+		{
+			if (Msg.message == 80)
+				PostMessageW(hWndParent, 0x8001u, 0, 0);
+			if ((!hDlg || !IsDialogMessageW(hDlg, &Msg)) && !TranslateAcceleratorW(hWndParent, hAccTable, &Msg))
+			{
+				TranslateMessage(&Msg);
+				DispatchMessageW(&Msg);
+			}
+		}
+		sub_1001929();
+		LocalFree(hMem);
+		if (v9)
+			UnhookWinEvent(v9);
+	}
+	else
+	{
+		Msg.wParam = 0;
+	}
+	if (v12)
+		v12(1, 0);
+	return Msg.wParam;
 }
+
 
 //----- (01002A55) --------------------------------------------------------
 BOOL __stdcall sub_1002A55(LPCWSTR lpString1)
@@ -4989,118 +4710,6 @@ LABEL_13:
 // 1009A9C: using guessed type int dword_1009A9C;
 // 1009AA4: using guessed type int dword_1009AA4;
 
-//----- (0100739D) --------------------------------------------------------
-int start()
-{
-  HMODULE v0; // eax
-  char *v1; // ecx
-  int v2; // eax
-  int v3; // eax
-  bool v4; // zf
-  char *v5; // esi
-  int v6; // eax
-  HMODULE v7; // eax
-  int v8; // eax
-  int v9; // esi
-  int v11; // [esp-4h] [ebp-90h]
-  struct _STARTUPINFOA StartupInfo; // [esp+Ch] [ebp-80h] BYREF
-  int v13; // [esp+50h] [ebp-3Ch]
-  int v14; // [esp+54h] [ebp-38h]
-  char v15[4]; // [esp+58h] [ebp-34h] BYREF
-  char v16[4]; // [esp+5Ch] [ebp-30h] BYREF
-  char v17[4]; // [esp+60h] [ebp-2Ch] BYREF
-  int v18; // [esp+68h] [ebp-24h] BYREF
-  char *v19; // [esp+6Ch] [ebp-20h]
-  int v20; // [esp+70h] [ebp-1Ch]
-  CPPEH_RECORD ms_exc; // [esp+74h] [ebp-18h]
-
-  v0 = GetModuleHandleA(0);
-  if ( *(_WORD *)v0 != 23117 )
-    goto LABEL_5;
-  v1 = (char *)v0 + *((_DWORD *)v0 + 15);
-  if ( *(_DWORD *)v1 != 17744 )
-    goto LABEL_5;
-  v2 = *((unsigned __int16 *)v1 + 12);
-  if ( v2 == 267 )
-  {
-    if ( *((_DWORD *)v1 + 29) > 0xEu )
-    {
-      v3 = 0;
-      v4 = *((_DWORD *)v1 + 58) == 0;
-      goto LABEL_10;
-    }
-LABEL_5:
-    v20 = 0;
-    goto LABEL_11;
-  }
-  if ( v2 != 523 || *((_DWORD *)v1 + 33) <= 0xEu )
-    goto LABEL_5;
-  v3 = 0;
-  v4 = *((_DWORD *)v1 + 62) == 0;
-LABEL_10:
-  LOBYTE(v3) = !v4;
-  v20 = v3;
-LABEL_11:
-  ms_exc.registration.TryLevel = 0;
-  _set_app_type(_crt_gui_app);
-  dword_100AB9C = -1;
-  dword_100ABA0 = -1;
-  *_p__fmode() = dword_1009AB8;
-  *_p__commode() = dword_1009AB4;
-  dword_100ABA4 = adjust_fdiv;
-  UserMathErrorFunction();
-  if ( !dword_1009608 )
-    _setusermatherr((_UserMathErrorFunctionPointer)UserMathErrorFunction);
-  sub_10075DD();
-  initterm(&First, &Last);
-  v18 = dword_1009AB0;
-  v14 = _getmainargs(v15, v16, v17, dword_1009AAC, &v18);
-  initterm(&dword_1009000, &dword_1009008);
-  v5 = acmdln;
-  v19 = acmdln;
-  if ( *acmdln != 34 )
-  {
-    while ( (unsigned __int8)*v5 > 0x20u )
-      v19 = ++v5;
-    goto LABEL_18;
-  }
-  do
-    v19 = ++v5;
-  while ( *v5 && *v5 != 34 );
-  if ( *v5 != 34 )
-    goto LABEL_18;
-  do
-  {
-    v19 = ++v5;
-LABEL_18:
-    ;
-  }
-  while ( *v5 && (unsigned __int8)*v5 <= 0x20u );
-  StartupInfo.dwFlags = 0;
-  GetStartupInfoA(&StartupInfo);
-  if ( (StartupInfo.dwFlags & 1) != 0 )
-    v6 = StartupInfo.wShowWindow;
-  else
-    v6 = 10;
-  v11 = v6;
-  v7 = GetModuleHandleA(0);
-  v8 = sub_1002936(v7, 0, (int)v5, v11);
-  v9 = v8;
-  v13 = v8;
-  if ( !v20 )
-    exit(v8);
-  cexit();
-  return v9;
-}
-// 1001320: using guessed type int __cdecl _getmainargs(_DWORD, _DWORD, _DWORD, _DWORD, _DWORD);
-// 1009608: using guessed type int dword_1009608;
-// 1009AAC: using guessed type int dword_1009AAC;
-// 1009AB0: using guessed type int dword_1009AB0;
-// 1009AB4: using guessed type int dword_1009AB4;
-// 1009AB8: using guessed type int dword_1009AB8;
-// 100AB9C: using guessed type int dword_100AB9C;
-// 100ABA0: using guessed type int dword_100ABA0;
-// 100ABA4: using guessed type int dword_100ABA4;
 
 //----- (010075DD) --------------------------------------------------------
 unsigned int sub_10075DD()
