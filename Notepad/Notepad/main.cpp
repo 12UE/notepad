@@ -4,11 +4,17 @@
    Detected compiler: Visual C++
 */
 
+#define _CRT_SECURE_NO_WARNINGS
+
 #include <windows.h>
+#include <stdio.h>
+#include <wchar.h>
+#include <time.h>
+#include <CommCtrl.h>
+#include <float.h>
 #include "defs.h"
 #include "notepad.h"
-
-
+#pragma comment(lib, "Comctl32.lib")
 //-------------------------------------------------------------------------
 // Data declarations
 
@@ -22,10 +28,10 @@ const WCHAR word_1001834 = 32u; // idb
 const WCHAR word_1001840 = 8206u; // idb
 int dword_1001844 = 8207; // weak
 const CHAR ValueName[8] = { '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0' }; // idb
-_PVFV dword_1009000 = NULL; // idb
-_PVFV dword_1009008 = NULL; // idb
-_PVFV First = NULL; // idb
-_PVFV Last = NULL; // idb
+//_PVFV dword_1009000 = NULL; // idb
+//_PVFV dword_1009008 = NULL; // idb
+//_PVFV First = NULL; // idb
+//_PVFV Last = NULL; // idb
 BYTE Data = 120u; // idb
 int dword_100901C = 1; // weak
 WCHAR ClassName[] = L"Notepad"; // idb
@@ -68,19 +74,19 @@ wchar_t *dword_10090C4 = (wchar_t *)0x24; // idb
 wchar_t *Format = (wchar_t *)0x25; // idb
 int *off_10090E8[9] =
 {
-  &dword_1009034,
-  &dword_1009038,
-  &dword_100903C,
-  &lpString,
-  &dword_100904C,
-  &dword_1009048,
-  &dword_1009044,
-  &dword_1009050,
-  &lpCaption
+  (int *)&dword_1009034,
+  (int *)&dword_1009038,
+  (int *)&dword_100903C,
+  (int *)&lpString,
+  (int *)&dword_100904C,
+  (int *)&dword_1009048,
+  (int *)&dword_1009044,
+  (int *)&dword_1009050,
+  (int *)&lpCaption
 }; // weak
-__int16 *off_100919C = &WindowName; // weak
+__int16 *off_100919C = (short *)&WindowName; // weak
 int dword_10091A0[] = { 65535 }; // weak
-int *off_10091A4 = &dword_100904C; // weak
+int *off_10091A4 = (int *)&dword_100904C; // weak
 _UNKNOWN unk_10091E0; // weak
 _UNKNOWN unk_10091E4; // weak
 _UNKNOWN unk_10091E8; // weak
@@ -876,7 +882,7 @@ HWND __stdcall sub_1001C42(int a1)
   v4 = wParam - (_DWORD)result + 1;
   if ( a1 || v4 != dword_1009624 || v2 != dword_1009620 )
   {
-    snwprintf(Buffer, 0x7Fu, Format, v2, wParam - (_DWORD)result + 1);
+    _snwprintf_s(Buffer, 0x7Fu, Format, v2, wParam - (_DWORD)result + 1);
     result = dword_1009834;
     Buffer[127] = 0;
     if ( dword_1009834 )
@@ -1023,7 +1029,7 @@ int __stdcall sub_1001F02(_WORD *a1, _WORD *a2, _WORD *a3)
     while ( *v6 )
       *a3++ = *v6++;
   }
-  v8 = a1 + 2;
+  v8 = (__int16 *)a1 + 2;
   do
   {
     v9 = *v8;
@@ -1052,7 +1058,7 @@ int __stdcall sub_1001F70(HWND hWnd, LPCWSTR lpCaption, LPCWSTR lpText, LPCWSTR 
   v8 = v7;
   if ( !v7 )
     return MessageBoxW(hWnd, lpText, lpCaption, uType);
-  sub_1001F02(lpText, lpString, v7);
+  sub_1001F02((uint16 *)lpText, (uint16 *)lpString, (uint16 *)v7);
   v9 = MessageBoxW(hWnd, v8, lpCaption, uType);
   LocalFree(v8);
   return v9;
@@ -1077,7 +1083,7 @@ DWORD sub_1001FF0()
     }
     if ( !v1 )
     {
-      snwprintf(Buffer, 0xC7u, dword_10090A8, result);
+      _snwprintf_s(Buffer, 0xC7u, dword_10090A8, result);
       v1 = Buffer;
     }
     if ( *v1 )
@@ -1176,7 +1182,7 @@ INT_PTR __stdcall DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
     case 1u:
       GetDlgItemTextW(hDlg, 258, String, 100);
       FoldStringW(0x80u, String, -1, String, 100);
-      dword_100AB94 = wtol(String);
+      dword_100AB94 = _wtol(String);
       v5 = SendMessageW(hWnd, 0xBBu, dword_100AB94 - 1, 0);
       if ( !dword_100AB94 || v5 == -1 )
       {
@@ -1445,7 +1451,7 @@ LABEL_18:
 // 100A528: using guessed type int dword_100A528;
 
 //----- (01002936) --------------------------------------------------------
-int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow)
+int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
 {
 	const WCHAR *v4; // edi
 	HMODULE v5; // eax
@@ -1512,20 +1518,20 @@ BOOL __stdcall sub_1002A55(LPCWSTR lpString1)
     v1 = FindFirstFileW(lpString1, &FindFileData);
     if ( v1 == (HANDLE)-1 )
     {
-      sub_1002409(v4, 260, lpString1);
+		sub_1002409((uint16*)v4, 260, (uint16*)lpString1);
     }
     else
     {
-      sub_1002409(v4, 260, FindFileData.cFileName);
+		sub_1002409((uint16*)v4, 260, (uint16*)FindFileData.cFileName);
       FindClose(v1);
     }
     GetFileTitleW(v4, Buf, 0x104u);
   }
   else
   {
-    sub_1002409(Buf, 310, lpString);
+	  sub_1002409((uint16*)Buf, 310, (uint16*)lpString);
   }
-  snwprintf(&Buffer, 0x7Fu, Format, 1, 1);
+  _snwprintf(&Buffer, 0x7Fu, Format, 1, 1);
   if ( dword_1009834 )
     SendMessageW(dword_1009834, 0x40Bu, 1u, (LPARAM)&Buffer);
   lstrcatW(Buf, dword_1009044);
@@ -2216,23 +2222,24 @@ LSTATUS sub_1003A39()
 }
 
 //----- (01003C92) --------------------------------------------------------
+// @@Œ¥≥ı ºªØ
 LSTATUS sub_1003C92()
 {
   HGDIOBJ v0; // eax
   LSTATUS result; // eax
   HKEY phkResult; // [esp+8h] [ebp-64h] BYREF
   char pv[8]; // [esp+Ch] [ebp-60h] BYREF
-  int v4; // [esp+14h] [ebp-58h]
-  int v5; // [esp+18h] [ebp-54h]
-  int v6; // [esp+1Ch] [ebp-50h]
-  unsigned __int8 v7; // [esp+20h] [ebp-4Ch]
-  unsigned __int8 v8; // [esp+21h] [ebp-4Bh]
-  unsigned __int8 v9; // [esp+22h] [ebp-4Ah]
-  unsigned __int8 v10; // [esp+23h] [ebp-49h]
-  unsigned __int8 v11; // [esp+24h] [ebp-48h]
-  unsigned __int8 v12; // [esp+25h] [ebp-47h]
-  unsigned __int8 v13; // [esp+26h] [ebp-46h]
-  unsigned __int8 v14; // [esp+27h] [ebp-45h]
+  int v4 = 0; // [esp+14h] [ebp-58h]
+  int v5 = 0; // [esp+18h] [ebp-54h]
+  int v6 = 0; // [esp+1Ch] [ebp-50h]
+  unsigned __int8 v7 = 0; // [esp+20h] [ebp-4Ch]
+  unsigned __int8 v8 = 0; // [esp+21h] [ebp-4Bh]
+  unsigned __int8 v9 = 0; // [esp+22h] [ebp-4Ah]
+  unsigned __int8 v10 = 0; // [esp+23h] [ebp-49h]
+  unsigned __int8 v11 = 0; // [esp+24h] [ebp-48h]
+  unsigned __int8 v12 = 0; // [esp+25h] [ebp-47h]
+  unsigned __int8 v13 = 0; // [esp+26h] [ebp-46h]
+  unsigned __int8 v14 = 0; // [esp+27h] [ebp-45h]
 
   v0 = GetStockObject(16);
   if ( v0 )
@@ -2275,7 +2282,7 @@ LSTATUS sub_1003C92()
 // 10016DC: using guessed type wchar_t aLucidaConsole[15];
 
 //----- (01003F4C) --------------------------------------------------------
-int __usercall sub_1003F4C@<eax>(unsigned __int16 *a1@<eax>, unsigned __int16 *a2@<ecx>)
+int __usercall sub_1003F4C(unsigned __int16 *a1, unsigned __int16 *a2)
 {
   unsigned __int16 *v2; // edi
   unsigned __int16 v4; // ax
@@ -2448,13 +2455,13 @@ int __stdcall sub_100419E(unsigned __int16 *a1)
   int v6; // [esp+Ch] [ebp-4h]
 
   v6 = 0;
-  if ( !sub_1003F4C(a1, L"/.SETUP") )
+  if (!sub_1003F4C(a1, (uint16*)L"/.SETUP"))
   {
     dword_100984C = 1;
     hMenu = GetSystemMenu(hWndParent, 0);
     hAccTable = LoadAcceleratorsW(hInstance, L"SlipUpAcc");
     SetWindowLongW(hWndParent, -16, 16580608);
-    v1 = sub_100417A(a1 + 7);
+	v1 = (const WCHAR *)sub_100417A(a1 + 7);
     if ( !*v1 )
       return 6;
     sub_1003F99(sz, v1);
@@ -2516,15 +2523,15 @@ int __stdcall sub_10042F9(int a1, int nCmdShow)
   int v14; // [esp+8h] [ebp-4h]
 
   v14 = 1;
-  if ( sub_1003F4C((unsigned __int16 *)a1, L"/PT") )
+  if (sub_1003F4C((unsigned __int16 *)a1, (uint16*)L"/PT"))
   {
-    if ( sub_1003F4C((unsigned __int16 *)a1, L"/P") )
+	  if (sub_1003F4C((unsigned __int16 *)a1, (uint16*)L"/P"))
       return 0;
-    v2 = sub_100417A((_WORD *)(a1 + 4));
+    v2 = (const WCHAR *)sub_100417A((_WORD *)(a1 + 4));
   }
   else
   {
-    v2 = sub_100417A((_WORD *)(a1 + 6));
+    v2 = (const WCHAR *)sub_100417A((_WORD *)(a1 + 6));
     v14 = 0;
   }
   v3 = v2;
@@ -2536,10 +2543,10 @@ int __stdcall sub_10042F9(int a1, int nCmdShow)
   {
     if ( *v4 )
     {
-      v5 = sub_100417A(v4);
+		v5 = sub_100417A((uint16*)v4);
       if ( *v5 == 34 )
       {
-        v6 = v5 + 1;
+        v6 = (WCHAR *)v5 + 1;
         for ( i = 0; ; ++i )
         {
           v8 = *v6;
@@ -2623,7 +2630,7 @@ int __stdcall Proc(const LOGFONTW *a1, const TEXTMETRICW *a2, DWORD a3, LPARAM a
 }
 
 //----- (010044D7) --------------------------------------------------------
-BOOL __usercall sub_10044D7@<eax>(HINSTANCE a1@<esi>)
+BOOL __usercall sub_10044D7(HINSTANCE a1)
 {
   int v1; // eax
   WNDCLASSEXW v3; // [esp+4h] [ebp-30h] BYREF
@@ -2645,11 +2652,12 @@ BOOL __usercall sub_10044D7@<eax>(HINSTANCE a1@<esi>)
 }
 
 //----- (01004565) --------------------------------------------------------
+// @@Œ¥≥ı ºªØ
 int __stdcall sub_1004565(HINSTANCE hInstance, int a2, int a3, int nCmdShow)
 {
   int v4; // eax
   HACCEL v5; // eax
-  void *v6; // ecx
+  void *v6 = 0; // ecx
   HWND v7; // edx
   HMENU v8; // eax
   HMENU v9; // eax
@@ -2771,14 +2779,14 @@ int __stdcall sub_1004565(HINSTANCE hInstance, int a2, int a3, int nCmdShow)
   v11 = sub_100417A((_WORD *)v21);
   dword_1009A80 = -1;
   v12 = v11;
-  if ( !sub_1003F4C(v11, L"/A") )
+  if (!sub_1003F4C(v11, (uint16*)L"/A"))
   {
     dword_1009A80 = 0;
 LABEL_24:
     v12 = sub_100417A(v12 + 2);
     goto LABEL_25;
   }
-  if ( !sub_1003F4C(v12, L"/W") )
+  if (!sub_1003F4C(v12, (uint16*)L"/W"))
     dword_1009A80 = 1;
   if ( dword_1009A80 != -1 )
     goto LABEL_24;
@@ -2810,7 +2818,7 @@ LABEL_39:
   {
     if ( *v12 )
     {
-      sub_1003F99(sz, v12);
+		sub_1003F99(sz, (WCHAR*)v12);
       hFile = CreateFileW(sz, 0x80000000, 3u, 0, 3u, 0x80u, 0);
       if ( hFile != (HANDLE)-1 )
         goto LABEL_38;
@@ -3049,9 +3057,9 @@ int __stdcall sub_1004EAE(HWND hWnd, LPCWSTR lpFileName, LPCWCH lpWideCharStr)
     if ( dword_100A528 == 2 )
     {
       WriteFile(hFile, &unk_10091E8, 2u, &NumberOfBytesWritten, 0);
-      sub_1004B65(lpWideCharStra, lpWideCharStra, v5);
+	  sub_1004B65((uint16*)lpWideCharStra, (uint8*)lpWideCharStra, v5);
       v11 = WriteFile(hFile, lpWideCharStra, 2 * v5, &NumberOfBytesWritten, 0);
-      sub_1004B65(lpWideCharStra, lpWideCharStra, v5);
+	  sub_1004B65((uint16*)lpWideCharStra, (uint8*)lpWideCharStra, v5);
       goto LABEL_27;
     }
     if ( dword_100A528 == 3 )
@@ -3115,6 +3123,7 @@ LABEL_29:
 // 100A528: using guessed type int dword_100A528;
 
 //----- (01005179) --------------------------------------------------------
+// @@Œ¥≥ı ºªØ
 int __stdcall sub_1005179(LPCWSTR lpString, int a2)
 {
   BOOL v2; // eax
@@ -3152,9 +3161,8 @@ int __stdcall sub_1005179(LPCWSTR lpString, int a2)
   _WORD *v35; // [esp+68h] [ebp-234h]
   UINT CodePage; // [esp+6Ch] [ebp-230h]
   int v37; // [esp+70h] [ebp-22Ch]
-  int cchWideChar; // [esp+74h] [ebp-228h]
+  int cchWideChar = 0; // [esp+74h] [ebp-228h]
   WCHAR String1[260]; // [esp+78h] [ebp-224h] BYREF
-  CPPEH_RECORD ms_exc; // [esp+284h] [ebp-18h]
 
   lpString2 = lpString;
   v35 = 0;
@@ -3210,7 +3218,6 @@ LABEL_12:
     sub_1004E20(lpString2);
     return 0;
   }
-  ms_exc.registration.TryLevel = 0;
   lpMultiByteStr = v4;
   if ( a2 != -1 )
   {
@@ -3313,10 +3320,9 @@ LABEL_30:
     if ( v4 != (CHAR *)&v29 )
       UnmapViewOfFile(v4);
     SendMessageW(hWnd, 0xBu, 0, 0);
-    ms_exc.registration.TryLevel = -1;
     return 0;
   }
-  v11 = LocalLock(v9);
+  v11 = (uint16*)LocalLock(v9);
   v35 = v11;
   if ( v34 )
   {
@@ -3328,7 +3334,7 @@ LABEL_30:
     {
       if ( *(_WORD *)v4 == 0xFFFE )
       {
-        sub_1004B65(v11, v4 + 2, v7);
+        sub_1004B65(v11, (uint8*)v4 + 2, v7);
         goto LABEL_57;
       }
       v12 = v4;
@@ -3339,13 +3345,12 @@ LABEL_30:
   }
   else
   {
-    v7 = MultiByteToWideChar(CodePage, 0, lpMultiByteStr, cbMultiByte, v11, v7);
+    v7 = MultiByteToWideChar(CodePage, 0, lpMultiByteStr, cbMultiByte, (LPWSTR)v11, v7);
     cchWideChar = v7;
   }
 LABEL_57:
   v13 = v35;
   dword_1009030 = v37;
-  ms_exc.registration.TryLevel = -1;
   if ( v4 != (CHAR *)&v29 )
   {
     UnmapViewOfFile(v4);
@@ -3368,10 +3373,10 @@ LABEL_57:
     }
     v13[v7] = 0;
     v16 = *v13;
-    v17 = v13 + 1;
+    v17 = (short *)v13 + 1;
     if ( v16 != 46
       || (v18 = *v17, v19 = v17 + 1, v18 != 76)
-      || (v20 = *v19, v21 = v19 + 1, v20 != 79)
+	  || (v20 = *v19, v21 = (uint16*)v19 + 1, v20 != 79)
       || (v10 = *v21 == 71, v28 = 1, !v10) )
     {
       v28 = 0;
@@ -3826,7 +3831,7 @@ int __stdcall sub_1005F63(HWND hDlg, int a2, HWND hWnd, int a4)
   if ( a2 != 272 )
     return 0;
   v4 = 30;
-  v5 = &word_100A3E0;
+  v5 = (const WCHAR *)&word_100A3E0;
   do
   {
     SendDlgItemMessageW(hDlg, v4, 0xC5u, 0x27u, 0);
@@ -3876,8 +3881,8 @@ int *__stdcall sub_1006091(wchar_t *a1)
   v24[0] = 0;
   v24[1] = 0;
   v24[2] = 0;
-  time(&Time);
-  localtime(&Time);
+  time((time_t *)&Time);
+  localtime((time_t *)&Time);
   v2 = *a1;
   if ( *a1 )
   {
@@ -4039,7 +4044,7 @@ int sub_1006428()
     v2 = 0;
     if ( stru_100A4A0.hDevMode )
       v2 = (const DEVMODEW *)GlobalLock(stru_100A4A0.hDevMode);
-    v3 = CreateDCW(&v1[*v1], &v1[v1[1]], 0, v2);
+    v3 = CreateDCW((LPCWSTR)&v1[*v1], (LPCWSTR)&v1[v1[1]], 0, v2);
     GlobalUnlock(stru_100A4A0.hDevNames);
     if ( stru_100A4A0.hDevMode )
       GlobalUnlock(stru_100A4A0.hDevMode);
@@ -4069,7 +4074,7 @@ int sub_10064F3()
   DWORD pcbNeeded; // [esp+8h] [ebp-8h] BYREF
   HANDLE phPrinter; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( !OpenPrinterW(&pPrinterName, &phPrinter, 0) )
+  if ( !OpenPrinterW((LPWSTR)&pPrinterName, &phPrinter, 0) )
     return -1;
   GetPrinterDriverW(phPrinter, 0, 1u, 0, 0, &pcbNeeded);
   v1 = (LPCWSTR *)LocalAlloc(0x40u, pcbNeeded);
@@ -4085,7 +4090,7 @@ LABEL_4:
   BYTE1(stru_100A4A0.Flags) |= 4u;
   PageSetupDlgW(&stru_100A4A0);
   BYTE1(stru_100A4A0.Flags) &= 0xFBu;
-  v2 = CreateDCW(*v1, &pPrinterName, 0, 0);
+  v2 = CreateDCW(*v1,(LPCWSTR) &pPrinterName, 0, 0);
   LocalFree(v1);
   ClosePrinter(phPrinter);
   if ( !v2 )
@@ -4325,7 +4330,7 @@ LABEL_26:
   {
     if ( v7 <= 0 )
       break;
-    snwprintf(Buffer, 0x64u, dword_10090C4, dword_1009ABC);
+    _snwprintf_s(Buffer, 0x64u, dword_10090C4, dword_1009ABC);
     SetDlgItemTextW(dword_100A138, 21, Buffer);
     v8 = hdc;
     sub_1006657(hdc, 0);
@@ -4593,65 +4598,66 @@ int sub_10070D4()
 // 1009600: using guessed type int dword_1009600;
 
 //----- (01007147) --------------------------------------------------------
-BOOL __usercall sub_1007147@<eax>(BOOL result@<eax>, int a2@<edx>, int a3@<ecx>, int a4@<ebx>, int a5@<ebp>, int a6@<edi>, int a7@<esi>)
+BOOL __usercall sub_1007147(BOOL result, int a2, int a3, int a4, int a5, int a6, int a7)
 {
-  unsigned int v7; // kr00_4
-  HANDLE v8; // eax
-  _DWORD v9[22]; // [esp-334h] [ebp-334h] BYREF
-  int v10; // [esp-2DCh] [ebp-2DCh] BYREF
-  __int16 v11; // [esp-250h] [ebp-250h]
-  __int16 v12; // [esp-24Ch] [ebp-24Ch]
-  __int16 v13; // [esp-248h] [ebp-248h]
-  __int16 v14; // [esp-244h] [ebp-244h]
-  int v15; // [esp-240h] [ebp-240h]
-  int v16; // [esp-23Ch] [ebp-23Ch]
-  int v17; // [esp-238h] [ebp-238h]
-  int v18; // [esp-234h] [ebp-234h]
-  int v19; // [esp-230h] [ebp-230h]
-  BOOL v20; // [esp-22Ch] [ebp-22Ch]
-  int v21; // [esp-228h] [ebp-228h]
-  void *v22; // [esp-224h] [ebp-224h]
-  __int16 v23; // [esp-220h] [ebp-220h]
-  unsigned int v24; // [esp-21Ch] [ebp-21Ch]
-  void **v25; // [esp-218h] [ebp-218h]
-  __int16 v26; // [esp-214h] [ebp-214h]
-  struct _EXCEPTION_POINTERS v27; // [esp-Ch] [ebp-Ch] BYREF
-  int v28; // [esp-4h] [ebp-4h]
-  void *retaddr; // [esp+0h] [ebp+0h] BYREF
+	throw "∏¥‘”¥ÌŒÛ";
+  //unsigned int v7; // kr00_4
+  //HANDLE v8; // eax
+  //_DWORD v9[22]; // [esp-334h] [ebp-334h] BYREF
+  //int v10; // [esp-2DCh] [ebp-2DCh] BYREF
+  //__int16 v11; // [esp-250h] [ebp-250h]
+  //__int16 v12; // [esp-24Ch] [ebp-24Ch]
+  //__int16 v13; // [esp-248h] [ebp-248h]
+  //__int16 v14; // [esp-244h] [ebp-244h]
+  //int v15; // [esp-240h] [ebp-240h]
+  //int v16; // [esp-23Ch] [ebp-23Ch]
+  //int v17; // [esp-238h] [ebp-238h]
+  //int v18; // [esp-234h] [ebp-234h]
+  //int v19; // [esp-230h] [ebp-230h]
+  //BOOL v20; // [esp-22Ch] [ebp-22Ch]
+  //int v21; // [esp-228h] [ebp-228h]
+  //void *v22; // [esp-224h] [ebp-224h]
+  //__int16 v23; // [esp-220h] [ebp-220h]
+  //unsigned int v24; // [esp-21Ch] [ebp-21Ch]
+  //void **v25; // [esp-218h] [ebp-218h]
+  //__int16 v26; // [esp-214h] [ebp-214h]
+  //struct _EXCEPTION_POINTERS v27; // [esp-Ch] [ebp-Ch] BYREF
+  //int v28; // [esp-4h] [ebp-4h]
+  //void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  if ( a3 != __security_cookie || (a3 & 0xFFFF0000) != 0 )
-  {
-    v28 = a5;
-    v20 = result;
-    v19 = a3;
-    v18 = a2;
-    v17 = a4;
-    v16 = a7;
-    v15 = a6;
-    v26 = __SS__;
-    v23 = __CS__;
-    v14 = __DS__;
-    v13 = __ES__;
-    v12 = __FS__;
-    v11 = __GS__;
-    v7 = __readeflags();
-    v24 = v7;
-    v10 = 65537;
-    v22 = retaddr;
-    v25 = &retaddr;
-    v21 = v28;
-    memset(v9, 0, 0x50u);
-    v9[0] = -1073740791;
-    v9[3] = retaddr;
-    v27.ExceptionRecord = (PEXCEPTION_RECORD)v9;
-    v27.ContextRecord = (PCONTEXT)&v10;
-    v9[21] = dword_1009600;
-    SetUnhandledExceptionFilter(0);
-    UnhandledExceptionFilter(&v27);
-    v8 = GetCurrentProcess();
-    result = TerminateProcess(v8, 0x502u);
-  }
-  return result;
+  //if ( a3 != __security_cookie || (a3 & 0xFFFF0000) != 0 )
+  //{
+  //  v28 = a5;
+  //  v20 = result;
+  //  v19 = a3;
+  //  v18 = a2;
+  //  v17 = a4;
+  //  v16 = a7;
+  //  v15 = a6;
+  //  v26 = __SS__;
+  //  v23 = __CS__;
+  //  v14 = __DS__;
+  //  v13 = __ES__;
+  //  v12 = __FS__;
+  //  v11 = __GS__;
+  //  v7 = __readeflags();
+  //  v24 = v7;
+  //  v10 = 65537;
+  //  v22 = retaddr;
+  //  v25 = &retaddr;
+  //  v21 = v28;
+  //  memset(v9, 0, 0x50u);
+  //  v9[0] = -1073740791;
+  //  v9[3] = retaddr;
+  //  v27.ExceptionRecord = (PEXCEPTION_RECORD)v9;
+  //  v27.ContextRecord = (PCONTEXT)&v10;
+  //  v9[21] = dword_1009600;
+  //  SetUnhandledExceptionFilter(0);
+  //  UnhandledExceptionFilter(&v27);
+  //  v8 = GetCurrentProcess();
+  //  result = TerminateProcess(v8, 0x502u);
+  //}
+  //return result;
 }
 // 1007147: could not find valid save-restore pair for ebp
 // 1009600: using guessed type int dword_1009600;
@@ -4714,7 +4720,8 @@ LABEL_13:
 //----- (010075DD) --------------------------------------------------------
 unsigned int sub_10075DD()
 {
-  return controlfp(0x10000u, 0x30000u);
+	throw "∏¥‘”¥ÌŒÛ";
+  // return _controlfp_s(0x10000u, 0x30000u);
 }
 
 //----- (010075F4) --------------------------------------------------------

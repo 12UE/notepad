@@ -1,7 +1,7 @@
 #pragma once
 
 #define __thiscall __cdecl // Test compile in C mode
-
+#define __usercall
 
 HGLOBAL sub_1001929();
 LONG __thiscall sub_100195D(void *self);
@@ -22,7 +22,6 @@ int __stdcall sub_100239D(void *lpv, int iSize); // idb
 int __stdcall sub_1002409(_WORD *a1, int a2, _WORD *a3);
 int __stdcall sub_1002452(HWND hDlg, int, HWND hWnd, int); // idb
 BOOL __stdcall sub_100270F(int a1);
-WPARAM __stdcall WinMain(HINSTANCE hInstance, int a2, int a3, int nCmdShow);
 BOOL __stdcall sub_1002A55(LPCWSTR lpString1);
 int __stdcall sub_1002B87(HWND hWnd, __int16, int); // idb
 int sub_100337E();
