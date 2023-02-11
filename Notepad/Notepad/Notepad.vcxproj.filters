@@ -35,4 +35,7 @@
       <Filter>资源文件</Filter>
     </ResourceCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="原来的资源代码.txt" />
+  </ItemGroup>
 </Project>

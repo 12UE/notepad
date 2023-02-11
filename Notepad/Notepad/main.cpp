@@ -72,18 +72,67 @@ LPARAM dword_10090BC = 34; // idb
 LPARAM dword_10090C0 = 35; // idb
 wchar_t *dword_10090C4 = (wchar_t *)0x24; // idb
 wchar_t *Format = (wchar_t *)0x25; // idb
-int *off_10090E8[9] =
+UINT dword_1009058 = 10u;
+UINT dword_100905C = 11u;
+UINT dword_10090CC = 0x26;
+UINT dword_10090D0 = 0x27;
+UINT dword_10090D4 = 0x28;
+UINT dword_10090D8 = 0x29;
+UINT  dword_10090DC = 0x2A;
+UINT dword_10090E0 = 0x2B;
+UINT dword_10090E4 = 0x2C;
+UINT *off_10090E8[45] =
 {
-  (int *)&dword_1009034,
-  (int *)&dword_1009038,
-  (int *)&dword_100903C,
-  (int *)&lpString,
-  (int *)&dword_100904C,
-  (int *)&dword_1009048,
-  (int *)&dword_1009044,
-  (int *)&dword_1009050,
-  (int *)&lpCaption
-}; // weak
+	(UINT *)&dword_1009034,
+	(UINT *)&dword_1009038,
+	(UINT *)&dword_100903C,
+	(UINT *)&lpString,
+	(UINT *)&dword_100904C,
+	(UINT *)&dword_1009048,
+	(UINT *)&dword_1009044,
+	(UINT *)&dword_1009050,
+	(UINT *)&lpCaption,
+	(UINT *)&dword_1009058,
+	(UINT *)&dword_100905C,
+	(UINT *)&dword_1009060,
+	(UINT *)&dword_1009064,
+	(UINT *)&dword_1009068,
+	(UINT *)&dword_100906C,
+	(UINT *)&dword_1009070,
+	(UINT *)&lpszHelp,
+	(UINT *)&dword_1009084,
+	(UINT *)&dword_1009088,
+	(UINT *)&dword_100908C,
+	(UINT *)&dword_1009090,
+	(UINT *)&dword_1009094,
+	(UINT *)&dword_1009098,
+	(UINT *)&dword_100909C,
+	(UINT *)&dword_10090A0,
+	(UINT *)&dword_10090A8,
+	(UINT *)&dword_10090A4,
+	(UINT *)&dword_10090AC,
+	(UINT *)&lpText,
+	(UINT *)&lParam,
+	(UINT *)&dword_10090B8,
+	(UINT *)&dword_10090BC,
+	(UINT *)&dword_10090C0,
+	(UINT *)&dword_10090C4,
+	(UINT *)&dword_1009078,
+	(UINT *)&dword_100907C,
+	(UINT *)&Format,
+	(UINT *)&dword_10090CC,
+	(UINT *)&dword_10090D0,
+	(UINT *)&dword_10090D4,
+	(UINT *)&dword_10090D8,
+	(UINT *)&dword_10090DC,
+	(UINT *)&dword_10090E0,
+	(UINT *)&dword_10090E4,
+	(UINT *)&dword_1009080
+};
+
+
+
+
 __int16 *off_100919C = (short *)&WindowName; // weak
 int dword_10091A0[] = { 65535 }; // weak
 int *off_10091A4 = (int *)&dword_100904C; // weak
@@ -2365,7 +2414,8 @@ WCHAR *__stdcall sub_1004047(HINSTANCE hInstance)
     v4 = 0;
     do
     {
-      v5 = LoadStringW(hInstance, *off_10090E8[v3], lpBuffer, v1);
+		UINT uId = *off_10090E8[v3];
+      v5 = LoadStringW(hInstance, uId, lpBuffer, v1);
       if ( v5 >= v1 - 1 )
         break;
       ++v3;
