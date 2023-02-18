@@ -2,7 +2,7 @@
    Copyright (c) 2007-2020 Hex-Rays <info@hex-rays.com>
 
    Detected compiler: Visual C++
-*/
+   */
 
 #define _CRT_SECURE_NO_WARNINGS
 
@@ -33,637 +33,671 @@ const CHAR ValueName[8] = { '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0' }; //
 //_PVFV First = NULL; // idb
 //_PVFV Last = NULL; // idb
 BYTE Data = 120u; // idb
+
+int dword_1009034[45] =
+{
+	1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+	11, 12, 13, 14, 15, 16, 17, 18, 19, 45, 20,
+	21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31,
+	32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44
+};
+
+
 int dword_100901C = 1; // weak
 WCHAR ClassName[] = L"Notepad"; // idb
 int dword_1009030 = -1; // idb
-LPCWSTR dword_1009034 = (LPCWSTR)1; // idb
-LPCWSTR dword_1009038 = (LPCWSTR)2; // idb
-LPCWSTR dword_100903C = (LPCWSTR)3; // idb
-LPCWSTR lpString = (LPCWSTR)4; // idb
-LPCWSTR dword_1009044 = (LPCWSTR)5; // idb
-LPCWSTR dword_1009048 = (LPCWSTR)6; // idb
-LPCWSTR dword_100904C = (LPCWSTR)7; // idb
-LPCWSTR dword_1009050 = (LPCWSTR)8; // idb
-LPCWSTR lpCaption = (LPCWSTR)9; // idb
-LPCWSTR dword_1009060 = (LPCWSTR)0xC; // idb
-int dword_1009064 = 13; // weak
-LPCWSTR dword_1009068 = (LPCWSTR)0xE; // idb
-LPCWSTR dword_100906C = (LPCWSTR)0xF; // idb
-int dword_1009070 = 16; // weak
-LPCWSTR lpszHelp = (LPCWSTR)0x11; // idb
-LPCWSTR dword_1009078 = (LPCWSTR)0x12; // idb
-LPCWSTR dword_100907C = (LPCWSTR)0x13; // idb
-int dword_1009080 = 45; // weak
-LPCWSTR dword_1009084 = (LPCWSTR)0x14; // idb
-LPCWSTR dword_1009088 = (LPCWSTR)0x15; // idb
-int dword_100908C = 22; // weak
-int dword_1009090 = 23; // weak
-int dword_1009094 = 24; // weak
-LPCWSTR dword_1009098 = (LPCWSTR)0x19; // idb
-int dword_100909C = 26; // weak
-LPCWSTR dword_10090A0 = (LPCWSTR)0x1B; // idb
-LPCWSTR dword_10090A4 = (LPCWSTR)0x1C; // idb
-wchar_t *dword_10090A8 = (wchar_t *)0x1D; // idb
-LPCWSTR dword_10090AC = (LPCWSTR)0x1E; // idb
-LPCWSTR lpText = (LPCWSTR)0x1F; // idb
-LPARAM lParam = 32; // idb
-LPARAM dword_10090B8 = 33; // idb
-LPARAM dword_10090BC = 34; // idb
-LPARAM dword_10090C0 = 35; // idb
-wchar_t *dword_10090C4 = (wchar_t *)0x24; // idb
-wchar_t *Format = (wchar_t *)0x25; // idb
-UINT dword_1009058 = 10u;
-UINT dword_100905C = 11u;
-UINT dword_10090CC = 0x26;
-UINT dword_10090D0 = 0x27;
-UINT dword_10090D4 = 0x28;
-UINT dword_10090D8 = 0x29;
-UINT  dword_10090DC = 0x2A;
-UINT dword_10090E0 = 0x2B;
-UINT dword_10090E4 = 0x2C;
+//LPCWSTR dword_1009034 = (LPCWSTR)1; // idb
+//LPCWSTR dword_1009038 = (LPCWSTR)2; // idb
+//LPCWSTR dword_100903C = (LPCWSTR)3; // idb
+//LPCWSTR lpString = (LPCWSTR)4; // idb
+//LPCWSTR dword_1009044 = (LPCWSTR)5; // idb
+//LPCWSTR dword_1009048 = (LPCWSTR)6; // idb
+//LPCWSTR dword_100904C = (LPCWSTR)7; // idb
+//LPCWSTR dword_1009050 = (LPCWSTR)8; // idb
+//LPCWSTR lpCaption = (LPCWSTR)9; // idb
+//LPCWSTR dword_1009060 = (LPCWSTR)0xC; // idb
+//int dword_1009064 = 13; // weak
+//LPCWSTR dword_1009068 = (LPCWSTR)0xE; // idb
+//LPCWSTR dword_100906C = (LPCWSTR)0xF; // idb
+//int dword_1009070 = 16; // weak
+//LPCWSTR lpszHelp = (LPCWSTR)0x11; // idb
+//LPCWSTR dword_1009078 = (LPCWSTR)0x12; // idb
+//LPCWSTR dword_100907C = (LPCWSTR)0x13; // idb
+//int dword_1009080 = 45; // weak
+//LPCWSTR dword_1009084 = (LPCWSTR)0x14; // idb
+//LPCWSTR dword_1009088 = (LPCWSTR)0x15; // idb
+//int dword_100908C = 22; // weak
+//int dword_1009090 = 23; // weak
+//int dword_1009094 = 24; // weak
+//LPCWSTR dword_1009098 = (LPCWSTR)0x19; // idb
+//int dword_100909C = 26; // weak
+//LPCWSTR dword_10090A0 = (LPCWSTR)0x1B; // idb
+//LPCWSTR dword_10090A4 = (LPCWSTR)0x1C; // idb
+//wchar_t *dword_10090A8 = (wchar_t *)0x1D; // idb
+//LPCWSTR dword_10090AC = (LPCWSTR)0x1E; // idb
+//LPCWSTR lpText = (LPCWSTR)0x1F; // idb
+//LPARAM lParam = 32; // idb
+//LPARAM dword_10090B8 = 33; // idb
+//LPARAM dword_10090BC = 34; // idb
+//LPARAM dword_10090C0 = 35; // idb
+//wchar_t *dword_10090C4 = (wchar_t *)0x24; // idb
+//wchar_t *Format = (wchar_t *)0x25; // idb
+//UINT dword_1009058 = 10u;
+//UINT dword_100905C = 11u;
+//UINT dword_10090CC = 0x26;
+//UINT dword_10090D0 = 0x27;
+//UINT dword_10090D4 = 0x28;
+//UINT dword_10090D8 = 0x29;
+//UINT  dword_10090DC = 0x2A;
+//UINT dword_10090E0 = 0x2B;
+//UINT dword_10090E4 = 0x2C;
 UINT *off_10090E8[45] =
 {
-	(UINT *)&dword_1009034,
-	(UINT *)&dword_1009038,
-	(UINT *)&dword_100903C,
-	(UINT *)&lpString,
-	(UINT *)&dword_100904C,
-	(UINT *)&dword_1009048,
-	(UINT *)&dword_1009044,
-	(UINT *)&dword_1009050,
-	(UINT *)&lpCaption,
-	(UINT *)&dword_1009058,
-	(UINT *)&dword_100905C,
-	(UINT *)&dword_1009060,
-	(UINT *)&dword_1009064,
-	(UINT *)&dword_1009068,
-	(UINT *)&dword_100906C,
-	(UINT *)&dword_1009070,
-	(UINT *)&lpszHelp,
-	(UINT *)&dword_1009084,
-	(UINT *)&dword_1009088,
-	(UINT *)&dword_100908C,
-	(UINT *)&dword_1009090,
-	(UINT *)&dword_1009094,
-	(UINT *)&dword_1009098,
-	(UINT *)&dword_100909C,
-	(UINT *)&dword_10090A0,
-	(UINT *)&dword_10090A8,
-	(UINT *)&dword_10090A4,
-	(UINT *)&dword_10090AC,
-	(UINT *)&lpText,
-	(UINT *)&lParam,
-	(UINT *)&dword_10090B8,
-	(UINT *)&dword_10090BC,
-	(UINT *)&dword_10090C0,
-	(UINT *)&dword_10090C4,
-	(UINT *)&dword_1009078,
-	(UINT *)&dword_100907C,
-	(UINT *)&Format,
-	(UINT *)&dword_10090CC,
-	(UINT *)&dword_10090D0,
-	(UINT *)&dword_10090D4,
-	(UINT *)&dword_10090D8,
-	(UINT *)&dword_10090DC,
-	(UINT *)&dword_10090E0,
-	(UINT *)&dword_10090E4,
-	(UINT *)&dword_1009080
+	(UINT *)dword_1009034,
+	(UINT *)((char *)dword_1009034 + 0x1009038 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x100903C - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009040 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x100904C - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009048 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009044 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009050 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009054 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009058 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x100905C - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009060 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009064 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009068 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x100906C - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009070 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009074 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009084 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009088 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x100908C - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009090 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009094 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009098 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x100909C - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090A0 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090A8 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090A4 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090AC - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090B0 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090B4 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090B8 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090BC - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090C0 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090C4 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009078 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x100907C - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090C8 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090CC - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090D0 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090D4 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090D8 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090DC - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090E0 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x10090E4 - 0x1009034),
+	(UINT *)((char *)dword_1009034 + 0x1009080 - 0x1009034),
 };
+
 
 
 
 
 __int16 *off_100919C = (short *)&WindowName; // weak
 int dword_10091A0[] = { 65535 }; // weak
-int *off_10091A4 = (int *)&dword_100904C; // weak
+int *off_10091A4[19] =
+{
+	(int *)((char *)dword_1009034 + 0x100904C - 0x1009034),
+	(int *)2,
+	(int *)((char *)dword_1009034 + 0x1009058 - 0x1009034),
+	(int *)0xA,
+	(int *)((char *)dword_1009034 + 0x100905C - 0x1009034),
+	(int *)5,
+	(int *)((char *)dword_1009034 + 0x100904C - 0x1009034),
+	(int *)6,
+	(int *)((char *)dword_1009034 + 0x100904C - 0x1009034),
+	(int *)0x1004,
+	(int *)((char *)dword_1009034 + 0x1009098 - 0x1009034),
+	(int *)0x1005,
+	(int *)((char *)dword_1009034 + 0x100904C - 0x1009034),
+	(int *)0x1008,
+	(int *)&off_100919C,
+	(int *)0xBFBBEF,
+	(int *)0xFEFF,
+	(int *)0xFFFE,
+	NULL
+};
+
+
 _UNKNOWN unk_10091E0; // weak
 _UNKNOWN unk_10091E4; // weak
 _UNKNOWN unk_10091E8; // weak
 wchar_t aY_0[260] =
 {
-  89u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u
+	89u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u
 }; // idb
 wchar_t aY[260] =
 {
-  89u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u,
-  0u
+	89u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u,
+	0u
 }; // idb
 int dword_1009600 = -47937; // weak
 uintptr_t __security_cookie = 47936u;
@@ -762,184 +796,183 @@ int dword_100ABA4; // weak
 //----- (01001929) --------------------------------------------------------
 HGLOBAL sub_1001929()
 {
-  HGLOBAL result; // eax
+	HGLOBAL result; // eax
 
-  if ( stru_100A4A0.hDevMode )
-    GlobalFree(stru_100A4A0.hDevMode);
-  result = stru_100A4A0.hDevNames;
-  if ( stru_100A4A0.hDevNames )
-    result = GlobalFree(stru_100A4A0.hDevNames);
-  stru_100A4A0.hDevMode = 0;
-  stru_100A4A0.hDevNames = 0;
-  return result;
+	if (stru_100A4A0.hDevMode)
+		GlobalFree(stru_100A4A0.hDevMode);
+	result = stru_100A4A0.hDevNames;
+	if (stru_100A4A0.hDevNames)
+		result = GlobalFree(stru_100A4A0.hDevNames);
+	stru_100A4A0.hDevMode = 0;
+	stru_100A4A0.hDevNames = 0;
+	return result;
 }
 
 //----- (0100195D) --------------------------------------------------------
 LONG __thiscall sub_100195D(void *self)
 {
-  LONG result; // eax
-  void *LCData; // [esp+0h] [ebp-4h] BYREF
+	LONG result; // eax
+	void *LCData; // [esp+0h] [ebp-4h] BYREF
 
-  LCData = self;
-  stru_100A4A0.lpfnPageSetupHook = (LPPAGESETUPHOOK)sub_1005F63;
-  stru_100A4A0.lpPageSetupTemplateName = (LPCWSTR)12;
-  GetLocaleInfoW(0x400u, 0xDu, (LPWSTR)&LCData, 2);
-  if ( (_WORD)LCData == 49 )
-  {
-    stru_100A4A0.rtMargin.top = 1000;
-    stru_100A4A0.rtMargin.bottom = 1000;
-    stru_100A4A0.Flags = 40966;
-    result = 750;
-  }
-  else
-  {
-    stru_100A4A0.rtMargin.top = 2500;
-    stru_100A4A0.rtMargin.bottom = 2500;
-    stru_100A4A0.Flags = 40970;
-    result = 2000;
-  }
-  stru_100A4A0.rtMargin.left = result;
-  stru_100A4A0.rtMargin.right = result;
-  return result;
+	LCData = self;
+	stru_100A4A0.lpfnPageSetupHook = (LPPAGESETUPHOOK)sub_1005F63;
+	stru_100A4A0.lpPageSetupTemplateName = (LPCWSTR)12;
+	GetLocaleInfoW(0x400u, 0xDu, (LPWSTR)&LCData, 2);
+	if ((WCHAR)LCData == 49)
+	{
+		stru_100A4A0.rtMargin.top = 1000;
+		stru_100A4A0.rtMargin.bottom = 1000;
+		stru_100A4A0.Flags = 40966;
+		result = 750;
+	}
+	else
+	{
+		stru_100A4A0.rtMargin.top = 2500;
+		stru_100A4A0.rtMargin.bottom = 2500;
+		stru_100A4A0.Flags = 40970;
+		result = 2000;
+	}
+	stru_100A4A0.rtMargin.left = result;
+	stru_100A4A0.rtMargin.right = result;
+	return result;
 }
 
 //----- (010019E0) --------------------------------------------------------
 BOOL __stdcall sub_10019E0(int nWidth, int a2)
 {
-  InvalidateRect(hWnd, 0, 1);
-  return MoveWindow(hWnd, 0, 0, nWidth, a2 - (*(_DWORD *)&dword_1009840 != 0 ? dword_100A6E0 : 0), 1);
+	InvalidateRect(hWnd, 0, 1);
+	return MoveWindow(hWnd, 0, 0, nWidth, a2 - (*(_DWORD *)&dword_1009840 != 0 ? dword_100A6E0 : 0), 1);
 }
 // 100A6E0: using guessed type int dword_100A6E0;
 
 //----- (01001A28) --------------------------------------------------------
 int __stdcall sub_1001A28(HWND hDlg, int a2, HWND hWnd, int a4)
 {
-  LPARAM v4; // ecx
-  HWND v5; // esi
-  int v6; // eax
-  int v7; // eax
-  struct tagPOINT Point; // [esp+4h] [ebp-8h] BYREF
+	LPARAM v4; // ecx
+	HWND v5; // esi
+	int v6; // eax
+	int v7; // eax
+	struct tagPOINT Point; // [esp+4h] [ebp-8h] BYREF
 
-  if ( a2 == 83 )
-  {
-    v7 = GetDlgCtrlID(*(HWND *)(a4 + 12));
-    if ( v7 != 257 && v7 != 259 )
-      return 0;
-    WinHelpW(*(HWND *)(a4 + 12), lpszHelp, 0xCu, (ULONG_PTR)dword_100136C);
-  }
-  else
-  {
-    if ( a2 != 123 )
-    {
-      if ( a2 == 272 )
-      {
-        SendDlgItemMessageW(hDlg, 257, 0x143u, 0, lParam);
-        SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_10090B8);
-        SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_10090BC);
-        SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_10090C0);
-        v4 = lParam;
-        dword_100A528 = dword_1009030;
-        switch ( dword_1009030 )
-        {
-          case 1:
-            v4 = dword_10090B8;
-            break;
-          case 2:
-            v4 = dword_10090BC;
-            break;
-          case 3:
-            v4 = dword_10090C0;
-            break;
-        }
-        SendDlgItemMessageW(hDlg, 257, 0x14Du, 0xFFFFFFFF, v4);
-      }
-      else if ( a2 == 273 )
-      {
-        dword_100A528 = SendDlgItemMessageW(hDlg, 257, 0x147u, 0, 0);
-      }
-      return 0;
-    }
-    v5 = hWnd;
-    if ( hDlg == hWnd )
-    {
-      GetCursorPos(&Point);
-      ScreenToClient(hDlg, &Point);
-      v5 = ChildWindowFromPoint(hDlg, Point);
-    }
-    v6 = GetDlgCtrlID(v5);
-    if ( v6 != 257 && v6 != 259 )
-      return 0;
-    WinHelpW(v5, lpszHelp, 0xAu, (ULONG_PTR)dword_100136C);
-  }
-  return 1;
-}
-// 100136C: using guessed type int dword_100136C[6];
+	if (a2 == 83)
+	{
+		v7 = GetDlgCtrlID(*(HWND *)(a4 + 12));
+		if (v7 != 257 && v7 != 259)
+			return 0;
+		WinHelpW(*(HWND *)(a4 + 12), (LPCWSTR)dword_1009034[16], 0xCu, (ULONG_PTR)dword_100136C);
+	}
+	else
+	{
+		if (a2 != 123)
+		{
+			if (a2 == 272)
+			{
+				SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_1009034[32]);
+				SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_1009034[33]);
+				SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_1009034[34]);
+				SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_1009034[35]);
+				v4 = dword_1009034[32];
+				dword_100A528 = dword_1009030;
+				switch (dword_1009030)
+				{
+				case 1:
+					v4 = dword_1009034[33];
+					break;
+				case 2:
+					v4 = dword_1009034[34];
+					break;
+				case 3:
+					v4 = dword_1009034[35];
+					break;
+				}
+				SendDlgItemMessageW(hDlg, 257, 0x14Du, 0xFFFFFFFF, v4);
+			}
+			else if (a2 == 273)
+			{
+				dword_100A528 = SendDlgItemMessageW(hDlg, 257, 0x147u, 0, 0);
+			}
+			return 0;
+		}
+		v5 = hWnd;
+		if (hDlg == hWnd)
+		{
+			GetCursorPos(&Point);
+			ScreenToClient(hDlg, &Point);
+			v5 = ChildWindowFromPoint(hDlg, Point);
+		}
+		v6 = GetDlgCtrlID(v5);
+		if (v6 != 257 && v6 != 259)
+			return 0;
+		WinHelpW(v5, (LPCWSTR)dword_1009034[16], 0xAu, (ULONG_PTR)dword_100136C);
+	}
+	return 1;
+}// 100136C: using guessed type int dword_100136C[6];
 // 100A528: using guessed type int dword_100A528;
 
 //----- (01001B99) --------------------------------------------------------
 LRESULT __stdcall sub_1001B99(int a1)
 {
-  LRESULT result; // eax
+	LRESULT result; // eax
 
-  result = SendMessageW(hWnd, 0xBBu, a1 - 1, 0);
-  if ( result != -1 )
-  {
-    SendMessageW(hWnd, 0xB1u, result, result);
-    result = SendMessageW(hWnd, 0xB7u, 0, 0);
-  }
-  return result;
+	result = SendMessageW(hWnd, 0xBBu, a1 - 1, 0);
+	if (result != -1)
+	{
+		SendMessageW(hWnd, 0xB1u, result, result);
+		result = SendMessageW(hWnd, 0xB7u, 0, 0);
+	}
+	return result;
 }
 
 //----- (01001BE8) --------------------------------------------------------
 const WCHAR *__stdcall sub_1001BE8(LPCWSTR lpsz)
 {
-  const WCHAR *result; // eax
-  BOOL v2; // esi
-  WCHAR v3; // cx
+	const WCHAR *result; // eax
+	BOOL v2; // esi
+	WCHAR v3; // cx
 
-  result = lpsz;
-  v2 = 0;
-  while ( 1 )
-  {
-    v3 = *result;
-    if ( !*result || (v3 == 32 || v3 == 9) && !v2 )
-      break;
-    if ( v3 == 34 )
-      v2 = !v2;
-    result = CharNextW(result);
-  }
-  while ( *result == 32 || *result == 9 )
-    ++result;
-  return result;
+	result = lpsz;
+	v2 = 0;
+	while (1)
+	{
+		v3 = *result;
+		if (!*result || (v3 == 32 || v3 == 9) && !v2)
+			break;
+		if (v3 == 34)
+			v2 = !v2;
+		result = CharNextW(result);
+	}
+	while (*result == 32 || *result == 9)
+		++result;
+	return result;
 }
 
 //----- (01001C42) --------------------------------------------------------
 HWND __stdcall sub_1001C42(int a1)
 {
-  LRESULT v1; // eax
-  int v2; // edi
-  HWND result; // eax
-  WPARAM v4; // ebx
-  LPARAM lParam; // [esp+Ch] [ebp-10Ch] BYREF
-  WPARAM wParam; // [esp+10h] [ebp-108h] BYREF
-  wchar_t Buffer[128]; // [esp+14h] [ebp-104h] BYREF
+	LRESULT v1; // eax
+	int v2; // edi
+	HWND result; // eax
+	WPARAM v4; // ebx
+	LPARAM lParam; // [esp+Ch] [ebp-10Ch] BYREF
+	WPARAM wParam; // [esp+10h] [ebp-108h] BYREF
+	wchar_t Buffer[128]; // [esp+14h] [ebp-104h] BYREF
 
-  SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
-  v1 = SendMessageW(hWnd, 0xC9u, wParam, 0);
-  v2 = v1 + 1;
-  result = (HWND)SendMessageW(hWnd, 0xBBu, v1, 0);
-  v4 = wParam - (_DWORD)result + 1;
-  if ( a1 || v4 != dword_1009624 || v2 != dword_1009620 )
-  {
-    _snwprintf_s(Buffer, 0x7Fu, Format, v2, wParam - (_DWORD)result + 1);
-    result = dword_1009834;
-    Buffer[127] = 0;
-    if ( dword_1009834 )
-      result = (HWND)SendMessageW(dword_1009834, 0x40Bu, 1u, (LPARAM)Buffer);
-  }
-  dword_1009620 = v2;
-  dword_1009624 = v4;
-  return result;
+	SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
+	v1 = SendMessageW(hWnd, 0xC9u, wParam, 0);
+	v2 = v1 + 1;
+	result = (HWND)SendMessageW(hWnd, 0xBBu, v1, 0);
+	v4 = wParam - (_DWORD)result + 1;
+	if (a1 || v4 != dword_1009624 || v2 != dword_1009620)
+	{
+		_snwprintf_s(Buffer, 0x7Fu, (const wchar_t *)dword_1009034[37], v2, wParam - (_DWORD)result + 1);
+		result = dword_1009834;
+		Buffer[127] = 0;
+		if (dword_1009834)
+			result = (HWND)SendMessageW(dword_1009834, 0x40Bu, 1u, (LPARAM)Buffer);
+	}
+	dword_1009620 = v2;
+	dword_1009624 = v4;
+	return result;
 }
 // 1009620: using guessed type int dword_1009620;
 // 1009624: using guessed type int dword_1009624;
@@ -947,552 +980,550 @@ HWND __stdcall sub_1001C42(int a1)
 //----- (01001D1C) --------------------------------------------------------
 void __stdcall pfnWinEventProc(HWINEVENTHOOK hWinEventHook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD idEventThread, DWORD dwmsEventTime)
 {
-  sub_1001C42(0);
+	sub_1001C42(0);
 }
 
 //----- (01001D2B) --------------------------------------------------------
 const WCHAR *__stdcall sub_1001D2B(LPCWSTR lpsz)
 {
-  WCHAR v1; // cx
-  const WCHAR *v2; // edi
-  const WCHAR *v3; // eax
+	WCHAR v1; // cx
+	const WCHAR *v2; // edi
+	const WCHAR *v3; // eax
 
-  v1 = *lpsz;
-  v2 = lpsz;
-  v3 = lpsz;
-  if ( *lpsz )
-  {
-    do
-    {
-      if ( v1 == 58 || v1 == 92 )
-        v2 = v3;
-      v3 = CharNextW(v3);
-      v1 = *v3;
-    }
-    while ( *v3 );
-    if ( v2 != lpsz )
-      ++v2;
-  }
-  return v2;
+	v1 = *lpsz;
+	v2 = lpsz;
+	v3 = lpsz;
+	if (*lpsz)
+	{
+		do
+		{
+			if (v1 == 58 || v1 == 92)
+				v2 = v3;
+			v3 = CharNextW(v3);
+			v1 = *v3;
+		} while (*v3);
+		if (v2 != lpsz)
+			++v2;
+	}
+	return v2;
 }
 
 //----- (01001D73) --------------------------------------------------------
 DWORD __stdcall sub_1001D73(HWND hWndNewOwner)
 {
-  HMENU v1; // ebx
-  HMENU v2; // eax
-  HMENU v3; // eax
-  HMENU v4; // eax
-  HMENU v5; // eax
-  HMENU v6; // eax
-  HMENU v7; // eax
-  HMENU v8; // eax
-  HMENU v9; // eax
-  HMENU v10; // eax
-  HMENU v11; // eax
-  HMENU v12; // eax
-  HMENU v13; // eax
-  BOOL v15; // [esp-4h] [ebp-20h]
-  UINT v16; // [esp-4h] [ebp-20h]
-  UINT v17; // [esp-4h] [ebp-20h]
-  BOOL v18; // [esp-4h] [ebp-20h]
-  UINT v19; // [esp-4h] [ebp-20h]
-  UINT v20; // [esp-4h] [ebp-20h]
-  BOOL v21; // [esp-4h] [ebp-20h]
-  BOOL v22; // [esp-4h] [ebp-20h]
-  UINT v23; // [esp-4h] [ebp-20h]
-  UINT v24; // [esp-4h] [ebp-20h]
-  LPARAM lParam; // [esp+Ch] [ebp-10h] BYREF
-  WPARAM wParam; // [esp+10h] [ebp-Ch] BYREF
-  BOOL v27; // [esp+14h] [ebp-8h]
-  UINT uEnable; // [esp+18h] [ebp-4h]
+	HMENU v1; // ebx
+	HMENU v2; // eax
+	HMENU v3; // eax
+	HMENU v4; // eax
+	HMENU v5; // eax
+	HMENU v6; // eax
+	HMENU v7; // eax
+	HMENU v8; // eax
+	HMENU v9; // eax
+	HMENU v10; // eax
+	HMENU v11; // eax
+	HMENU v12; // eax
+	HMENU v13; // eax
+	BOOL v15; // [esp-4h] [ebp-20h]
+	UINT v16; // [esp-4h] [ebp-20h]
+	UINT v17; // [esp-4h] [ebp-20h]
+	BOOL v18; // [esp-4h] [ebp-20h]
+	UINT v19; // [esp-4h] [ebp-20h]
+	UINT v20; // [esp-4h] [ebp-20h]
+	BOOL v21; // [esp-4h] [ebp-20h]
+	BOOL v22; // [esp-4h] [ebp-20h]
+	UINT v23; // [esp-4h] [ebp-20h]
+	UINT v24; // [esp-4h] [ebp-20h]
+	LPARAM lParam; // [esp+Ch] [ebp-10h] BYREF
+	WPARAM wParam; // [esp+10h] [ebp-Ch] BYREF
+	BOOL v27; // [esp+14h] [ebp-8h]
+	UINT uEnable; // [esp+18h] [ebp-4h]
 
-  v27 = 0;
-  v1 = GetMenu(hWndParent);
-  SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
-  v15 = wParam == lParam;
-  uEnable = v15;
-  v2 = GetSubMenu(v1, 1);
-  EnableMenuItem(v2, 0x300u, v15);
-  v16 = uEnable;
-  v3 = GetSubMenu(v1, 1);
-  EnableMenuItem(v3, 0x301u, v16);
-  v17 = uEnable;
-  v4 = GetSubMenu(v1, 1);
-  EnableMenuItem(v4, 0x303u, v17);
-  v5 = GetSubMenu(v1, 1);
-  if ( GetMenuState(v5, 0x19u, 0) == 1 && uEnable == 1 )
-  {
-    v6 = GetSubMenu(v1, 1);
-    EnableMenuItem(v6, 0x19u, 0);
-  }
-  if ( OpenClipboard(hWndNewOwner) )
-  {
-    v27 = IsClipboardFormatAvailable(1u);
-    CloseClipboard();
-  }
-  v18 = !v27;
-  v7 = GetSubMenu(v1, 1);
-  EnableMenuItem(v7, 0x302u, v18);
-  uEnable = SendMessageW(hWnd, 0xEu, 0, 0) == 0;
-  v19 = uEnable;
-  v8 = GetSubMenu(v1, 1);
-  EnableMenuItem(v8, 0x15u, v19);
-  v20 = uEnable;
-  v9 = GetSubMenu(v1, 1);
-  EnableMenuItem(v9, 0x16u, v20);
-  v21 = dword_1009850 != 0;
-  v10 = GetSubMenu(v1, 1);
-  EnableMenuItem(v10, 0x18u, v21);
-  v22 = SendMessageW(hWnd, 0xC6u, 0, 0) == 0;
-  v11 = GetSubMenu(v1, 1);
-  EnableMenuItem(v11, 0x10u, v22);
-  v23 = dword_1009850 != 0 ? 8 : 0;
-  v12 = GetSubMenu(v1, 2);
-  CheckMenuItem(v12, 0x20u, v23);
-  v24 = *(_DWORD *)&dword_1009840 != 0 ? 8 : 0;
-  v13 = GetSubMenu(v1, 3);
-  return CheckMenuItem(v13, 0x1Bu, v24);
+	v27 = 0;
+	v1 = GetMenu(hWndParent);
+	SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
+	v15 = wParam == lParam;
+	uEnable = v15;
+	v2 = GetSubMenu(v1, 1);
+	EnableMenuItem(v2, 0x300u, v15);
+	v16 = uEnable;
+	v3 = GetSubMenu(v1, 1);
+	EnableMenuItem(v3, 0x301u, v16);
+	v17 = uEnable;
+	v4 = GetSubMenu(v1, 1);
+	EnableMenuItem(v4, 0x303u, v17);
+	v5 = GetSubMenu(v1, 1);
+	if (GetMenuState(v5, 0x19u, 0) == 1 && uEnable == 1)
+	{
+		v6 = GetSubMenu(v1, 1);
+		EnableMenuItem(v6, 0x19u, 0);
+	}
+	if (OpenClipboard(hWndNewOwner))
+	{
+		v27 = IsClipboardFormatAvailable(1u);
+		CloseClipboard();
+	}
+	v18 = !v27;
+	v7 = GetSubMenu(v1, 1);
+	EnableMenuItem(v7, 0x302u, v18);
+	uEnable = SendMessageW(hWnd, 0xEu, 0, 0) == 0;
+	v19 = uEnable;
+	v8 = GetSubMenu(v1, 1);
+	EnableMenuItem(v8, 0x15u, v19);
+	v20 = uEnable;
+	v9 = GetSubMenu(v1, 1);
+	EnableMenuItem(v9, 0x16u, v20);
+	v21 = dword_1009850 != 0;
+	v10 = GetSubMenu(v1, 1);
+	EnableMenuItem(v10, 0x18u, v21);
+	v22 = SendMessageW(hWnd, 0xC6u, 0, 0) == 0;
+	v11 = GetSubMenu(v1, 1);
+	EnableMenuItem(v11, 0x10u, v22);
+	v23 = dword_1009850 != 0 ? 8 : 0;
+	v12 = GetSubMenu(v1, 2);
+	CheckMenuItem(v12, 0x20u, v23);
+	v24 = *(_DWORD *)&dword_1009840 != 0 ? 8 : 0;
+	v13 = GetSubMenu(v1, 3);
+	return CheckMenuItem(v13, 0x1Bu, v24);
 }
 
 //----- (01001F02) --------------------------------------------------------
-int __stdcall sub_1001F02(_WORD *a1, _WORD *a2, _WORD *a3)
+int __stdcall sub_1001F02(const WCHAR *a1, const WCHAR *a2, WCHAR *a3)
 {
-  __int16 v5; // dx
-  _WORD *v6; // esi
-  __int16 *v8; // ecx
-  __int16 v9; // dx
+	__int16 v5; // dx
+	const WCHAR *v6; // esi
+	__int16 *v8; // ecx
+	__int16 v9; // dx
 
-  while ( *a1 != word_100AB90 )
-  {
-    *a3 = *a1;
-    v5 = *a1;
-    ++a3;
-    ++a1;
-    if ( !v5 )
-      return 0;
-  }
-  v6 = a2;
-  if ( a2 )
-  {
-    while ( *v6 )
-      *a3++ = *v6++;
-  }
-  v8 = (__int16 *)a1 + 2;
-  do
-  {
-    v9 = *v8;
-    *a3++ = *v8++;
-  }
-  while ( v9 );
-  return 1;
+	while (*a1 != word_100AB90)
+	{
+		*a3 = *a1;
+		v5 = *a1;
+		++a3;
+		++a1;
+		if (!v5)
+			return 0;
+	}
+	v6 = a2;
+	if (a2)
+	{
+		while (*v6)
+			*a3++ = *v6++;
+	}
+	v8 = (__int16 *)a1 + 2;
+	do
+	{
+		v9 = *v8;
+		*a3++ = *v8++;
+	} while (v9);
+	return 1;
 }
 // 100AB90: using guessed type __int16 word_100AB90;
 
 //----- (01001F70) --------------------------------------------------------
 int __stdcall sub_1001F70(HWND hWnd, LPCWSTR lpCaption, LPCWSTR lpText, LPCWSTR lpString, UINT uType)
 {
-  int v5; // edi
-  int v6; // eax
-  WCHAR *v7; // eax
-  WCHAR *v8; // esi
-  int v9; // edi
+	int v5; // edi
+	int v6; // eax
+	WCHAR *v7; // eax
+	WCHAR *v8; // esi
+	int v9; // edi
 
-  if ( lpString )
-    v5 = lstrlenW(lpString);
-  else
-    v5 = 0;
-  v6 = lstrlenW(lpText);
-  v7 = (WCHAR *)LocalAlloc(0x40u, 2 * (v5 + v6) + 2);
-  v8 = v7;
-  if ( !v7 )
-    return MessageBoxW(hWnd, lpText, lpCaption, uType);
-  sub_1001F02((uint16 *)lpText, (uint16 *)lpString, (uint16 *)v7);
-  v9 = MessageBoxW(hWnd, v8, lpCaption, uType);
-  LocalFree(v8);
-  return v9;
+	if (lpString)
+		v5 = lstrlenW(lpString);
+	else
+		v5 = 0;
+	v6 = lstrlenW(lpText);
+	v7 = (WCHAR *)LocalAlloc(0x40u, 2 * (v5 + v6) + 2);
+	v8 = v7;
+	if (!v7)
+		return MessageBoxW(hWnd, lpText, lpCaption, uType);
+	sub_1001F02(lpText, lpString, v7);
+	v9 = MessageBoxW(hWnd, v8, lpCaption, uType);
+	LocalFree(v8);
+	return v9;
 }
 
 //----- (01001FF0) --------------------------------------------------------
 DWORD sub_1001FF0()
 {
-  DWORD result; // eax
-  wchar_t *v1; // ecx
-  unsigned int i; // edx
-  wchar_t Buffer[200]; // [esp+0h] [ebp-194h] BYREF
+	DWORD result; // eax
+	wchar_t *v1; // ecx
+	unsigned int i; // edx
+	wchar_t Buffer[200]; // [esp+0h] [ebp-194h] BYREF
 
-  result = CommDlgExtendedError();
-  if ( result )
-  {
-    v1 = 0;
-    for ( i = 0; i < 16; i += 2 )
-    {
-      if ( result == dword_10091A0[i] )
-        v1 = (wchar_t *)*(&off_10091A4)[i];
-    }
-    if ( !v1 )
-    {
-      _snwprintf_s(Buffer, 0xC7u, dword_10090A8, result);
-      v1 = Buffer;
-    }
-    if ( *v1 )
-      MessageBoxW(hWndParent, v1, lpCaption, 0x1010u);
-    result = 1;
-  }
-  return result;
-}
-// 10091A0: using guessed type int dword_10091A0[];
+	result = CommDlgExtendedError();
+	if (result)
+	{
+		v1 = 0;
+		for (i = 0; i < 16; i += 2)
+		{
+			if (result == dword_10091A0[i])
+				v1 = (wchar_t *)*(&off_10091A4)[i];
+		}
+		if (!v1)
+		{
+			_snwprintf_s(Buffer, 0xC7u, (const wchar_t *)dword_1009034[29], result);
+			v1 = Buffer;
+		}
+		if (*v1)
+			MessageBoxW(hWndParent, v1, (LPCWSTR)dword_1009034[8], 0x1010u);
+		result = 1;
+	}
+	return result;
+}// 10091A0: using guessed type int dword_10091A0[];
 // 10091A4: using guessed type int *off_10091A4;
 
 //----- (0100207F) --------------------------------------------------------
 void *__stdcall sub_100207F(int a1)
 {
-  void *result; // eax
-  const wchar_t *v2; // edi
-  WPARAM v3; // eax
-  HLOCAL hMem; // [esp+8h] [ebp-14h]
-  int v5; // [esp+Ch] [ebp-10h]
-  LPARAM lParam; // [esp+10h] [ebp-Ch] BYREF
-  WPARAM wParam; // [esp+14h] [ebp-8h] BYREF
-  size_t MaxCount; // [esp+18h] [ebp-4h]
+	void *result; // eax
+	const wchar_t *v2; // edi
+	WPARAM v3; // eax
+	HLOCAL hMem; // [esp+8h] [ebp-14h]
+	int v5; // [esp+Ch] [ebp-10h]
+	LPARAM lParam; // [esp+10h] [ebp-Ch] BYREF
+	WPARAM wParam; // [esp+14h] [ebp-8h] BYREF
+	size_t MaxCount; // [esp+18h] [ebp-4h]
 
-  v5 = lstrlenW(stru_100A500.lpstrReplaceWith);
-  MaxCount = lstrlenW(stru_100A500.lpstrFindWhat);
-  SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
-  result = (void *)SendMessageW(hWnd, 0xBDu, 0, 0);
-  hMem = result;
-  if ( result )
-  {
-    result = LocalLock(result);
-    v2 = (const wchar_t *)result;
-    if ( result )
-    {
-      v3 = wParam;
-      if ( lParam - wParam != MaxCount )
-        return (void *)LocalUnlock(hMem);
-      if ( dword_1009A90 )
-      {
-        if ( !wcsncmp(stru_100A500.lpstrFindWhat, &v2[wParam], MaxCount) )
-          goto LABEL_9;
-        if ( dword_1009A90 )
-          return (void *)LocalUnlock(hMem);
-        v3 = wParam;
-      }
-      if ( CompareStringW(0x400u, 0x10001001u, stru_100A500.lpstrFindWhat, MaxCount, &v2[v3], MaxCount) == 2 )
-      {
-LABEL_9:
-        SendMessageW(hWnd, 0xC2u, 1u, (LPARAM)stru_100A500.lpstrReplaceWith);
-        SendMessageW(hWnd, 0xB1u, wParam, wParam + v5);
-        if ( a1 )
-          SendMessageW(hWnd, 0xB7u, 0, 0);
-        return (void *)LocalUnlock(hMem);
-      }
-      return (void *)LocalUnlock(hMem);
-    }
-  }
-  return result;
+	v5 = lstrlenW(stru_100A500.lpstrReplaceWith);
+	MaxCount = lstrlenW(stru_100A500.lpstrFindWhat);
+	SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
+	result = (void *)SendMessageW(hWnd, 0xBDu, 0, 0);
+	hMem = result;
+	if (result)
+	{
+		result = LocalLock(result);
+		v2 = (const wchar_t *)result;
+		if (result)
+		{
+			v3 = wParam;
+			if (lParam - wParam != MaxCount)
+				return (void *)LocalUnlock(hMem);
+			if (dword_1009A90)
+			{
+				if (!wcsncmp(stru_100A500.lpstrFindWhat, &v2[wParam], MaxCount))
+					goto LABEL_9;
+				if (dword_1009A90)
+					return (void *)LocalUnlock(hMem);
+				v3 = wParam;
+			}
+			if (CompareStringW(0x400u, 0x10001001u, stru_100A500.lpstrFindWhat, MaxCount, &v2[v3], MaxCount) == 2)
+			{
+			LABEL_9:
+				SendMessageW(hWnd, 0xC2u, 1u, (LPARAM)stru_100A500.lpstrReplaceWith);
+				SendMessageW(hWnd, 0xB1u, wParam, wParam + v5);
+				if (a1)
+					SendMessageW(hWnd, 0xB7u, 0, 0);
+				return (void *)LocalUnlock(hMem);
+			}
+			return (void *)LocalUnlock(hMem);
+		}
+	}
+	return result;
 }
 
 //----- (010021A6) --------------------------------------------------------
 INT_PTR __stdcall DialogFunc(HWND hDlg, UINT a2, WPARAM a3, LPARAM a4)
 {
-  LRESULT v5; // eax
-  LRESULT v6; // eax
-  HWND v7; // edi
-  LONG v8; // eax
-  LRESULT v9; // eax
-  LPARAM lParam; // [esp+Ch] [ebp-D4h] BYREF
-  WPARAM wParam; // [esp+10h] [ebp-D0h] BYREF
-  WCHAR String[100]; // [esp+14h] [ebp-CCh] BYREF
+	LRESULT v5; // eax
+	LRESULT v6; // eax
+	HWND v7; // edi
+	LONG v8; // eax
+	LRESULT v9; // eax
+	LPARAM lParam; // [esp+Ch] [ebp-D4h] BYREF
+	WPARAM wParam; // [esp+10h] [ebp-D0h] BYREF
+	WCHAR String[100]; // [esp+14h] [ebp-CCh] BYREF
 
-  switch ( a2 )
-  {
-    case 0x53u:
-      WinHelpW(*(HWND *)(a4 + 12), lpszHelp, 0xCu, (ULONG_PTR)dword_1001384);
-      return 0;
-    case 0x7Bu:
-      WinHelpW((HWND)a3, lpszHelp, 0xAu, (ULONG_PTR)dword_1001384);
-      return 0;
-    case 0x110u:
-      v7 = GetDlgItem(hDlg, 258);
-      v8 = GetWindowLongW(v7, -16);
-      SetWindowLongW(v7, -16, v8 | 0x2000);
-      SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
-      v9 = SendMessageW(hWnd, 0xC9u, wParam, 0);
-      wsprintfW(String, L"%d", v9 + 1);
-      SetDlgItemTextW(hDlg, 258, String);
-      SetFocus(hDlg);
-      return 1;
-  }
-  if ( a2 != 273 )
-    return 0;
-  switch ( (unsigned __int16)a3 )
-  {
-    case 1u:
-      GetDlgItemTextW(hDlg, 258, String, 100);
-      FoldStringW(0x80u, String, -1, String, 100);
-      dword_100AB94 = _wtol(String);
-      v5 = SendMessageW(hWnd, 0xBBu, dword_100AB94 - 1, 0);
-      if ( !dword_100AB94 || v5 == -1 )
-      {
-        MessageBoxW(hDlg, lpText, dword_10090AC, 0);
-        v6 = SendMessageW(hWnd, 0xBAu, 0, 0);
-        wsprintfW(String, L"%d", v6);
-        SetDlgItemTextW(hDlg, 258, String);
-        SetFocus(hDlg);
-        return 0;
-      }
-      EndDialog(hDlg, 0);
-      return 1;
-    case 2u:
-      EndDialog(hDlg, 1);
-      return 1;
-    case 0x102u:
-      return 1;
-  }
-  return 0;
-}
-// 1001384: using guessed type int dword_1001384[4];
+	switch (a2)
+	{
+	case 0x53u:
+		WinHelpW(*(HWND *)(a4 + 12), (LPCWSTR)dword_1009034[16], 0xCu, (ULONG_PTR)dword_1001384);
+		return 0;
+	case 0x7Bu:
+		WinHelpW((HWND)a3, (LPCWSTR)dword_1009034[16], 0xAu, (ULONG_PTR)dword_1001384);
+		return 0;
+	case 0x110u:
+		v7 = GetDlgItem(hDlg, 258);
+		v8 = GetWindowLongW(v7, -16);
+		SetWindowLongW(v7, -16, v8 | 0x2000);
+		SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
+		v9 = SendMessageW(hWnd, 0xC9u, wParam, 0);
+		wsprintfW(String, L"%d", v9 + 1);
+		SetDlgItemTextW(hDlg, 258, String);
+		SetFocus(hDlg);
+		return 1;
+	}
+	if (a2 != 273)
+		return 0;
+	switch ((wchar_t)a3)
+	{
+	case 1u:
+		GetDlgItemTextW(hDlg, 258, String, 100);
+		FoldStringW(0x80u, String, -1, String, 100);
+		dword_100AB94 = _wtol(String);
+		v5 = SendMessageW(hWnd, 0xBBu, dword_100AB94 - 1, 0);
+		if (!dword_100AB94 || v5 == -1)
+		{
+			MessageBoxW(hDlg, (LPCWSTR)dword_1009034[31], (LPCWSTR)dword_1009034[30], 0);
+			v6 = SendMessageW(hWnd, 0xBAu, 0, 0);
+			wsprintfW(String, L"%d", v6);
+			SetDlgItemTextW(hDlg, 258, String);
+			SetFocus(hDlg);
+			return 0;
+		}
+		EndDialog(hDlg, 0);
+		return 1;
+	case 2u:
+		EndDialog(hDlg, 1);
+		return 1;
+	case 0x102u:
+		return 1;
+	}
+	return 0;
+}// 1001384: using guessed type int dword_1001384[4];
 // 100AB94: using guessed type int dword_100AB94;
 
 //----- (0100239D) --------------------------------------------------------
 int __stdcall sub_100239D(void *lpv, int iSize)
 {
-  int result; // eax
-  int v3; // ecx
+	int result; // eax
+	int v3; // ecx
 
-  result = 0;
-  if ( (unsigned int)iSize <= 1 )
-    return result;
-  v3 = *(unsigned __int16 *)lpv;
-  switch ( v3 )
-  {
-    case 48111:
-      if ( (unsigned int)iSize <= 2 || *((_BYTE *)lpv + 2) != 0xBF )
-        return result;
-      return 3;
-    case 65279:
-      return 1;
-    case 65534:
-      return 2;
-  }
-  if ( sub_10070B1(lpv, iSize) )
-    return 1;
-  return sub_1007059((int)lpv, iSize) != 0 ? 3 : 0;
+	result = 0;
+	if ((unsigned int)iSize <= 1)
+		return result;
+	v3 = *(wchar_t *)lpv;
+	switch (v3)
+	{
+	case 48111:
+		if ((unsigned int)iSize <= 2 || *((_BYTE *)lpv + 2) != 0xBF)
+			return result;
+		return 3;
+	case 65279:
+		return 1;
+	case 65534:
+		return 2;
+	}
+	if (sub_10070B1(lpv, iSize))
+		return 1;
+	return sub_1007059((int)lpv, iSize) != 0 ? 3 : 0;
 }
 
 //----- (01002409) --------------------------------------------------------
-int __stdcall sub_1002409(_WORD *a1, int a2, _WORD *a3)
+int __stdcall sub_1002409(WCHAR *a1, int a2, const WCHAR *a3)
 {
-  int result; // eax
+	int result; // eax
 
-  result = 0;
-  if ( !a2 )
-    return -2147024809;
-  do
-  {
-    if ( !*a3 )
-      break;
-    *a1++ = *a3++;
-    --a2;
-  }
-  while ( a2 );
-  if ( !a2 )
-  {
-    --a1;
-    result = -2147024774;
-  }
-  *a1 = 0;
-  return result;
+	result = 0;
+	if (!a2)
+		return -2147024809;
+	do
+	{
+		if (!*a3)
+			break;
+		*a1++ = *a3++;
+		--a2;
+	} while (a2);
+	if (!a2)
+	{
+		--a1;
+		result = -2147024774;
+	}
+	*a1 = 0;
+	return result;
 }
 
 //----- (01002452) --------------------------------------------------------
 int __stdcall sub_1002452(HWND hDlg, int a2, HWND hWnd, int a4)
 {
-  HWND v4; // ebx
-  LPARAM v5; // ecx
-  int v6; // eax
-  int v8; // eax
-  HWND v9; // eax
-  HANDLE v10; // eax
-  int v11; // eax
-  LPARAM v12; // ecx
-  int v13; // eax
-  int v14; // eax
-  struct tagPOINT Point; // [esp+Ch] [ebp-61Ch] BYREF
-  HANDLE hObject; // [esp+14h] [ebp-614h]
-  HWND v17; // [esp+18h] [ebp-610h] BYREF
-  char Buffer[1024]; // [esp+1Ch] [ebp-60Ch] BYREF
-  WCHAR lParam[260]; // [esp+41Ch] [ebp-20Ch] BYREF
+	HWND v4; // ebx
+	LPARAM v5; // ecx
+	int v6; // eax
+	int v8; // eax
+	HWND v9; // eax
+	HANDLE v10; // eax
+	int v11; // eax
+	LPARAM v12; // ecx
+	int v13; // eax
+	int v14; // eax
+	struct tagPOINT Point; // [esp+Ch] [ebp-61Ch] BYREF
+	HANDLE hObject; // [esp+14h] [ebp-614h]
+	HWND v17; // [esp+18h] [ebp-610h] BYREF
+	char Buffer[1024]; // [esp+1Ch] [ebp-60Ch] BYREF
+	WCHAR lParam[260]; // [esp+41Ch] [ebp-20Ch] BYREF
 
-  v4 = hWnd;
-  v17 = hDlg;
-  if ( a2 == 78 )
-  {
-    if ( *(_DWORD *)(a4 + 8) == -602 )
-    {
-      v9 = GetParent(hDlg);
-      if ( SendMessageW(v9, 0x465u, 0x104u, (LPARAM)lParam) > 0 )
-      {
-        if ( lstrcmpiW(lParam, String1) )
-        {
-          v10 = CreateFileW(lParam, 0x80000000, 1u, 0, 3u, 0x80u, 0);
-          hObject = v10;
-          if ( v10 != (HANDLE)-1 )
-          {
-            if ( ReadFile(v10, Buffer, 0x400u, (LPDWORD)&v17, 0) > 0 && v17 )
-            {
-              v11 = sub_100239D(Buffer, (int)v17);
-              v12 = ::lParam;
-              dword_1009030 = v11;
-              v13 = v11 - 1;
-              if ( v13 )
-              {
-                v14 = v13 - 1;
-                if ( v14 )
-                {
-                  if ( v14 == 1 )
-                    v12 = dword_10090C0;
-                }
-                else
-                {
-                  v12 = dword_10090BC;
-                }
-              }
-              else
-              {
-                v12 = dword_10090B8;
-              }
-              SendDlgItemMessageW(hDlg, 257, 0x14Du, 0xFFFFFFFF, v12);
-              lstrcpyW(String1, lParam);
-            }
-            CloseHandle(hObject);
-          }
-        }
-      }
-    }
-    return 0;
-  }
-  if ( a2 != 83 )
-  {
-    if ( a2 != 123 )
-    {
-      if ( a2 == 272 )
-      {
-        SendDlgItemMessageW(hDlg, 257, 0x143u, 0, ::lParam);
-        SendDlgItemMessageW(v17, 257, 0x143u, 0, dword_10090B8);
-        SendDlgItemMessageW(v17, 257, 0x143u, 0, dword_10090BC);
-        SendDlgItemMessageW(v17, 257, 0x143u, 0, dword_10090C0);
-        v5 = ::lParam;
-        switch ( dword_1009030 )
-        {
-          case 1:
-            v5 = dword_10090B8;
-            break;
-          case 2:
-            v5 = dword_10090BC;
-            break;
-          case 3:
-            v5 = dword_10090C0;
-            break;
-        }
-        SendDlgItemMessageW(v17, 257, 0x14Du, 0xFFFFFFFF, v5);
-      }
-      else if ( a2 == 273 )
-      {
-        dword_1009030 = SendDlgItemMessageW(hDlg, 257, 0x147u, 0, 0);
-      }
-      return 0;
-    }
-    if ( hDlg == hWnd )
-    {
-      GetCursorPos(&Point);
-      ScreenToClient(hDlg, &Point);
-      v4 = ChildWindowFromPoint(hDlg, Point);
-    }
-    v6 = GetDlgCtrlID(v4);
-    if ( v6 != 257 && v6 != 259 )
-      return 0;
-    WinHelpW(v4, lpszHelp, 0xAu, (ULONG_PTR)dword_100136C);
-    return 1;
-  }
-  v8 = GetDlgCtrlID(*(HWND *)(a4 + 12));
-  if ( v8 == 257 || v8 == 259 )
-  {
-    WinHelpW(*(HWND *)(a4 + 12), lpszHelp, 0xCu, (ULONG_PTR)dword_100136C);
-    return 1;
-  }
-  return 0;
-}
-// 100136C: using guessed type int dword_100136C[6];
+	v4 = hWnd;
+	v17 = hDlg;
+	if (a2 == 78)
+	{
+		if (*(_DWORD *)(a4 + 8) == -602)
+		{
+			v9 = GetParent(hDlg);
+			if (SendMessageW(v9, 0x465u, 0x104u, (LPARAM)lParam) > 0)
+			{
+				if (lstrcmpiW(lParam, String1))
+				{
+					v10 = CreateFileW(lParam, 0x80000000, 1u, 0, 3u, 0x80u, 0);
+					hObject = v10;
+					if (v10 != (HANDLE)-1)
+					{
+						if (ReadFile(v10, Buffer, 0x400u, (LPDWORD)&v17, 0) > 0 && v17)
+						{
+							v11 = sub_100239D(Buffer, (int)v17);
+							v12 = dword_1009034[32];
+							dword_1009030 = v11;
+							v13 = v11 - 1;
+							if (v13)
+							{
+								v14 = v13 - 1;
+								if (v14)
+								{
+									if (v14 == 1)
+										v12 = dword_1009034[35];
+								}
+								else
+								{
+									v12 = dword_1009034[34];
+								}
+							}
+							else
+							{
+								v12 = dword_1009034[33];
+							}
+							SendDlgItemMessageW(hDlg, 257, 0x14Du, 0xFFFFFFFF, v12);
+							lstrcpyW(String1, lParam);
+						}
+						CloseHandle(hObject);
+					}
+				}
+			}
+		}
+		return 0;
+	}
+	if (a2 != 83)
+	{
+		if (a2 != 123)
+		{
+			if (a2 == 272)
+			{
+				SendDlgItemMessageW(hDlg, 257, 0x143u, 0, dword_1009034[32]);
+				SendDlgItemMessageW(v17, 257, 0x143u, 0, dword_1009034[33]);
+				SendDlgItemMessageW(v17, 257, 0x143u, 0, dword_1009034[34]);
+				SendDlgItemMessageW(v17, 257, 0x143u, 0, dword_1009034[35]);
+				v5 = dword_1009034[32];
+				switch (dword_1009030)
+				{
+				case 1:
+					v5 = dword_1009034[33];
+					break;
+				case 2:
+					v5 = dword_1009034[34];
+					break;
+				case 3:
+					v5 = dword_1009034[35];
+					break;
+				}
+				SendDlgItemMessageW(v17, 257, 0x14Du, 0xFFFFFFFF, v5);
+			}
+			else if (a2 == 273)
+			{
+				dword_1009030 = SendDlgItemMessageW(hDlg, 257, 0x147u, 0, 0);
+			}
+			return 0;
+		}
+		if (hDlg == hWnd)
+		{
+			GetCursorPos(&Point);
+			ScreenToClient(hDlg, &Point);
+			v4 = ChildWindowFromPoint(hDlg, Point);
+		}
+		v6 = GetDlgCtrlID(v4);
+		if (v6 != 257 && v6 != 259)
+			return 0;
+		WinHelpW(v4, (LPCWSTR)dword_1009034[16], 0xAu, (ULONG_PTR)dword_100136C);
+		return 1;
+	}
+	v8 = GetDlgCtrlID(*(HWND *)(a4 + 12));
+	if (v8 == 257 || v8 == 259)
+	{
+		WinHelpW(*(HWND *)(a4 + 12), (LPCWSTR)dword_1009034[16], 0xCu, (ULONG_PTR)dword_100136C);
+		return 1;
+	}
+	return 0;
+}// 100136C: using guessed type int dword_100136C[6];
 
 //----- (0100270F) --------------------------------------------------------
 BOOL __stdcall sub_100270F(int a1)
 {
-  const WCHAR *v1; // eax
-  int v3; // [esp+Ch] [ebp-210h]
-  WCHAR String1; // [esp+10h] [ebp-20Ch] BYREF
-  char v5[516]; // [esp+12h] [ebp-20Ah] BYREF
-  __int16 v6; // [esp+216h] [ebp-6h]
+	const WCHAR *v1; // eax
+	int v3; // [esp+Ch] [ebp-210h]
+	WCHAR String1; // [esp+10h] [ebp-20Ch] BYREF
+	char v5[516]; // [esp+12h] [ebp-20Ah] BYREF
+	__int16 v6; // [esp+216h] [ebp-6h]
 
-  String1 = 0;
-  memset(v5, 0, sizeof(v5));
-  v6 = 0;
-  v3 = 1;
-  if ( dword_100901C && !SendMessageW(hWnd, 0xEu, 0, 0) )
-    return 1;
-  if ( SendMessageW(hWnd, 0xB8u, 0, 0) )
-  {
-    v1 = lpString;
-    if ( !dword_100901C )
-      v1 = sz;
-    dword_1009854 = 1;
-    v3 = sub_1001F70(hWndParent, lpCaption, dword_100903C, v1, (a1 != 0 ? 0x1000 : 0) | 0x33);
-    dword_1009854 = 0;
-    if ( v3 == 6 )
-    {
-      if ( dword_100901C )
-      {
-        lstrcpyW(&String1, L"*.txt");
-        goto LABEL_15;
-      }
-      dword_100A528 = dword_1009030;
-      if ( sub_1004EAE(hWndParent, sz, 0) )
-        return 1;
-      lstrcpyW(&String1, sz);
-LABEL_15:
-      while ( 1 )
-      {
-        stru_100A680.lpstrFile = &String1;
-        dword_1009854 = 1;
-        stru_100A680.nFilterIndex = 1;
-        stru_100A680.lpstrDefExt = L"txt";
-        stru_100A680.lpstrFilter = &word_100A540;
-        stru_100A680.lpfnHook = (LPOFNHOOKPROC)sub_1001A28;
-        stru_100A680.lpTemplateName = L"NpEncodingDialog";
-        stru_100A680.Flags = 8947814;
-        stru_100A680.lpstrTitle = (LPCWSTR)dword_1009090;
-        if ( !GetSaveFileNameW(&stru_100A680) )
-          break;
-        lstrcpyW(&String1, stru_100A680.lpstrFile);
-        if ( sub_1004EAE(hWndParent, &String1, (LPCWCH)1) )
-        {
-          lstrcpyW(sz, &String1);
-          dword_1009030 = dword_100A528;
-          goto LABEL_18;
-        }
-        lstrcpyW(&String1, sz);
-      }
-      v3 = 2;
-      if ( CommDlgExtendedError() )
-        MessageBoxW(hWndParent, dword_100904C, lpCaption, 0x1010u);
-LABEL_18:
-      dword_1009854 = 0;
-    }
-  }
-  return v3 != 2;
-}
-// 10013A0: using guessed type wchar_t aNpencodingdial[17];
+	String1 = 0;
+	memset(v5, 0, sizeof(v5));
+	v6 = 0;
+	v3 = 1;
+	if (dword_100901C && !SendMessageW(hWnd, 0xEu, 0, 0))
+		return 1;
+	if (SendMessageW(hWnd, 0xB8u, 0, 0))
+	{
+		v1 = (const WCHAR *)dword_1009034[3];
+		if (!dword_100901C)
+			v1 = sz;
+		dword_1009854 = 1;
+		v3 = sub_1001F70(
+			hWndParent,
+			(LPCWSTR)dword_1009034[8],
+			(LPCWSTR)dword_1009034[2],
+			v1,
+			(a1 != 0 ? 0x1000 : 0) | 0x33);
+		dword_1009854 = 0;
+		if (v3 == 6)
+		{
+			if (dword_100901C)
+			{
+				lstrcpyW(&String1, L"*.txt");
+				goto LABEL_15;
+			}
+			dword_100A528 = dword_1009030;
+			if (sub_1004EAE(hWndParent, sz, 0))
+				return 1;
+			lstrcpyW(&String1, sz);
+		LABEL_15:
+			while (1)
+			{
+				stru_100A680.lpstrFile = &String1;
+				dword_1009854 = 1;
+				stru_100A680.nFilterIndex = 1;
+				stru_100A680.lpstrDefExt = L"txt";
+				stru_100A680.lpstrFilter = &word_100A540;
+				stru_100A680.lpfnHook = (LPOFNHOOKPROC)sub_1001A28;
+				stru_100A680.lpTemplateName = L"NpEncodingDialog";
+				stru_100A680.Flags = 8947814;
+				stru_100A680.lpstrTitle = (LPCWSTR)dword_1009034[23];
+				if (!GetSaveFileNameW(&stru_100A680))
+					break;
+				lstrcpyW(&String1, stru_100A680.lpstrFile);
+				if (sub_1004EAE(hWndParent, &String1, (LPCWCH)1))
+				{
+					lstrcpyW(sz, &String1);
+					dword_1009030 = dword_100A528;
+					goto LABEL_18;
+				}
+				lstrcpyW(&String1, sz);
+			}
+			v3 = 2;
+			if (CommDlgExtendedError())
+				MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[6], (LPCWSTR)dword_1009034[8], 0x1010u);
+		LABEL_18:
+			dword_1009854 = 0;
+		}
+	}
+	return v3 != 2;
+}// 10013A0: using guessed type wchar_t aNpencodingdial[17];
 // 10013C4: using guessed type wchar_t aTxt_0[4];
 // 100901C: using guessed type int dword_100901C;
 // 1009090: using guessed type int dword_1009090;
@@ -1550,365 +1581,364 @@ int __stdcall WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLi
 //----- (01002A55) --------------------------------------------------------
 BOOL __stdcall sub_1002A55(LPCWSTR lpString1)
 {
-  HANDLE v1; // edi
-  struct _WIN32_FIND_DATAW FindFileData; // [esp+8h] [ebp-7C8h] BYREF
-  WCHAR v4[260]; // [esp+258h] [ebp-578h] BYREF
-  WCHAR Buf[310]; // [esp+460h] [ebp-370h] BYREF
-  wchar_t Buffer; // [esp+6CCh] [ebp-104h] BYREF
-  char v7[252]; // [esp+6CEh] [ebp-102h] BYREF
-  __int16 v8; // [esp+7CAh] [ebp-6h]
+	HANDLE v1; // edi
+	struct _WIN32_FIND_DATAW FindFileData; // [esp+8h] [ebp-7C8h] BYREF
+	WCHAR v4[260]; // [esp+258h] [ebp-578h] BYREF
+	WCHAR Buf[310]; // [esp+460h] [ebp-370h] BYREF
+	wchar_t Buffer; // [esp+6CCh] [ebp-104h] BYREF
+	char v7[252]; // [esp+6CEh] [ebp-102h] BYREF
+	__int16 v8; // [esp+7CAh] [ebp-6h]
 
-  Buffer = 0;
-  memset(v7, 0, sizeof(v7));
-  v8 = 0;
-  if ( lstrcmpW(lpString1, lpString) )
-  {
-    GetFileAttributesW(lpString1);
-    v1 = FindFirstFileW(lpString1, &FindFileData);
-    if ( v1 == (HANDLE)-1 )
-    {
-		sub_1002409((uint16*)v4, 260, (uint16*)lpString1);
-    }
-    else
-    {
-		sub_1002409((uint16*)v4, 260, (uint16*)FindFileData.cFileName);
-      FindClose(v1);
-    }
-    GetFileTitleW(v4, Buf, 0x104u);
-  }
-  else
-  {
-	  sub_1002409((uint16*)Buf, 310, (uint16*)lpString);
-  }
-  _snwprintf(&Buffer, 0x7Fu, Format, 1, 1);
-  if ( dword_1009834 )
-    SendMessageW(dword_1009834, 0x40Bu, 1u, (LPARAM)&Buffer);
-  lstrcatW(Buf, dword_1009044);
-  return SetWindowTextW(hWndParent, Buf);
+	Buffer = 0;
+	memset(v7, 0, sizeof(v7));
+	v8 = 0;
+	if (lstrcmpW(lpString1, (LPCWSTR)dword_1009034[3]))
+	{
+		GetFileAttributesW(lpString1);
+		v1 = FindFirstFileW(lpString1, &FindFileData);
+		if (v1 == (HANDLE)-1)
+		{
+			sub_1002409(v4, 260, lpString1);
+		}
+		else
+		{
+			sub_1002409(v4, 260, FindFileData.cFileName);
+			FindClose(v1);
+		}
+		GetFileTitleW(v4, Buf, 0x104u);
+	}
+	else
+	{ 
+		sub_1002409(Buf, 310, (WCHAR *)dword_1009034[3]);
+	}
+	_snwprintf_s(&Buffer, 0x7Fu, 0x7Fu, (const wchar_t *)dword_1009034[37], 1, 1);
+	if (dword_1009834)
+		SendMessageW(dword_1009834, 0x40Bu, 1u, (LPARAM)&Buffer);
+	lstrcatW(Buf, (LPCWSTR)dword_1009034[4]);
+	return SetWindowTextW(hWndParent, Buf);
 }
 
 //----- (01002B87) --------------------------------------------------------
 int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 {
-  int v4; // ebx
-  HANDLE v5; // edi
-  DWORD v6; // eax
-  HMENU v7; // ebx
-  LPARAM v8; // eax
-  HMENU v9; // eax
-  HWND v10; // eax
-  HWND v11; // eax
-  HDC v12; // ebx
-  int v13; // eax
-  HFONT v14; // edi
-  HMENU v15; // edi
-  HMENU v16; // eax
-  HMENU v17; // eax
-  HMENU v18; // eax
-  HWND v19; // eax
-  HWND v20; // eax
-  HICON v21; // eax
-  UINT v22; // [esp-8h] [ebp-274h]
-  CHOOSEFONTW v23; // [esp+Ch] [ebp-260h] BYREF
-  LPARAM lParam; // [esp+48h] [ebp-224h] BYREF
-  struct tagRECT Rect; // [esp+4Ch] [ebp-220h] BYREF
-  HWND v26; // [esp+5Ch] [ebp-210h] BYREF
-  WCHAR String1; // [esp+60h] [ebp-20Ch] BYREF
-  char v28[516]; // [esp+62h] [ebp-20Ah] BYREF
-  __int16 v29; // [esp+266h] [ebp-6h]
+	int v4; // ebx
+	HANDLE v5; // edi
+	DWORD v6; // eax
+	HMENU v7; // ebx
+	LPARAM v8; // eax
+	HMENU v9; // eax
+	HWND v10; // eax
+	HWND v11; // eax
+	HDC v12; // ebx
+	int v13; // eax
+	HFONT v14; // edi
+	HMENU v15; // edi
+	HMENU v16; // eax
+	HMENU v17; // eax
+	HMENU v18; // eax
+	HWND v19; // eax
+	HWND v20; // eax
+	HICON v21; // eax
+	UINT v22; // [esp-8h] [ebp-274h]
+	CHOOSEFONTW v23; // [esp+Ch] [ebp-260h] BYREF
+	LPARAM lParam; // [esp+48h] [ebp-224h] BYREF
+	struct tagRECT Rect; // [esp+4Ch] [ebp-220h] BYREF
+	HWND v26; // [esp+5Ch] [ebp-210h] BYREF
+	WCHAR String1; // [esp+60h] [ebp-20Ch] BYREF
+	char v28[516]; // [esp+62h] [ebp-20Ah] BYREF
+	__int16 v29; // [esp+266h] [ebp-6h]
 
-  String1 = 0;
-  memset(v28, 0, sizeof(v28));
-  v29 = 0;
-  v26 = hWnd;
-  if ( (unsigned __int16)a2 > 0x40u )
-  {
-    if ( a2 == 65 )
-    {
-      v21 = LoadIconW(hInstance, (LPCWSTR)2);
-      ShellAboutW(hWndParent, lpCaption, &WindowName, v21);
-      return 1;
-    }
-    if ( (unsigned __int16)a2 <= 0x2FFu )
-      return 0;
-    if ( (unsigned __int16)a2 > 0x301u )
-    {
-      if ( a2 == 770 )
-        goto LABEL_91;
-      if ( a2 != 771 )
-        return 0;
-    }
-    SendMessageW(::hWnd, 0xB0u, (WPARAM)&v26, (LPARAM)&lParam);
-    if ( v26 == (HWND)lParam )
-      return 1;
-LABEL_91:
-    v20 = GetFocus();
-    if ( v20 == ::hWnd || v20 == hWndParent )
-      PostMessageW(::hWnd, (unsigned __int16)a2, 0, 0);
-    return 1;
-  }
-  if ( a2 == 64 )
-  {
-    v19 = GetDesktopWindow();
-    sub_10072C3((int)v19, (int)"notepad.chm", 0, 0);
-    return 1;
-  }
-  if ( (unsigned __int16)a2 > 0x15u )
-  {
-    if ( (unsigned __int16)a2 > 0x1Au )
-    {
-      if ( a2 == 27 )
-      {
-        GetClientRect(hWndParent, &Rect);
-        if ( *(_DWORD *)&dword_1009840 )
-        {
-          *(_DWORD *)&dword_1009840 = 0;
-          ShowWindow(dword_1009834, 0);
-          sub_10019E0(Rect.right - Rect.left, Rect.bottom - Rect.top);
-        }
-        else
-        {
-          *(_DWORD *)&dword_1009840 = 1;
-          sub_10019E0(Rect.right - Rect.left, Rect.bottom - Rect.top);
-          sub_1001C42(1);
-          ShowWindow(dword_1009834, 5);
-        }
-        return 1;
-      }
-      if ( a2 != 32 )
-      {
-        if ( a2 != 33 )
-          return 0;
-        v12 = GetDC(0);
-        if ( v12 )
-        {
-          v23.lStructSize = 60;
-          v23.hwndOwner = v26;
-          v23.lpLogFont = &lf;
-          v13 = GetDeviceCaps(v12, 90);
-          lf.lfHeight = -MulDiv(*(int *)&Data, v13, 720);
-          v23.Flags = 16777281;
-          v23.rgbColors = 0;
-          v23.lCustData = 0;
-          v23.lpfnHook = 0;
-          v23.lpTemplateName = 0;
-          v23.hInstance = 0;
-          v23.lpszStyle = 0;
-          v23.nFontType = 0x2000;
-          v23.nSizeMin = 0;
-          v23.nSizeMax = 0;
-          ReleaseDC(0, v12);
-          if ( ChooseFontW(&v23) )
-          {
-            SetCursor(hCursor);
-            v14 = CreateFontIndirectW(&lf);
-            if ( v14 )
-            {
-              DeleteObject(ho);
-              ho = v14;
-              SendMessageW(::hWnd, 0x30u, (WPARAM)v14, 1);
-              *(_DWORD *)&Data = v23.iPointSize;
-            }
-            SetCursor(dword_100AB88);
-          }
-        }
-        return 1;
-      }
-      if ( sub_1005B41(dword_1009850 != 0 ? 1345323268 : 1344274692) )
-        dword_1009850 = dword_1009850 == 0;
-      else
-        MessageBoxW(hWndParent, dword_100906C, lpCaption, 0x30u);
-      if ( !dword_1009850 )
-      {
-        v17 = GetMenu(hWndParent);
-        v18 = GetSubMenu(v17, 3);
-        EnableMenuItem(v18, 0x1Bu, 0);
-        if ( dword_1009844 )
-          SendMessageW(v26, 0x111u, 0x1Bu, 0);
-        return 1;
-      }
-      dword_1009844 = *(_DWORD *)&dword_1009840;
-      if ( *(_DWORD *)&dword_1009840 )
-        SendMessageW(v26, 0x111u, 0x1Bu, 0);
-      v15 = GetMenu(hWndParent);
-      v16 = GetSubMenu(v15, 3);
-      CheckMenuItem(v16, 0x1Bu, 0);
-      v22 = 27;
-      v9 = GetSubMenu(v15, 3);
-    }
-    else
-    {
-      switch ( a2 )
-      {
-        case 26:
-          sub_1006F10(0);
-          return 1;
-        case 22:
-          if ( word_100A800 )
-          {
-            sub_100594C(&word_100A800);
-            return 1;
-          }
-LABEL_61:
-          v10 = hDlg;
-          if ( !hDlg )
-          {
-            stru_100A500.Flags = 65537;
-            stru_100A500.lpstrReplaceWith = 0;
-            stru_100A500.wReplaceWithLen = 0;
-            stru_100A500.lpstrFindWhat = &word_100A800;
-            stru_100A500.wFindWhatLen = 128;
-            v11 = FindTextW(&stru_100A500);
-            goto LABEL_58;
-          }
-          goto LABEL_56;
-        case 23:
-          v10 = hDlg;
-          if ( !hDlg )
-          {
-            stru_100A500.Flags = 65552;
-            stru_100A500.lpstrReplaceWith = (LPWSTR)&unk_100A700;
-            stru_100A500.wReplaceWithLen = 128;
-            stru_100A500.lpstrFindWhat = &word_100A800;
-            stru_100A500.wFindWhatLen = 128;
-            v11 = ReplaceTextW(&stru_100A500);
-LABEL_58:
-            hDlg = v11;
-            return 1;
-          }
-LABEL_56:
-          SetFocus(v10);
-          return 1;
-        case 24:
-          if ( !DialogBoxParamW(hInstance, (LPCWSTR)0xE, hWndParent, DialogFunc, 0) )
-            sub_1001B99(dword_100AB94);
-          return 1;
-      }
-      if ( a2 != 25 )
-        return 0;
-      v7 = GetMenu(hWndParent);
-      v8 = SendMessageW(::hWnd, 0xEu, 0, 0);
-      SendMessageW(::hWnd, 0xB1u, 0, v8);
-      SendMessageW(::hWnd, 0xB7u, 0, 0);
-      v22 = 25;
-      v9 = GetSubMenu(v7, 1);
-    }
-    EnableMenuItem(v9, v22, 1u);
-    return 1;
-  }
-  if ( a2 == 21 )
-    goto LABEL_61;
-  if ( (unsigned __int16)a2 > 5u )
-  {
-    if ( a2 == 6 )
-    {
-      sub_1006E4B(0);
-    }
-    else if ( a2 == 7 )
-    {
-      PostMessageW(hWnd, 0x10u, 0, 0);
-    }
-    else if ( a2 != 15 )
-    {
-      if ( a2 != 16 )
-        return 0;
-      SendMessageW(::hWnd, 0xC7u, 0, 0);
-    }
-  }
-  else
-  {
-    switch ( a2 )
-    {
-      case 5:
-        while ( !PageSetupDlgW(&stru_100A4A0) )
-        {
-          v6 = CommDlgExtendedError();
-          if ( v6 != 4107 && v6 != 4105 && v6 != 4108 )
-            goto LABEL_27;
-          sub_1001929();
-          stru_100A4A0.hDevNames = 0;
-          stru_100A4A0.hDevMode = 0;
-        }
-        lstrcpyW(word_100A3E0, &word_100A340);
-        lstrcpyW(&word_100A430, &word_100A390);
-        return 1;
-      case 1:
-        sub_1004CFF(1);
-        break;
-      case 2:
-        if ( sub_100270F(0) )
-        {
-          v4 = dword_1009030;
-          stru_100A680.lpstrFile = &String1;
-          lstrcpyW(&String1, L"*.txt");
-          stru_100A680.lpstrTitle = (LPCWSTR)dword_100908C;
-          stru_100A680.lpstrFilter = &word_100A5E0;
-          stru_100A680.lpstrDefExt = L"txt";
-          stru_100A680.Flags = 8917092;
-          stru_100A680.nFilterIndex = 1;
-          stru_100A680.lpTemplateName = L"NpEncodingDialog";
-          stru_100A680.lpfnHook = (LPOFNHOOKPROC)sub_1002452;
-          if ( GetOpenFileNameW(&stru_100A680) )
-          {
-            v5 = hFile;
-            hFile = CreateFileW(&String1, 0x80000000, 3u, 0, 3u, 0x80u, 0);
-            if ( !sub_1005179(&String1, dword_1009030) )
-            {
-              hFile = v5;
-              dword_1009030 = v4;
-            }
-          }
-          else
-          {
-            dword_1009030 = v4;
-LABEL_27:
-            sub_1001FF0();
-          }
-        }
-        return 1;
-      case 3:
-        dword_100A528 = dword_1009030;
-        if ( dword_100901C || !sub_1004EAE(hWndParent, sz, 0) )
-        {
-LABEL_14:
-          stru_100A680.lpstrFile = &String1;
-          stru_100A680.lpstrTitle = (LPCWSTR)dword_1009090;
-          stru_100A680.Flags = 8947814;
-          stru_100A680.lpTemplateName = L"NpEncodingDialog";
-          stru_100A680.lpfnHook = (LPOFNHOOKPROC)sub_1001A28;
-          stru_100A680.lpstrFilter = &word_100A540;
-          stru_100A680.lpstrDefExt = L"txt";
-          if ( dword_100901C )
-            lstrcpyW(&String1, L"*.txt");
-          else
-            lstrcpynW(&String1, sz, 260);
-          dword_1009854 = 1;
-          stru_100A680.nFilterIndex = 1;
-          if ( GetSaveFileNameW(&stru_100A680) )
-          {
-            if ( sub_1004EAE(v26, &String1, (LPCWCH)1) )
-            {
-              lstrcpynW(sz, &String1, 260);
-              dword_1009030 = dword_100A528;
-            }
-          }
-          else
-          {
-            sub_1001FF0();
-          }
-          dword_1009854 = 0;
-          return 1;
-        }
-        break;
-      case 4:
-        goto LABEL_14;
-      default:
-        return 0;
-    }
-  }
-  return 1;
-}
-// 10013A0: using guessed type wchar_t aNpencodingdial[17];
+	String1 = 0;
+	memset(v28, 0, sizeof(v28));
+	v29 = 0;
+	v26 = hWnd;
+	if ((wchar_t)a2 > 0x40u)
+	{
+		if (a2 == 65)
+		{
+			v21 = LoadIconW(hInstance, (LPCWSTR)2);
+			ShellAboutW(hWndParent, (LPCWSTR)dword_1009034[8], &WindowName, v21);
+			return 1;
+		}
+		if ((wchar_t)a2 <= 0x2FFu)
+			return 0;
+		if ((wchar_t)a2 > 0x301u)
+		{
+			if (a2 == 770)
+				goto LABEL_91;
+			if (a2 != 771)
+				return 0;
+		}
+		SendMessageW(::hWnd, 0xB0u, (WPARAM)&v26, (LPARAM)&lParam);
+		if (v26 == (HWND)lParam)
+			return 1;
+	LABEL_91:
+		v20 = GetFocus();
+		if (v20 == ::hWnd || v20 == hWndParent)
+			PostMessageW(::hWnd, (wchar_t)a2, 0, 0);
+		return 1;
+	}
+	if (a2 == 64)
+	{
+		v19 = GetDesktopWindow();
+		sub_10072C3((int)v19, (int)"notepad.chm", 0, 0);
+		return 1;
+	}
+	if ((wchar_t)a2 > 0x15u)
+	{
+		if ((wchar_t)a2 > 0x1Au)
+		{
+			if (a2 == 27)
+			{
+				GetClientRect(hWndParent, &Rect);
+				if (*(_DWORD *)&dword_1009840)
+				{
+					*(_DWORD *)&dword_1009840 = 0;
+					ShowWindow(dword_1009834, 0);
+					sub_10019E0(Rect.right - Rect.left, Rect.bottom - Rect.top);
+				}
+				else
+				{
+					*(_DWORD *)&dword_1009840 = 1;
+					sub_10019E0(Rect.right - Rect.left, Rect.bottom - Rect.top);
+					sub_1001C42(1);
+					ShowWindow(dword_1009834, 5);
+				}
+				return 1;
+			}
+			if (a2 != 32)
+			{
+				if (a2 != 33)
+					return 0;
+				v12 = GetDC(0);
+				if (v12)
+				{
+					v23.lStructSize = 60;
+					v23.hwndOwner = v26;
+					v23.lpLogFont = &lf;
+					v13 = GetDeviceCaps(v12, 90);
+					lf.lfHeight = -MulDiv(*(int *)&Data, v13, 720);
+					v23.Flags = 16777281;
+					v23.rgbColors = 0;
+					v23.lCustData = 0;
+					v23.lpfnHook = 0;
+					v23.lpTemplateName = 0;
+					v23.hInstance = 0;
+					v23.lpszStyle = 0;
+					v23.nFontType = 0x2000;
+					v23.nSizeMin = 0;
+					v23.nSizeMax = 0;
+					ReleaseDC(0, v12);
+					if (ChooseFontW(&v23))
+					{
+						SetCursor(hCursor);
+						v14 = CreateFontIndirectW(&lf);
+						if (v14)
+						{
+							DeleteObject(ho);
+							ho = v14;
+							SendMessageW(::hWnd, 0x30u, (WPARAM)v14, 1);
+							*(_DWORD *)&Data = v23.iPointSize;
+						}
+						SetCursor(dword_100AB88);
+					}
+				}
+				return 1;
+			}
+			if (sub_1005B41(dword_1009850 != 0 ? 1345323268 : 1344274692))
+				dword_1009850 = dword_1009850 == 0;
+			else
+				MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[14], (LPCWSTR)dword_1009034[8], 0x30u);
+			if (!dword_1009850)
+			{
+				v17 = GetMenu(hWndParent);
+				v18 = GetSubMenu(v17, 3);
+				EnableMenuItem(v18, 0x1Bu, 0);
+				if (dword_1009844)
+					SendMessageW(v26, 0x111u, 0x1Bu, 0);
+				return 1;
+			}
+			dword_1009844 = *(_DWORD *)&dword_1009840;
+			if (*(_DWORD *)&dword_1009840)
+				SendMessageW(v26, 0x111u, 0x1Bu, 0);
+			v15 = GetMenu(hWndParent);
+			v16 = GetSubMenu(v15, 3);
+			CheckMenuItem(v16, 0x1Bu, 0);
+			v22 = 27;
+			v9 = GetSubMenu(v15, 3);
+		}
+		else
+		{
+			switch (a2)
+			{
+			case 26:
+				sub_1006F10(0);
+				return 1;
+			case 22:
+				if (word_100A800)
+				{
+					sub_100594C(&word_100A800);
+					return 1;
+				}
+			LABEL_61:
+				v10 = hDlg;
+				if (!hDlg)
+				{
+					stru_100A500.Flags = 65537;
+					stru_100A500.lpstrReplaceWith = 0;
+					stru_100A500.wReplaceWithLen = 0;
+					stru_100A500.lpstrFindWhat = &word_100A800;
+					stru_100A500.wFindWhatLen = 128;
+					v11 = FindTextW(&stru_100A500);
+					goto LABEL_58;
+				}
+				goto LABEL_56;
+			case 23:
+				v10 = hDlg;
+				if (!hDlg)
+				{
+					stru_100A500.Flags = 65552;
+					stru_100A500.lpstrReplaceWith = (LPWSTR)&unk_100A700;
+					stru_100A500.wReplaceWithLen = 128;
+					stru_100A500.lpstrFindWhat = &word_100A800;
+					stru_100A500.wFindWhatLen = 128;
+					v11 = ReplaceTextW(&stru_100A500);
+				LABEL_58:
+					hDlg = v11;
+					return 1;
+				}
+			LABEL_56:
+				SetFocus(v10);
+				return 1;
+			case 24:
+				if (!DialogBoxParamW(hInstance, (LPCWSTR)0xE, hWndParent, DialogFunc, 0))
+					sub_1001B99(dword_100AB94);
+				return 1;
+			}
+			if (a2 != 25)
+				return 0;
+			v7 = GetMenu(hWndParent);
+			v8 = SendMessageW(::hWnd, 0xEu, 0, 0);
+			SendMessageW(::hWnd, 0xB1u, 0, v8);
+			SendMessageW(::hWnd, 0xB7u, 0, 0);
+			v22 = 25;
+			v9 = GetSubMenu(v7, 1);
+		}
+		EnableMenuItem(v9, v22, 1u);
+		return 1;
+	}
+	if (a2 == 21)
+		goto LABEL_61;
+	if ((wchar_t)a2 > 5u)
+	{
+		if (a2 == 6)
+		{
+			sub_1006E4B(0);
+		}
+		else if (a2 == 7)
+		{
+			PostMessageW(hWnd, 0x10u, 0, 0);
+		}
+		else if (a2 != 15)
+		{
+			if (a2 != 16)
+				return 0;
+			SendMessageW(::hWnd, 0xC7u, 0, 0);
+		}
+	}
+	else
+	{
+		switch (a2)
+		{
+		case 5:
+			while (!PageSetupDlgW(&stru_100A4A0))
+			{
+				v6 = CommDlgExtendedError();
+				if (v6 != 4107 && v6 != 4105 && v6 != 4108)
+					goto LABEL_27;
+				sub_1001929();
+				stru_100A4A0.hDevNames = 0;
+				stru_100A4A0.hDevMode = 0;
+			}
+			lstrcpyW(word_100A3E0, &word_100A340);
+			lstrcpyW(&word_100A430, &word_100A390);
+			return 1;
+		case 1:
+			sub_1004CFF(1);
+			break;
+		case 2:
+			if (sub_100270F(0))
+			{
+				v4 = dword_1009030;
+				stru_100A680.lpstrFile = &String1;
+				lstrcpyW(&String1, L"*.txt");
+				stru_100A680.lpstrTitle = (LPCWSTR)dword_1009034[22];
+				stru_100A680.lpstrFilter = &word_100A5E0;
+				stru_100A680.lpstrDefExt = L"txt";
+				stru_100A680.Flags = 8917092;
+				stru_100A680.nFilterIndex = 1;
+				stru_100A680.lpTemplateName = L"NpEncodingDialog";
+				stru_100A680.lpfnHook = (LPOFNHOOKPROC)sub_1002452;
+				if (GetOpenFileNameW(&stru_100A680))
+				{
+					v5 = hFile;
+					hFile = CreateFileW(&String1, 0x80000000, 3u, 0, 3u, 0x80u, 0);
+					if (!sub_1005179(&String1, dword_1009030))
+					{
+						hFile = v5;
+						dword_1009030 = v4;
+					}
+				}
+				else
+				{
+					dword_1009030 = v4;
+				LABEL_27:
+					sub_1001FF0();
+				}
+			}
+			return 1;
+		case 3:
+			dword_100A528 = dword_1009030;
+			if (dword_100901C || !sub_1004EAE(hWndParent, sz, 0))
+			{
+			LABEL_14:
+				stru_100A680.lpstrFile = &String1;
+				stru_100A680.lpstrTitle = (LPCWSTR)dword_1009034[23];
+				stru_100A680.Flags = 8947814;
+				stru_100A680.lpTemplateName = L"NpEncodingDialog";
+				stru_100A680.lpfnHook = (LPOFNHOOKPROC)sub_1001A28;
+				stru_100A680.lpstrFilter = &word_100A540;
+				stru_100A680.lpstrDefExt = L"txt";
+				if (dword_100901C)
+					lstrcpyW(&String1, L"*.txt");
+				else
+					lstrcpynW(&String1, sz, 260);
+				dword_1009854 = 1;
+				stru_100A680.nFilterIndex = 1;
+				if (GetSaveFileNameW(&stru_100A680))
+				{
+					if (sub_1004EAE(v26, &String1, (LPCWCH)1))
+					{
+						lstrcpynW(sz, &String1, 260);
+						dword_1009030 = dword_100A528;
+					}
+				}
+				else
+				{
+					sub_1001FF0();
+				}
+				dword_1009854 = 0;
+				return 1;
+			}
+			break;
+		case 4:
+			goto LABEL_14;
+		default:
+			return 0;
+		}
+	}
+	return 1;
+}// 10013A0: using guessed type wchar_t aNpencodingdial[17];
 // 10013C4: using guessed type wchar_t aTxt_0[4];
 // 100901C: using guessed type int dword_100901C;
 // 100908C: using guessed type int dword_100908C;
@@ -1921,244 +1951,243 @@ LABEL_14:
 //----- (0100337E) --------------------------------------------------------
 int sub_100337E()
 {
-  HANDLE v0; // edi
-  int result; // eax
+	HANDLE v0; // edi
+	int result; // eax
 
-  v0 = hFile;
-  result = sub_100270F(0);
-  if ( result )
-  {
-    hFile = CreateFileW(&szFile, 0x80000000, 3u, 0, 3u, 0x80u, 0);
-    if ( hFile == (HANDLE)-1 )
-    {
-      result = sub_1004E20(&szFile);
-    }
-    else
-    {
-      result = sub_1005179(&szFile, -1);
-      if ( result )
-        return result;
-    }
-    hFile = v0;
-  }
-  return result;
+	v0 = hFile;
+	result = sub_100270F(0);
+	if (result)
+	{
+		hFile = CreateFileW(&szFile, 0x80000000, 3u, 0, 3u, 0x80u, 0);
+		if (hFile == (HANDLE)-1)
+		{
+			result = sub_1004E20(&szFile);
+		}
+		else
+		{
+			result = sub_1005179(&szFile, -1);
+			if (result)
+				return result;
+		}
+		hFile = v0;
+	}
+	return result;
 }
 
 //----- (010033DC) --------------------------------------------------------
 void __stdcall sub_10033DC(HDROP hDrop, HWND hWnd)
 {
-  if ( DragQueryFileW(hDrop, 0xFFFFFFFF, 0, 0) )
-  {
-    DragQueryFileW(hDrop, 0, &szFile, 0x104u);
-    SetActiveWindow(hWnd);
-    sub_100337E();
-  }
-  DragFinish(hDrop);
+	if (DragQueryFileW(hDrop, 0xFFFFFFFF, 0, 0))
+	{
+		DragQueryFileW(hDrop, 0, &szFile, 0x104u);
+		SetActiveWindow(hWnd);
+		sub_100337E();
+	}
+	DragFinish(hDrop);
 }
 
 //----- (01003429) --------------------------------------------------------
 LRESULT __stdcall sub_1003429(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM a4)
 {
-  WPARAM v5; // eax
-  LPARAM v6; // ecx
-  void (__stdcall *v7)(HWND, UINT, WPARAM, LPARAM); // edi
-  unsigned int v8; // ecx
-  void (__stdcall *v9)(HCURSOR); // esi
-  BOOL v10; // esi
-  HWND v11; // [esp-4h] [ebp-14h]
-  LPARAM v12; // [esp-4h] [ebp-14h]
-  LPARAM lParam[2]; // [esp+8h] [ebp-8h] BYREF
+	WPARAM v5; // eax
+	LPARAM v6; // ecx
+	void(__stdcall *v7)(HWND, UINT, WPARAM, LPARAM); // edi
+	unsigned int v8; // ecx
+	void(__stdcall *v9)(HCURSOR); // esi
+	BOOL v10; // esi
+	HWND v11; // [esp-4h] [ebp-14h]
+	LPARAM v12; // [esp-4h] [ebp-14h]
+	LPARAM lParam[2]; // [esp+8h] [ebp-8h] BYREF
 
-  if ( Msg > 0x1C )
-  {
-    if ( Msg != 273 )
-    {
-      switch ( Msg )
-      {
-        case 0x112u:
-          if ( !dword_100984C || wParam != 61472 && wParam != 61504 && wParam != 61520 )
-            DefWindowProcW(hWnd, 0x112u, wParam, a4);
-          return 0;
-        case 0x116u:
-          sub_1001D73(hWnd);
-          return 0;
-        case 0x117u:
-          if ( dword_100984C && HIWORD(a4) )
-            EnableMenuItem(hMenu, 0xF020u, 3u);
-          return 0;
-        case 0x233u:
-          sub_10033DC((HDROP)wParam, hWnd);
-          return 0;
-      }
-      if ( Msg != 793 )
-      {
-        if ( Msg == 32769 )
-        {
-          v10 = ((unsigned __int16)GetKeyboardLayout(0) & 0x3FF) == 17;
-          SendMessageW(::hWnd, 0xD8u, 1u, v10);
-          return 0;
-        }
-LABEL_49:
-        if ( Msg == dword_100A488 )
-        {
-          v8 = *(_DWORD *)(a4 + 12);
-          dword_1009A94 = (v8 & 1) == 0;
-          dword_1009A90 = (v8 >> 2) & 1;
-          if ( (v8 & 8) != 0 )
-          {
-            v9 = (void (__stdcall *)(HCURSOR))SetCursor;
-            SetCursor(hCursor);
-          }
-          else
-          {
-            if ( (v8 & 0x10) == 0 )
-            {
-              if ( (v8 & 0x20) != 0 )
-              {
-                if ( (v8 & 1) == 0 )
-                  dword_1009A94 = 0;
-                SetCursor(hCursor);
-                SendMessageW(::hWnd, 0xB1u, 0, 0);
-                do
-                  sub_100207F(0);
-                while ( sub_100594C(&word_100A800) );
-                SetCursor(dword_100AB88);
-                SendMessageW(::hWnd, 0xB1u, 0, 0);
-                SendMessageW(::hWnd, 0xB7u, 0, 0);
-                sub_1001C42(1);
-              }
-              else if ( (v8 & 0x40) != 0 )
-              {
-                hDlg = 0;
-              }
-              return 0;
-            }
-            v9 = (void (__stdcall *)(HCURSOR))SetCursor;
-            SetCursor(hCursor);
-            sub_100207F(1);
-          }
-          sub_100594C(&word_100A800);
-          v9(dword_100AB88);
-          return 0;
-        }
-        v12 = a4;
-        return DefWindowProcW(hWnd, Msg, wParam, v12);
-      }
-      if ( (HIWORD(a4) & 0xFFF) == 5 )
-      {
-        sub_1002B87(hWnd, 21, 0);
-        return 0;
-      }
-    }
-    if ( (HWND)a4 == ::hWnd && (HIWORD(wParam) == 1280 || HIWORD(wParam) == 1281) )
-    {
-      if ( dword_1009848 == 1 )
-        dword_1009848 = 2;
-      else
-        MessageBoxW(hWndParent, dword_100904C, lpCaption, 0x1010u);
-      return 0;
-    }
-    if ( !sub_1002B87(hWnd, wParam, a4) )
-    {
-      v12 = a4;
-      return DefWindowProcW(hWnd, Msg, wParam, v12);
-    }
-    return 0;
-  }
-  if ( Msg == 28 )
-  {
-    if ( wParam )
-    {
-      v5 = ::wParam;
-      v6 = dword_1009860;
-      if ( !::wParam && !dword_1009860 )
-        return 0;
-      v7 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
-    }
-    else
-    {
-      v7 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
-      SendMessageW(::hWnd, 0xB0u, (WPARAM)&::wParam, (LPARAM)&dword_1009860);
-      v5 = ::wParam;
-      v6 = dword_1009860;
-      if ( ::wParam == dword_1009860 )
-      {
-        ::wParam = 0;
-        dword_1009860 = 0;
-        return 0;
-      }
-    }
-    v7(::hWnd, 0xB1u, v5, v6);
-    v7(::hWnd, 0xB7u, 0, 0);
-    return 0;
-  }
-  if ( Msg <= 8 )
-  {
-    switch ( Msg )
-    {
-      case 8u:
-        SendMessageW(::hWnd, 8u, wParam, a4);
-        return 0;
-      case 2u:
-        PostQuitMessage(0);
-        return 0;
-      case 5u:
-        if ( wParam )
-        {
-          if ( wParam == 1 )
-            return DefWindowProcW(hWnd, 5u, 1u, a4);
-          if ( wParam != 2 )
-            return 0;
-        }
-        SendMessageW(dword_1009834, 5u, 0, 0);
-        lParam[1] = -1;
-        lParam[0] = 3 * (__int16)a4 / 4;
-        SendMessageW(dword_1009834, 0x404u, 2u, (LPARAM)lParam);
-        sub_10019E0((__int16)a4, SHIWORD(a4));
-        return 0;
-      case 6u:
-        if ( ((_WORD)wParam == 1 || (_WORD)wParam == 2) && !IsIconic(hWndParent) && GetForegroundWindow() == hWndParent )
-        {
-          v11 = GetForegroundWindow();
-          SetFocus(v11);
-        }
-        return 0;
-      case 7u:
-        if ( !IsIconic(hWndParent) )
-          SetFocus(::hWnd);
-        return 0;
-    }
-    goto LABEL_49;
-  }
-  if ( Msg == 16 )
-  {
-    sub_1003A39();
-    if ( sub_100270F(0) )
-    {
-      if ( !WinHelpW(hWndParent, lpszHelp, 2u, 0) )
-        MessageBoxW(hWndParent, dword_100904C, lpCaption, 0x1010u);
-      DestroyWindow(dword_1009834);
-      DestroyWindow(hWndParent);
-      DeleteObject(ho);
-    }
-    return 0;
-  }
-  if ( Msg != 17 )
-  {
-    if ( Msg == 26 )
-      return 0;
-    goto LABEL_49;
-  }
-  if ( dword_1009854 )
-  {
-    MessageBeep(0);
-    MessageBeep(0);
-    MessageBoxW(hWndParent, (LPCWSTR)dword_1009094, lpCaption, 0x1000u);
-    return 0;
-  }
-  return sub_100270F(1);
-}
-// 1009094: using guessed type int dword_1009094;
+	if (Msg > 0x1C)
+	{
+		if (Msg != 273)
+		{
+			switch (Msg)
+			{
+			case 0x112u:
+				if (!dword_100984C || wParam != 61472 && wParam != 61504 && wParam != 61520)
+					DefWindowProcW(hWnd, 0x112u, wParam, a4);
+				return 0;
+			case 0x116u:
+				sub_1001D73(hWnd);
+				return 0;
+			case 0x117u:
+				if (dword_100984C && HIWORD(a4))
+					EnableMenuItem(hMenu, 0xF020u, 3u);
+				return 0;
+			case 0x233u:
+				sub_10033DC((HDROP)wParam, hWnd);
+				return 0;
+			}
+			if (Msg != 793)
+			{
+				if (Msg == 32769)
+				{
+					v10 = ((wchar_t)GetKeyboardLayout(0) & 0x3FF) == 17;
+					SendMessageW(::hWnd, 0xD8u, 1u, v10);
+					return 0;
+				}
+			LABEL_49:
+				if (Msg == dword_100A488)
+				{
+					v8 = *(_DWORD *)(a4 + 12);
+					dword_1009A94 = (v8 & 1) == 0;
+					dword_1009A90 = (v8 >> 2) & 1;
+					if ((v8 & 8) != 0)
+					{
+						v9 = (void(__stdcall *)(HCURSOR))SetCursor;
+						SetCursor(hCursor);
+					}
+					else
+					{
+						if ((v8 & 0x10) == 0)
+						{
+							if ((v8 & 0x20) != 0)
+							{
+								if ((v8 & 1) == 0)
+									dword_1009A94 = 0;
+								SetCursor(hCursor);
+								SendMessageW(::hWnd, 0xB1u, 0, 0);
+								do
+								sub_100207F(0);
+								while (sub_100594C(&word_100A800));
+								SetCursor(dword_100AB88);
+								SendMessageW(::hWnd, 0xB1u, 0, 0);
+								SendMessageW(::hWnd, 0xB7u, 0, 0);
+								sub_1001C42(1);
+							}
+							else if ((v8 & 0x40) != 0)
+							{
+								hDlg = 0;
+							}
+							return 0;
+						}
+						v9 = (void(__stdcall *)(HCURSOR))SetCursor;
+						SetCursor(hCursor);
+						sub_100207F(1);
+					}
+					sub_100594C(&word_100A800);
+					v9(dword_100AB88);
+					return 0;
+				}
+				v12 = a4;
+				return DefWindowProcW(hWnd, Msg, wParam, v12);
+			}
+			if ((HIWORD(a4) & 0xFFF) == 5)
+			{
+				sub_1002B87(hWnd, 21, 0);
+				return 0;
+			}
+		}
+		if ((HWND)a4 == ::hWnd && (HIWORD(wParam) == 1280 || HIWORD(wParam) == 1281))
+		{
+			if (dword_1009848 == 1)
+				dword_1009848 = 2;
+			else
+				MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[6], (LPCWSTR)dword_1009034[8], 0x1010u);
+			return 0;
+		}
+		if (!sub_1002B87(hWnd, wParam, a4))
+		{
+			v12 = a4;
+			return DefWindowProcW(hWnd, Msg, wParam, v12);
+		}
+		return 0;
+	}
+	if (Msg == 28)
+	{
+		if (wParam)
+		{
+			v5 = ::wParam;
+			v6 = dword_1009860;
+			if (!::wParam && !dword_1009860)
+				return 0;
+			v7 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
+		}
+		else
+		{
+			v7 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
+			SendMessageW(::hWnd, 0xB0u, (WPARAM)&::wParam, (LPARAM)&dword_1009860);
+			v5 = ::wParam;
+			v6 = dword_1009860;
+			if (::wParam == dword_1009860)
+			{
+				::wParam = 0;
+				dword_1009860 = 0;
+				return 0;
+			}
+		}
+		v7(::hWnd, 0xB1u, v5, v6);
+		v7(::hWnd, 0xB7u, 0, 0);
+		return 0;
+	}
+	if (Msg <= 8)
+	{
+		switch (Msg)
+		{
+		case 8u:
+			SendMessageW(::hWnd, 8u, wParam, a4);
+			return 0;
+		case 2u:
+			PostQuitMessage(0);
+			return 0;
+		case 5u:
+			if (wParam)
+			{
+				if (wParam == 1)
+					return DefWindowProcW(hWnd, 5u, 1u, a4);
+				if (wParam != 2)
+					return 0;
+			}
+			SendMessageW(dword_1009834, 5u, 0, 0);
+			lParam[1] = -1;
+			lParam[0] = 3 * (__int16)a4 / 4;
+			SendMessageW(dword_1009834, 0x404u, 2u, (LPARAM)lParam);
+			sub_10019E0((__int16)a4, SHIWORD(a4));
+			return 0;
+		case 6u:
+			if (((WCHAR)wParam == 1 || (WCHAR)wParam == 2) && !IsIconic(hWndParent) && GetForegroundWindow() == hWndParent)
+			{
+				v11 = GetForegroundWindow();
+				SetFocus(v11);
+			}
+			return 0;
+		case 7u:
+			if (!IsIconic(hWndParent))
+				SetFocus(::hWnd);
+			return 0;
+		}
+		goto LABEL_49;
+	}
+	if (Msg == 16)
+	{
+		sub_1003A39();
+		if (sub_100270F(0))
+		{
+			if (!WinHelpW(hWndParent, (LPCWSTR)dword_1009034[16], 2u, 0))
+				MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[6], (LPCWSTR)dword_1009034[8], 0x1010u);
+			DestroyWindow(dword_1009834);
+			DestroyWindow(hWndParent);
+			DeleteObject(ho);
+		}
+		return 0;
+	}
+	if (Msg != 17)
+	{
+		if (Msg == 26)
+			return 0;
+		goto LABEL_49;
+	}
+	if (dword_1009854)
+	{
+		MessageBeep(0);
+		MessageBeep(0);
+		MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[24], (LPCWSTR)dword_1009034[8], 0x1000u);
+		return 0;
+	}
+	return sub_100270F(1);
+}// 1009094: using guessed type int dword_1009094;
 // 1009848: using guessed type int dword_1009848;
 // 100984C: using guessed type int dword_100984C;
 // 1009854: using guessed type int dword_1009854;
@@ -2168,390 +2197,382 @@ LABEL_49:
 //----- (0100393A) --------------------------------------------------------
 LSTATUS __stdcall sub_100393A(HKEY hKey, LPCWSTR lpValueName, BYTE Data)
 {
-  return RegSetValueExW(hKey, lpValueName, 0, 4u, &Data, 4u);
+	return RegSetValueExW(hKey, lpValueName, 0, 4u, &Data, 4u);
 }
 
 //----- (0100395E) --------------------------------------------------------
 LSTATUS __stdcall sub_100395E(HKEY hKey, LPCWSTR lpValueName, LPCWSTR lpString)
 {
-  int v3; // eax
+	int v3; // eax
 
-  v3 = lstrlenW(lpString);
-  return RegSetValueExW(hKey, lpValueName, 0, 1u, (const BYTE *)lpString, 2 * v3 + 2);
+	v3 = lstrlenW(lpString);
+	return RegSetValueExW(hKey, lpValueName, 0, 1u, (const BYTE *)lpString, 2 * v3 + 2);
 }
 
 //----- (0100398D) --------------------------------------------------------
 int __stdcall sub_100398D(HKEY hKey, LPCWSTR lpValueName, int a3)
 {
-  int result; // eax
-  DWORD cbData; // [esp+0h] [ebp-Ch] BYREF
-  BYTE Data[4]; // [esp+4h] [ebp-8h] BYREF
-  DWORD Type; // [esp+8h] [ebp-4h] BYREF
+	int result; // eax
+	DWORD cbData; // [esp+0h] [ebp-Ch] BYREF
+	BYTE Data[4]; // [esp+4h] [ebp-8h] BYREF
+	DWORD Type; // [esp+8h] [ebp-4h] BYREF
 
-  Type = 0;
-  *(_DWORD *)Data = 1;
-  cbData = 4;
-  if ( hKey && !RegQueryValueExW(hKey, lpValueName, 0, &Type, Data, &cbData) && Type == 4 )
-    result = *(_DWORD *)Data;
-  else
-    result = a3;
-  return result;
+	Type = 0;
+	*(_DWORD *)Data = 1;
+	cbData = 4;
+	if (hKey && !RegQueryValueExW(hKey, lpValueName, 0, &Type, Data, &cbData) && Type == 4)
+		result = *(_DWORD *)Data;
+	else
+		result = a3;
+	return result;
 }
 
 //----- (010039E2) --------------------------------------------------------
 LSTATUS __stdcall sub_10039E2(HKEY hKey, LPCWSTR lpValueName, int a3, LPBYTE lpData, DWORD cbData)
 {
-  unsigned int v5; // esi
-  LPBYTE v6; // edi
-  LSTATUS result; // eax
+	unsigned int v5; // esi
+	LPBYTE v6; // edi
+	LSTATUS result; // eax
 
-  v5 = 2 * cbData;
-  v6 = lpData;
-  cbData *= 2;
-  if ( !hKey
-    || (result = RegQueryValueExW(hKey, lpValueName, 0, (LPDWORD)&hKey, lpData, &cbData)) != 0
-    || hKey != (HKEY)1 )
-  {
-    result = v5;
-    qmemcpy(v6, (const void *)a3, v5);
-  }
-  return result;
+	v5 = 2 * cbData;
+	v6 = lpData;
+	cbData *= 2;
+	if (!hKey
+		|| (result = RegQueryValueExW(hKey, lpValueName, 0, (LPDWORD)&hKey, lpData, &cbData)) != 0
+		|| hKey != (HKEY)1)
+	{
+		result = v5;
+		qmemcpy(v6, (const void *)a3, v5);
+	}
+	return result;
 }
 
 //----- (01003A39) --------------------------------------------------------
 LSTATUS sub_1003A39()
 {
-  LSTATUS result; // eax
-  WINDOWPLACEMENT wndpl; // [esp+0h] [ebp-30h] BYREF
-  HKEY phkResult; // [esp+2Ch] [ebp-4h] BYREF
+	LSTATUS result; // eax
+	WINDOWPLACEMENT wndpl; // [esp+0h] [ebp-30h] BYREF
+	HKEY phkResult; // [esp+2Ch] [ebp-4h] BYREF
 
-  result = RegCreateKeyW(HKEY_CURRENT_USER, L"Software\\Microsoft\\Notepad", &phkResult);
-  if ( !result )
-  {
-    sub_100393A(phkResult, L"lfEscapement", lf.lfEscapement);
-    sub_100393A(phkResult, L"lfOrientation", lf.lfOrientation);
-    sub_100393A(phkResult, L"lfWeight", lf.lfWeight);
-    sub_100393A(phkResult, L"lfItalic", lf.lfItalic);
-    sub_100393A(phkResult, L"lfUnderline", lf.lfUnderline);
-    sub_100393A(phkResult, L"lfStrikeOut", lf.lfStrikeOut);
-    sub_100393A(phkResult, L"lfCharSet", lf.lfCharSet);
-    sub_100393A(phkResult, L"lfOutPrecision", lf.lfOutPrecision);
-    sub_100393A(phkResult, L"lfClipPrecision", lf.lfClipPrecision);
-    sub_100393A(phkResult, L"lfQuality", lf.lfQuality);
-    sub_100393A(phkResult, L"lfPitchAndFamily", lf.lfPitchAndFamily);
-    sub_100393A(phkResult, L"iPointSize", Data);
-    sub_100393A(phkResult, L"fWrap", dword_1009850);
-    sub_100393A(phkResult, L"StatusBar", dword_1009840);
-    sub_100393A(phkResult, L"fSaveWindowPositions", dword_1009A84);
-    sub_100395E(phkResult, L"lfFaceName", lf.lfFaceName);
-    sub_100395E(phkResult, L"szHeader", word_100A3E0);
-    sub_100395E(phkResult, L"szTrailer", &word_100A430);
-    sub_100393A(phkResult, L"iMarginTop", stru_100A4A0.rtMargin.top);
-    sub_100393A(phkResult, L"iMarginBottom", stru_100A4A0.rtMargin.bottom);
-    sub_100393A(phkResult, L"iMarginLeft", stru_100A4A0.rtMargin.left);
-    sub_100393A(phkResult, L"iMarginRight", stru_100A4A0.rtMargin.right);
-    sub_100393A(phkResult, L"fMLE_is_broken", dword_1009858);
-    wndpl.length = 44;
-    if ( GetWindowPlacement(hWndParent, &wndpl) )
-    {
-      sub_100393A(phkResult, L"iWindowPosX", wndpl.rcNormalPosition.left);
-      sub_100393A(phkResult, L"iWindowPosY", wndpl.rcNormalPosition.top);
-      sub_100393A(
-        phkResult,
-        L"iWindowPosDX",
-        LOBYTE(wndpl.rcNormalPosition.right) - LOBYTE(wndpl.rcNormalPosition.left));
-      sub_100393A(
-        phkResult,
-        L"iWindowPosDY",
-        LOBYTE(wndpl.rcNormalPosition.bottom) - LOBYTE(wndpl.rcNormalPosition.top));
-    }
-    result = RegCloseKey(phkResult);
-  }
-  return result;
+	result = RegCreateKeyW(HKEY_CURRENT_USER, L"Software\\Microsoft\\Notepad", &phkResult);
+	if (!result)
+	{
+		sub_100393A(phkResult, L"lfEscapement", lf.lfEscapement);
+		sub_100393A(phkResult, L"lfOrientation", lf.lfOrientation);
+		sub_100393A(phkResult, L"lfWeight", lf.lfWeight);
+		sub_100393A(phkResult, L"lfItalic", lf.lfItalic);
+		sub_100393A(phkResult, L"lfUnderline", lf.lfUnderline);
+		sub_100393A(phkResult, L"lfStrikeOut", lf.lfStrikeOut);
+		sub_100393A(phkResult, L"lfCharSet", lf.lfCharSet);
+		sub_100393A(phkResult, L"lfOutPrecision", lf.lfOutPrecision);
+		sub_100393A(phkResult, L"lfClipPrecision", lf.lfClipPrecision);
+		sub_100393A(phkResult, L"lfQuality", lf.lfQuality);
+		sub_100393A(phkResult, L"lfPitchAndFamily", lf.lfPitchAndFamily);
+		sub_100393A(phkResult, L"iPointSize", Data);
+		sub_100393A(phkResult, L"fWrap", dword_1009850);
+		sub_100393A(phkResult, L"StatusBar", dword_1009840);
+		sub_100393A(phkResult, L"fSaveWindowPositions", dword_1009A84);
+		sub_100395E(phkResult, L"lfFaceName", lf.lfFaceName);
+		sub_100395E(phkResult, L"szHeader", word_100A3E0);
+		sub_100395E(phkResult, L"szTrailer", &word_100A430);
+		sub_100393A(phkResult, L"iMarginTop", stru_100A4A0.rtMargin.top);
+		sub_100393A(phkResult, L"iMarginBottom", stru_100A4A0.rtMargin.bottom);
+		sub_100393A(phkResult, L"iMarginLeft", stru_100A4A0.rtMargin.left);
+		sub_100393A(phkResult, L"iMarginRight", stru_100A4A0.rtMargin.right);
+		sub_100393A(phkResult, L"fMLE_is_broken", dword_1009858);
+		wndpl.length = 44;
+		if (GetWindowPlacement(hWndParent, &wndpl))
+		{
+			sub_100393A(phkResult, L"iWindowPosX", wndpl.rcNormalPosition.left);
+			sub_100393A(phkResult, L"iWindowPosY", wndpl.rcNormalPosition.top);
+			sub_100393A(
+				phkResult,
+				L"iWindowPosDX",
+				LOBYTE(wndpl.rcNormalPosition.right) - LOBYTE(wndpl.rcNormalPosition.left));
+			sub_100393A(
+				phkResult,
+				L"iWindowPosDY",
+				LOBYTE(wndpl.rcNormalPosition.bottom) - LOBYTE(wndpl.rcNormalPosition.top));
+		}
+		result = RegCloseKey(phkResult);
+	}
+	return result;
 }
 
 //----- (01003C92) --------------------------------------------------------
 // @@Œ¥≥ı ºªØ
 LSTATUS sub_1003C92()
 {
-  HGDIOBJ v0; // eax
-  LSTATUS result; // eax
-  HKEY phkResult; // [esp+8h] [ebp-64h] BYREF
-  char pv[8]; // [esp+Ch] [ebp-60h] BYREF
-  int v4 = 0; // [esp+14h] [ebp-58h]
-  int v5 = 0; // [esp+18h] [ebp-54h]
-  int v6 = 0; // [esp+1Ch] [ebp-50h]
-  unsigned __int8 v7 = 0; // [esp+20h] [ebp-4Ch]
-  unsigned __int8 v8 = 0; // [esp+21h] [ebp-4Bh]
-  unsigned __int8 v9 = 0; // [esp+22h] [ebp-4Ah]
-  unsigned __int8 v10 = 0; // [esp+23h] [ebp-49h]
-  unsigned __int8 v11 = 0; // [esp+24h] [ebp-48h]
-  unsigned __int8 v12 = 0; // [esp+25h] [ebp-47h]
-  unsigned __int8 v13 = 0; // [esp+26h] [ebp-46h]
-  unsigned __int8 v14 = 0; // [esp+27h] [ebp-45h]
+	HGDIOBJ v0; // eax
+	LSTATUS result; // eax
+	HKEY phkResult; // [esp+8h] [ebp-64h] BYREF
+	char pv[8]; // [esp+Ch] [ebp-60h] BYREF
+	int v4 = 0; // [esp+14h] [ebp-58h]
+	int v5 = 0; // [esp+18h] [ebp-54h]
+	int v6 = 0; // [esp+1Ch] [ebp-50h]
+	unsigned __int8 v7 = 0; // [esp+20h] [ebp-4Ch]
+	unsigned __int8 v8 = 0; // [esp+21h] [ebp-4Bh]
+	unsigned __int8 v9 = 0; // [esp+22h] [ebp-4Ah]
+	unsigned __int8 v10 = 0; // [esp+23h] [ebp-49h]
+	unsigned __int8 v11 = 0; // [esp+24h] [ebp-48h]
+	unsigned __int8 v12 = 0; // [esp+25h] [ebp-47h]
+	unsigned __int8 v13 = 0; // [esp+26h] [ebp-46h]
+	unsigned __int8 v14 = 0; // [esp+27h] [ebp-45h]
 
-  v0 = GetStockObject(16);
-  if ( v0 )
-    GetObjectW(v0, 92, pv);
-  if ( RegCreateKeyW(HKEY_CURRENT_USER, L"Software\\Microsoft\\Notepad", &phkResult) )
-    phkResult = 0;
-  lf.lfWidth = 0;
-  lf.lfEscapement = sub_100398D(phkResult, L"lfEscapement", v4);
-  lf.lfOrientation = sub_100398D(phkResult, L"lfOrientation", v5);
-  lf.lfWeight = sub_100398D(phkResult, L"lfWeight", v6);
-  lf.lfItalic = sub_100398D(phkResult, L"lfItalic", v7);
-  lf.lfUnderline = sub_100398D(phkResult, L"lfUnderline", v8);
-  lf.lfStrikeOut = sub_100398D(phkResult, L"lfStrikeOut", v9);
-  lf.lfCharSet = sub_100398D(phkResult, L"lfCharSet", v10);
-  lf.lfOutPrecision = sub_100398D(phkResult, L"lfOutPrecision", v11);
-  lf.lfClipPrecision = sub_100398D(phkResult, L"lfClipPrecision", v12);
-  lf.lfQuality = sub_100398D(phkResult, L"lfQuality", v13);
-  lf.lfPitchAndFamily = sub_100398D(phkResult, L"lfPitchAndFamily", v14);
-  sub_10039E2(phkResult, L"lfFaceName", (int)L"Lucida Console", (LPBYTE)lf.lfFaceName, 0x20u);
-  *(_DWORD *)&Data = sub_100398D(phkResult, L"iPointSize", 100);
-  dword_1009850 = sub_100398D(phkResult, L"fWrap", 0);
-  *(_DWORD *)&dword_1009840 = sub_100398D(phkResult, L"StatusBar", 0);
-  *(_DWORD *)&dword_1009A84 = sub_100398D(phkResult, L"fSaveWindowPositions", 0);
-  sub_10039E2(phkResult, L"szHeader", (int)word_100A3E0, (LPBYTE)word_100A3E0, 0x28u);
-  sub_10039E2(phkResult, L"szTrailer", (int)&word_100A430, (LPBYTE)&word_100A430, 0x28u);
-  stru_100A4A0.rtMargin.top = sub_100398D(phkResult, L"iMarginTop", stru_100A4A0.rtMargin.top);
-  stru_100A4A0.rtMargin.bottom = sub_100398D(phkResult, L"iMarginBottom", stru_100A4A0.rtMargin.bottom);
-  stru_100A4A0.rtMargin.left = sub_100398D(phkResult, L"iMarginLeft", stru_100A4A0.rtMargin.left);
-  stru_100A4A0.rtMargin.right = sub_100398D(phkResult, L"iMarginRight", stru_100A4A0.rtMargin.right);
-  Y = sub_100398D(phkResult, L"iWindowPosY", 0x80000000);
-  X = sub_100398D(phkResult, L"iWindowPosX", 0x80000000);
-  nWidth = sub_100398D(phkResult, L"iWindowPosDX", 0x80000000);
-  nHeight = sub_100398D(phkResult, L"iWindowPosDY", 0x80000000);
-  result = sub_100398D(phkResult, L"fMLE_is_broken", 0);
-  *(_DWORD *)&dword_1009858 = result;
-  if ( phkResult )
-    result = RegCloseKey(phkResult);
-  return result;
+	v0 = GetStockObject(16);
+	if (v0)
+		GetObjectW(v0, 92, pv);
+	if (RegCreateKeyW(HKEY_CURRENT_USER, L"Software\\Microsoft\\Notepad", &phkResult))
+		phkResult = 0;
+	lf.lfWidth = 0;
+	lf.lfEscapement = sub_100398D(phkResult, L"lfEscapement", v4);
+	lf.lfOrientation = sub_100398D(phkResult, L"lfOrientation", v5);
+	lf.lfWeight = sub_100398D(phkResult, L"lfWeight", v6);
+	lf.lfItalic = sub_100398D(phkResult, L"lfItalic", v7);
+	lf.lfUnderline = sub_100398D(phkResult, L"lfUnderline", v8);
+	lf.lfStrikeOut = sub_100398D(phkResult, L"lfStrikeOut", v9);
+	lf.lfCharSet = sub_100398D(phkResult, L"lfCharSet", v10);
+	lf.lfOutPrecision = sub_100398D(phkResult, L"lfOutPrecision", v11);
+	lf.lfClipPrecision = sub_100398D(phkResult, L"lfClipPrecision", v12);
+	lf.lfQuality = sub_100398D(phkResult, L"lfQuality", v13);
+	lf.lfPitchAndFamily = sub_100398D(phkResult, L"lfPitchAndFamily", v14);
+	sub_10039E2(phkResult, L"lfFaceName", (int)L"Lucida Console", (LPBYTE)lf.lfFaceName, 0x20u);
+	*(_DWORD *)&Data = sub_100398D(phkResult, L"iPointSize", 100);
+	dword_1009850 = sub_100398D(phkResult, L"fWrap", 0);
+	*(_DWORD *)&dword_1009840 = sub_100398D(phkResult, L"StatusBar", 0);
+	*(_DWORD *)&dword_1009A84 = sub_100398D(phkResult, L"fSaveWindowPositions", 0);
+	sub_10039E2(phkResult, L"szHeader", (int)word_100A3E0, (LPBYTE)word_100A3E0, 0x28u);
+	sub_10039E2(phkResult, L"szTrailer", (int)&word_100A430, (LPBYTE)&word_100A430, 0x28u);
+	stru_100A4A0.rtMargin.top = sub_100398D(phkResult, L"iMarginTop", stru_100A4A0.rtMargin.top);
+	stru_100A4A0.rtMargin.bottom = sub_100398D(phkResult, L"iMarginBottom", stru_100A4A0.rtMargin.bottom);
+	stru_100A4A0.rtMargin.left = sub_100398D(phkResult, L"iMarginLeft", stru_100A4A0.rtMargin.left);
+	stru_100A4A0.rtMargin.right = sub_100398D(phkResult, L"iMarginRight", stru_100A4A0.rtMargin.right);
+	Y = sub_100398D(phkResult, L"iWindowPosY", 0x80000000);
+	X = sub_100398D(phkResult, L"iWindowPosX", 0x80000000);
+	nWidth = sub_100398D(phkResult, L"iWindowPosDX", 0x80000000);
+	nHeight = sub_100398D(phkResult, L"iWindowPosDY", 0x80000000);
+	result = sub_100398D(phkResult, L"fMLE_is_broken", 0);
+	*(_DWORD *)&dword_1009858 = result;
+	if (phkResult)
+		result = RegCloseKey(phkResult);
+	return result;
 }
 // 10016DC: using guessed type wchar_t aLucidaConsole[15];
 
 //----- (01003F4C) --------------------------------------------------------
-int __usercall sub_1003F4C(unsigned __int16 *a1, unsigned __int16 *a2)
+int __usercall sub_1003F4C(wchar_t *a1, wchar_t *a2)
 {
-  unsigned __int16 *v2; // edi
-  unsigned __int16 v4; // ax
-  WCHAR *v5; // eax
-  unsigned __int16 v7; // [esp+Ch] [ebp-4h]
+	wchar_t *v2; // edi
+	wchar_t v4; // ax
+	WCHAR *v5; // eax
+	wchar_t v7; // [esp+Ch] [ebp-4h]
 
-  v2 = a2;
-  v4 = *a2;
-  if ( !*a2 )
-    return 0;
-  while ( 1 )
-  {
-    v7 = (unsigned __int16)CharUpperW((LPWSTR)v4);
-    v5 = (WCHAR *)*a1;
-    ++v2;
-    ++a1;
-    if ( v7 != (unsigned __int16)CharUpperW(v5) )
-      break;
-    v4 = *v2;
-    if ( !*v2 )
-      return 0;
-  }
-  return 1;
+	v2 = a2;
+	v4 = *a2;
+	if (!*a2)
+		return 0;
+	while (1)
+	{
+		v7 = (wchar_t)CharUpperW((LPWSTR)v4);
+		v5 = (WCHAR *)*a1;
+		++v2;
+		++a1;
+		if (v7 != (wchar_t)CharUpperW(v5))
+			break;
+		v4 = *v2;
+		if (!*v2)
+			return 0;
+	}
+	return 1;
 }
 
 //----- (01003F99) --------------------------------------------------------
 LPCWSTR __stdcall sub_1003F99(LPWSTR lpString1, LPCWSTR lpString2)
 {
-  LPCWSTR i; // esi
-  LPWSTR v3; // ecx
-  unsigned int v4; // edx
-  WCHAR v5; // di
-  WCHAR v6; // ax
-  HANDLE v7; // eax
-  struct _WIN32_FIND_DATAW FindFileData; // [esp+Ch] [ebp-254h] BYREF
+	LPCWSTR i; // esi
+	LPWSTR v3; // ecx
+	unsigned int v4; // edx
+	WCHAR v5; // di
+	WCHAR v6; // ax
+	HANDLE v7; // eax
+	struct _WIN32_FIND_DATAW FindFileData; // [esp+Ch] [ebp-254h] BYREF
 
-  i = lpString2;
-  v3 = lpString1;
-  if ( *lpString2 == 34 || *lpString2 == 39 )
-  {
-    v4 = 0;
-    v5 = *lpString2;
-    for ( i = lpString2 + 1; ; ++i )
-    {
-      v6 = *i;
-      if ( !*i || v6 == v5 || v4 >= 0x104 )
-        break;
-      *v3++ = v6;
-      ++v4;
-    }
-    *v3 = 0;
-  }
-  else
-  {
-    lstrcpynW(lpString1, lpString2, 260);
-  }
-  v7 = FindFirstFileW(lpString1, &FindFileData);
-  if ( v7 != (HANDLE)-1 || (sub_1004DCD(lpString1), v7 = FindFirstFileW(lpString1, &FindFileData), v7 != (HANDLE)-1) )
-    FindClose(v7);
-  return i;
+	i = lpString2;
+	v3 = lpString1;
+	if (*lpString2 == 34 || *lpString2 == 39)
+	{
+		v4 = 0;
+		v5 = *lpString2;
+		for (i = lpString2 + 1;; ++i)
+		{
+			v6 = *i;
+			if (!*i || v6 == v5 || v4 >= 0x104)
+				break;
+			*v3++ = v6;
+			++v4;
+		}
+		*v3 = 0;
+	}
+	else
+	{
+		lstrcpynW(lpString1, lpString2, 260);
+	}
+	v7 = FindFirstFileW(lpString1, &FindFileData);
+	if (v7 != (HANDLE)-1 || (sub_1004DCD(lpString1), v7 = FindFirstFileW(lpString1, &FindFileData), v7 != (HANDLE)-1))
+		FindClose(v7);
+	return i;
 }
 
 //----- (01004047) --------------------------------------------------------
 WCHAR *__stdcall sub_1004047(HINSTANCE hInstance)
 {
-  int v1; // esi
-  WCHAR *result; // eax
-  int v3; // edi
-  int v4; // ebx
-  int v5; // eax
-  WCHAR *lpBuffer; // [esp+Ch] [ebp-4h]
+	int v1; // esi
+	WCHAR *result; // eax
+	int v3; // edi
+	int v4; // ebx
+	int v5; // eax
+	WCHAR *lpBuffer; // [esp+Ch] [ebp-4h]
 
-  v1 = 280;
-  for ( result = (WCHAR *)LocalAlloc(0x40u, 0x230u); ; result = (WCHAR *)LocalAlloc(0x40u, 2 * v1) )
-  {
-    lpBuffer = result;
-    if ( !result )
-      break;
-    v3 = 0;
-    v4 = 0;
-    do
-    {
-		UINT uId = *off_10090E8[v3];
-      v5 = LoadStringW(hInstance, uId, lpBuffer, v1);
-      if ( v5 >= v1 - 1 )
-        break;
-      ++v3;
-      v4 += v5 + 1;
-    }
-    while ( v3 < 45 );
-    LocalFree(lpBuffer);
-    if ( v3 >= 45 )
-      return (WCHAR *)v4;
-    v1 *= 2;
-  }
-  return result;
+	v1 = 280;
+	for (result = (WCHAR *)LocalAlloc(0x40u, 0x230u);; result = (WCHAR *)LocalAlloc(0x40u, 2 * v1))
+	{
+		lpBuffer = result;
+		if (!result)
+			break;
+		v3 = 0;
+		v4 = 0;
+		do
+		{
+			UINT uId = *off_10090E8[v3];
+			v5 = LoadStringW(hInstance, uId, lpBuffer, v1);
+			if (v5 >= v1 - 1)
+				break;
+			++v3;
+			v4 += v5 + 1;
+		} while (v3 < 45);
+		LocalFree(lpBuffer);
+		if (v3 >= 45)
+			return (WCHAR *)v4;
+		v1 *= 2;
+	}
+	return result;
 }
 // 10090E8: using guessed type int *off_10090E8[9];
 
 //----- (010040BA) --------------------------------------------------------
 int __stdcall sub_10040BA(HINSTANCE hInstance)
 {
-  int result; // eax
-  WCHAR *v2; // esi
-  int v3; // ebx
-  UINT **v4; // edi
-  int v5; // eax
+	int result; // eax
+	WCHAR *v2; // esi
+	int v3; // ebx
+	UINT **v4; // edi
+	int v5; // eax
 
-  result = (int)sub_1004047(hInstance);
-  if ( result )
-  {
-    result = (int)LocalAlloc(0x40u, 2 * result);
-    v2 = (WCHAR *)result;
-    if ( result )
-    {
-      v3 = LocalSize((HLOCAL)result) >> 1;
-      if ( v3 )
-      {
-        v4 = (UINT **)off_10090E8;
-        while ( 1 )
-        {
-          v5 = LoadStringW(hInstance, **v4, v2, v3) + 1;
-          **v4 = (UINT)v2;
-          v2 += v5;
-          if ( v5 > v3 )
-            break;
-          ++v4;
-          v3 -= v5;
-          if ( (int)v4 >= (int)&off_100919C )
-          {
-            lstrcpynW(word_100A3E0, dword_1009078, 40);
-            lstrcpynW(&word_100A430, dword_100907C, 40);
-            word_100AB90 = *(_WORD *)dword_1009070;
-            return 1;
-          }
-        }
-        MessageBoxW(0, L"Out of RC string space!!", L"DEV Error!", 0);
-        result = 0;
-      }
-      else
-      {
-        result = 0;
-      }
-    }
-  }
-  return result;
-}
-// 1009070: using guessed type int dword_1009070;
+	result = (int)sub_1004047(hInstance);
+	if (result)
+	{
+		result = (int)LocalAlloc(0x40u, 2 * result);
+		v2 = (WCHAR *)result;
+		if (result)
+		{
+			v3 = LocalSize((HLOCAL)result) >> 1;
+			if (v3)
+			{
+				v4 = off_10090E8;
+				while (1)
+				{
+					v5 = LoadStringW(hInstance, **v4, v2, v3) + 1;
+					**v4 = (UINT)v2;
+					v2 += v5;
+					if (v5 > v3)
+						break;
+					++v4;
+					v3 -= v5;
+					if ((int)v4 >= (int)&off_100919C)
+					{
+						lstrcpynW(word_100A3E0, (LPCWSTR)dword_1009034[17], 40);
+						lstrcpynW(&word_100A430, (LPCWSTR)dword_1009034[18], 40);
+						word_100AB90 = dword_1009034[15];
+						return 1;
+					}
+				}
+				MessageBoxW(0, L"Out of RC string space!!", L"DEV Error!", 0);
+				result = 0;
+			}
+			else
+			{
+				result = 0;
+			}
+		}
+	}
+	return result;
+}// 1009070: using guessed type int dword_1009070;
 // 10090E8: using guessed type int *off_10090E8[9];
 // 100919C: using guessed type __int16 *off_100919C;
 // 100AB90: using guessed type __int16 word_100AB90;
 
 //----- (0100417A) --------------------------------------------------------
-_WORD *__stdcall sub_100417A(_WORD *a1)
+WCHAR *__stdcall sub_100417A(WCHAR *a1)
 {
-  _WORD *result; // eax
+	WCHAR *result; // eax
 
-  for ( result = a1; *result == 32 || *result == 9; ++result )
-    ;
-  return result;
+	for (result = a1; *result == 32 || *result == 9; ++result)
+		;
+	return result;
 }
 
 //----- (0100419E) --------------------------------------------------------
-int __stdcall sub_100419E(unsigned __int16 *a1)
+int __stdcall sub_100419E(wchar_t *a1)
 {
-  const WCHAR *v1; // eax
-  DWORD v2; // eax
-  DWORD v3; // eax
-  int v4; // eax
-  int result; // eax
-  int v6; // [esp+Ch] [ebp-4h]
+	const WCHAR *v1; // eax
+	DWORD v2; // eax
+	DWORD v3; // eax
+	int v4; // eax
+	int result; // eax
+	int v6; // [esp+Ch] [ebp-4h]
 
-  v6 = 0;
-  if (!sub_1003F4C(a1, (uint16*)L"/.SETUP"))
-  {
-    dword_100984C = 1;
-    hMenu = GetSystemMenu(hWndParent, 0);
-    hAccTable = LoadAcceleratorsW(hInstance, L"SlipUpAcc");
-    SetWindowLongW(hWndParent, -16, 16580608);
-	v1 = (const WCHAR *)sub_100417A(a1 + 7);
-    if ( !*v1 )
-      return 6;
-    sub_1003F99(sz, v1);
-    hFile = CreateFileW(sz, 0x80000000, 3u, 0, 3u, 0x80u, 0);
-    if ( hFile != (HANDLE)-1 )
-      goto LABEL_14;
-    v2 = GetLastError() - 2;
-    if ( v2 )
-    {
-      v3 = v2 - 3;
-      if ( v3 )
-        v4 = v3 == 118 ? sub_1001F70(hWndParent, lpCaption, (LPCWSTR)dword_1009064, sz, 0x31u) : sub_1001F70(
-                                                                                                   hWndParent,
-                                                                                                   lpCaption,
-                                                                                                   dword_1009034,
-                                                                                                   sz,
-                                                                                                   0x31u);
-      else
-        v4 = sub_1001F70(hWndParent, lpCaption, (LPCWSTR)dword_100909C, sz, 0x31u);
-      v6 = v4;
-    }
-    else
-    {
-      v6 = sub_1001F70(hWndParent, lpCaption, dword_1009038, sz, 0x33u);
-      if ( v6 == 6 )
-        hFile = CreateFileW(sz, 0xC0000000, 3u, 0, 4u, 0x80u, 0);
-    }
-    if ( hFile != (HANDLE)-1 )
-    {
-LABEL_14:
-      sub_1005179(sz, dword_1009A80);
-      result = 2;
-      if ( v6 == 2 )
-        return result;
-      return 6;
-    }
-  }
-  return 0;
-}
-// 100175C: using guessed type wchar_t aSetup[8];
+	v6 = 0;
+	if (!sub_1003F4C(a1, L"/.SETUP"))
+	{
+		dword_100984C = 1;
+		hMenu = GetSystemMenu(hWndParent, 0);
+		hAccTable = LoadAcceleratorsW(hInstance, L"SlipUpAcc");
+		SetWindowLongW(hWndParent, -16, 16580608);
+		v1 = sub_100417A(a1 + 7);
+		if (!*v1)
+			return 6;
+		sub_1003F99(sz, v1);
+		hFile = CreateFileW(sz, 0x80000000, 3u, 0, 3u, 0x80u, 0);
+		if (hFile != (HANDLE)-1)
+			goto LABEL_14;
+		v2 = GetLastError() - 2;
+		if (v2)
+		{
+			v3 = v2 - 3;
+			if (v3)
+				v4 = v3 == 118 ? sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[12], sz, 0x31u) : sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[0], sz, 0x31u);
+			else
+				v4 = sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[26], sz, 0x31u);
+			v6 = v4;
+		}
+		else
+		{
+			v6 = sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[1], sz, 0x33u);
+			if (v6 == 6)
+				hFile = CreateFileW(sz, 0xC0000000, 3u, 0, 4u, 0x80u, 0);
+		}
+		if (hFile != (HANDLE)-1)
+		{
+		LABEL_14:
+			sub_1005179(sz, dword_1009A80);
+			result = 2;
+			if (v6 == 2)
+				return result;
+			return 6;
+		}
+	}
+	return 0;
+}// 100175C: using guessed type wchar_t aSetup[8];
 // 1009064: using guessed type int dword_1009064;
 // 100909C: using guessed type int dword_100909C;
 // 100984C: using guessed type int dword_100984C;
@@ -2559,95 +2580,94 @@ LABEL_14:
 //----- (010042F9) --------------------------------------------------------
 int __stdcall sub_10042F9(int a1, int nCmdShow)
 {
-  const WCHAR *v2; // eax
-  const WCHAR *v3; // esi
-  WCHAR *v4; // eax
-  _WORD *v5; // eax
-  WCHAR *v6; // eax
-  unsigned int i; // edx
-  WCHAR v8; // cx
-  DWORD v9; // eax
-  DWORD v10; // eax
-  DWORD v11; // eax
-  const WCHAR *v12; // eax
-  int v14; // [esp+8h] [ebp-4h]
+	const WCHAR *v2; // eax
+	const WCHAR *v3; // esi
+	WCHAR *v4; // eax
+	WCHAR *v5; // eax
+	WCHAR *v6; // eax
+	unsigned int i; // edx
+	WCHAR v8; // cx
+	DWORD v9; // eax
+	DWORD v10; // eax
+	DWORD v11; // eax
+	const WCHAR *v12; // eax
+	int v14; // [esp+8h] [ebp-4h]
 
-  v14 = 1;
-  if (sub_1003F4C((unsigned __int16 *)a1, (uint16*)L"/PT"))
-  {
-	  if (sub_1003F4C((unsigned __int16 *)a1, (uint16*)L"/P"))
-      return 0;
-    v2 = (const WCHAR *)sub_100417A((_WORD *)(a1 + 4));
-  }
-  else
-  {
-    v2 = (const WCHAR *)sub_100417A((_WORD *)(a1 + 6));
-    v14 = 0;
-  }
-  v3 = v2;
-  if ( !*v2 )
-    return 0;
-  ShowWindow(hWndParent, nCmdShow);
-  v4 = (WCHAR *)(sub_1003F99(sz, v3) + 1);
-  if ( !v14 )
-  {
-    if ( *v4 )
-    {
-		v5 = sub_100417A((uint16*)v4);
-      if ( *v5 == 34 )
-      {
-        v6 = (WCHAR *)v5 + 1;
-        for ( i = 0; ; ++i )
-        {
-          v8 = *v6;
-          if ( !*v6 || v8 == 34 || i >= 0xFF )
-            break;
-          pPrinterName[i] = v8;
-          ++v6;
-        }
-        pPrinterName[i] = 0;
-        goto LABEL_15;
-      }
-    }
-    return 0;
-  }
+	v14 = 1;
+	if (sub_1003F4C((wchar_t *)a1, L"/PT"))
+	{
+		if (sub_1003F4C((wchar_t *)a1, L"/P"))
+			return 0;
+		v2 = sub_100417A((WCHAR *)(a1 + 4));
+	}
+	else
+	{
+		v2 = sub_100417A((WCHAR *)(a1 + 6));
+		v14 = 0;
+	}
+	v3 = v2;
+	if (!*v2)
+		return 0;
+	ShowWindow(hWndParent, nCmdShow);
+	v4 = (WCHAR *)(sub_1003F99(sz, v3) + 1);
+	if (!v14)
+	{
+		if (*v4)
+		{
+			v5 = sub_100417A(v4);
+			if (*v5 == 34)
+			{
+				v6 = v5 + 1;
+				for (i = 0;; ++i)
+				{
+					v8 = *v6;
+					if (!*v6 || v8 == 34 || i >= 0xFF)
+						break;
+					pPrinterName[i] = v8;
+					++v6;
+				}
+				pPrinterName[i] = 0;
+				goto LABEL_15;
+			}
+		}
+		return 0;
+	}
 LABEL_15:
-  hFile = CreateFileW(sz, 0x80000000, 3u, 0, 3u, 0x80u, 0);
-  if ( hFile == (HANDLE)-1 )
-  {
-    v9 = GetLastError() - 2;
-    if ( v9 )
-    {
-      v10 = v9 - 3;
-      if ( v10 && (v11 = v10 - 60) != 0 )
-      {
-        if ( v11 == 58 )
-          v12 = (const WCHAR *)dword_1009064;
-        else
-          v12 = dword_1009034;
-      }
-      else
-      {
-        v12 = (const WCHAR *)dword_100909C;
-      }
-    }
-    else
-    {
-      v12 = dword_1009038;
-    }
-    sub_1001F70(hWndParent, lpCaption, v12, sz, 0x30u);
-  }
-  else
-  {
-    sub_1005179(sz, dword_1009A80);
-    if ( v14 )
-      sub_1006E4B(1);
-    else
-      sub_1006E4B(2);
-  }
-  return 1;
-}
-// 100176C: using guessed type wchar_t aP[3];
+	hFile = CreateFileW(sz, 0x80000000, 3u, 0, 3u, 0x80u, 0);
+	if (hFile == (HANDLE)-1)
+	{
+		v9 = GetLastError() - 2;
+		if (v9)
+		{
+			v10 = v9 - 3;
+			if (v10 && (v11 = v10 - 60) != 0)
+			{
+				if (v11 == 58)
+					v12 = (const WCHAR *)dword_1009034[12];
+				else
+					v12 = (const WCHAR *)dword_1009034[0];
+			}
+			else
+			{
+				v12 = (const WCHAR *)dword_1009034[26];
+			}
+		}
+		else
+		{
+			v12 = (const WCHAR *)dword_1009034[1];
+		}
+		sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], v12, sz, 0x30u);
+	}
+	else
+	{
+		sub_1005179(sz, dword_1009A80);
+		if (v14)
+			sub_1006E4B(1);
+		else
+			sub_1006E4B(2);
+	}
+	return 1;
+}// 100176C: using guessed type wchar_t aP[3];
 // 1001774: using guessed type wchar_t aPt[4];
 // 1009064: using guessed type int dword_1009064;
 // 100909C: using guessed type int dword_100909C;
@@ -2655,245 +2675,245 @@ LABEL_15:
 //----- (01004458) --------------------------------------------------------
 int __stdcall sub_1004458(LPWSTR lpString1)
 {
-  WCHAR *v1; // ebx
-  WCHAR *v2; // ebx
-  WCHAR *v3; // ebx
-  int result; // eax
+	WCHAR *v1; // ebx
+	WCHAR *v2; // ebx
+	WCHAR *v3; // ebx
+	int result; // eax
 
-  lstrcpyW(lpString1, dword_1009084);
-  v1 = &lpString1[lstrlenW(lpString1) + 1];
-  lstrcpyW(v1, L"*.txt");
-  v2 = &v1[lstrlenW(v1) + 1];
-  lstrcpyW(v2, dword_1009088);
-  v3 = &v2[lstrlenW(v2) + 1];
-  lstrcpyW(v3, L"*.*");
-  result = lstrlenW(v3);
-  v3[result + 1] = 0;
-  return result;
+	lstrcpyW(lpString1, (LPCWSTR)dword_1009034[20]);
+	v1 = &lpString1[lstrlenW(lpString1) + 1];
+	lstrcpyW(v1, L"*.txt");
+	v2 = &v1[lstrlenW(v1) + 1];
+	lstrcpyW(v2, (LPCWSTR)dword_1009034[21]);
+	v3 = &v2[lstrlenW(v2) + 1];
+	lstrcpyW(v3, L"*.*");
+	result = lstrlenW(v3);
+	v3[result + 1] = 0;
+	return result;
 }
 
 //----- (010044BB) --------------------------------------------------------
 int __stdcall Proc(const LOGFONTW *a1, const TEXTMETRICW *a2, DWORD a3, LPARAM a4)
 {
-  *(_BYTE *)(a4 + 23) = a1->lfCharSet;
-  return 0;
+	*(_BYTE *)(a4 + 23) = a1->lfCharSet;
+	return 0;
 }
 
 //----- (010044D7) --------------------------------------------------------
 BOOL __usercall sub_10044D7(HINSTANCE a1)
 {
-  int v1; // eax
-  WNDCLASSEXW v3; // [esp+4h] [ebp-30h] BYREF
+	int v1; // eax
+	WNDCLASSEXW v3; // [esp+4h] [ebp-30h] BYREF
 
-  v3.cbSize = 48;
-  v1 = GetSystemMetrics(41);
-  v3.hCursor = LoadCursorW(0, (LPCWSTR)(32513 - (v1 != 0)));
-  v3.hIcon = LoadIconW(a1, (LPCWSTR)2);
-  v3.hIconSm = (HICON)LoadImageW(a1, (LPCWSTR)2, 1u, 16, 16, 0);
-  v3.lpszMenuName = (LPCWSTR)1;
-  v3.hInstance = a1;
-  v3.lpszClassName = ClassName;
-  v3.lpfnWndProc = sub_1003429;
-  v3.hbrBackground = (HBRUSH)6;
-  v3.style = 0;
-  v3.cbClsExtra = 0;
-  v3.cbWndExtra = 0;
-  return RegisterClassExW(&v3) != 0;
+	v3.cbSize = 48;
+	v1 = GetSystemMetrics(41);
+	v3.hCursor = LoadCursorW(0, (LPCWSTR)(32513 - (v1 != 0)));
+	v3.hIcon = LoadIconW(a1, (LPCWSTR)2);
+	v3.hIconSm = (HICON)LoadImageW(a1, (LPCWSTR)2, 1u, 16, 16, 0);
+	v3.lpszMenuName = (LPCWSTR)1;
+	v3.hInstance = a1;
+	v3.lpszClassName = ClassName;
+	v3.lpfnWndProc = sub_1003429;
+	v3.hbrBackground = (HBRUSH)6;
+	v3.style = 0;
+	v3.cbClsExtra = 0;
+	v3.cbWndExtra = 0;
+	return RegisterClassExW(&v3) != 0;
 }
 
 //----- (01004565) --------------------------------------------------------
 // @@Œ¥≥ı ºªØ
 int __stdcall sub_1004565(HINSTANCE hInstance, int a2, int a3, int nCmdShow)
 {
-  int v4; // eax
-  HACCEL v5; // eax
-  void *v6 = 0; // ecx
-  HWND v7; // edx
-  HMENU v8; // eax
-  HMENU v9; // eax
-  int v10; // eax
-  unsigned __int16 *v11; // eax
-  unsigned __int16 *v12; // edi
-  int v13; // eax
-  int v15; // eax
-  WINDOWPLACEMENT wndpl; // [esp+Ch] [ebp-A8h] BYREF
-  struct tagRECT Rect; // [esp+38h] [ebp-7Ch] BYREF
-  struct tagRECT v18; // [esp+48h] [ebp-6Ch] BYREF
-  LPARAM lParam[2]; // [esp+58h] [ebp-5Ch] BYREF
-  HINSTANCE v20; // [esp+60h] [ebp-54h]
-  LPARAM v21; // [esp+64h] [ebp-50h] BYREF
-  HGDIOBJ h; // [esp+68h] [ebp-4Ch] BYREF
-  HDC hdc; // [esp+6Ch] [ebp-48h]
-  WCHAR Name[32]; // [esp+70h] [ebp-44h] BYREF
+	int v4; // eax
+	HACCEL v5; // eax
+	void *v6 = 0; // ecx
+	HWND v7; // edx
+	HMENU v8; // eax
+	HMENU v9; // eax
+	int v10; // eax
+	wchar_t *v11; // eax
+	wchar_t *v12; // edi
+	int v13; // eax
+	int v15; // eax
+	WINDOWPLACEMENT wndpl; // [esp+Ch] [ebp-A8h] BYREF
+	struct tagRECT Rect; // [esp+38h] [ebp-7Ch] BYREF
+	struct tagRECT v18; // [esp+48h] [ebp-6Ch] BYREF
+	LPARAM lParam[2]; // [esp+58h] [ebp-5Ch] BYREF
+	HINSTANCE v20; // [esp+60h] [ebp-54h]
+	LPARAM v21; // [esp+64h] [ebp-50h] BYREF
+	HGDIOBJ h; // [esp+68h] [ebp-4Ch] BYREF
+	HDC hdc; // [esp+6Ch] [ebp-48h]
+	WCHAR Name[32]; // [esp+70h] [ebp-44h] BYREF
 
-  v20 = hInstance;
-  v21 = a3;
-  dword_100A488 = RegisterWindowMessageW(L"commdlg_FindReplace");
-  if ( !dword_100A488 )
-    return 0;
-  dword_100A484 = RegisterWindowMessageW(L"commdlg_help");
-  if ( !dword_100A484 )
-    return 0;
-  hdc = GetDC(0);
-  if ( !hdc )
-    return 0;
-  if ( !sub_10040BA(hInstance) )
-    return 0;
-  v4 = GetSystemMetrics(41);
-  dword_100AB88 = LoadCursorW(0, (LPCWSTR)(32513 - (v4 != 0)));
-  hCursor = LoadCursorW(0, (LPCWSTR)0x7F02);
-  v5 = LoadAcceleratorsW(hInstance, L"MainAcc");
-  hAccTable = v5;
-  if ( !hCursor || !v5 || !a2 && !sub_10044D7(hInstance) )
-    return 0;
-  ::hInstance = hInstance;
-  stru_100A4A0.lStructSize = 84;
-  stru_100A4A0.hDevMode = 0;
-  stru_100A4A0.hDevNames = 0;
-  stru_100A4A0.hInstance = hInstance;
-  sub_100195D(v6);
-  sub_1003C92();
-  v7 = CreateWindowExW(0, ClassName, &WindowName, 0xCF0000u, X, Y, nWidth, nHeight, 0, 0, hInstance, 0);
-  hWndParent = v7;
-  stru_100A4A0.hwndOwner = v7;
-  if ( !v7 )
-    return 0;
-  if ( nWidth != 0x80000000 && nHeight != 0x80000000 )
-  {
-    memset(&wndpl, 0, sizeof(wndpl));
-    wndpl.rcNormalPosition.left = X;
-    wndpl.rcNormalPosition.right = nWidth + X;
-    wndpl.rcNormalPosition.top = Y;
-    wndpl.rcNormalPosition.bottom = nHeight + Y;
-    wndpl.length = 44;
-    SetWindowPlacement(v7, &wndpl);
-    v7 = hWndParent;
-  }
-  DragAcceptFiles(v7, 1);
-  GetClientRect(hWndParent, &Rect);
-  hWnd = CreateWindowExW(
-           0x200u,
-           L"Edit",
-           &WindowName,
-           dword_1009850 != 0 ? 1344274692 : 1345323268,
-           0,
-           0,
-           Rect.right,
-           Rect.bottom - 100,
-           hWndParent,
-           (HMENU)0xF,
-           v20,
-           0);
-  if ( !hWnd )
-    return 0;
-  dword_1009834 = CreateStatusWindowW(
-                    (*(_DWORD *)&dword_1009840 != 0 ? 0x10000000 : 0) | 0x44800000,
-                    &WindowName,
-                    hWndParent,
-                    0x401u);
-  if ( !dword_1009834 )
-    return 0;
-  sub_1001C42(1);
-  GetClientRect(dword_1009834, &v18);
-  dword_100A6E0 = v18.bottom - v18.top;
-  lParam[1] = -1;
-  lParam[0] = 3 * (v18.right - v18.left) / 4;
-  SendMessageW(dword_1009834, 0x404u, 2u, (LPARAM)lParam);
-  SendMessageW(hWnd, 0xC8u, dword_1009850, 0);
-  if ( dword_1009850 )
-  {
-    v8 = GetMenu(hWndParent);
-    v9 = GetSubMenu(v8, 3);
-    EnableMenuItem(v9, 0x1Bu, 1u);
-  }
-  v10 = GetDeviceCaps(hdc, 90);
-  lf.lfHeight = -MulDiv(*(int *)&Data, v10, 720);
-  ho = CreateFontIndirectW(&lf);
-  h = SelectObject(hdc, ho);
-  GetTextFaceW(hdc, 32, Name);
-  SelectObject(hdc, h);
-  if ( lstrcmpiW(Name, lf.lfFaceName) )
-  {
-    EnumFontsW(hdc, lf.lfFaceName, Proc, (LPARAM)&lf);
-    DeleteObject(ho);
-    ho = CreateFontIndirectW(&lf);
-  }
-  SendMessageW(hWnd, 0x30u, (WPARAM)ho, 0);
-  ReleaseDC(0, hdc);
-  word_100A800 = 0;
-  hMem = LocalAlloc(0x42u, 2u);
-  PostMessageW(hWnd, 0xC5u, 0, 0);
-  sub_1002A55(lpString);
-  ShowWindow(hWndParent, nCmdShow);
-  SetCursor(dword_100AB88);
-  v11 = sub_100417A((_WORD *)v21);
-  dword_1009A80 = -1;
-  v12 = v11;
-  if (!sub_1003F4C(v11, (uint16*)L"/A"))
-  {
-    dword_1009A80 = 0;
-LABEL_24:
-    v12 = sub_100417A(v12 + 2);
-    goto LABEL_25;
-  }
-  if (!sub_1003F4C(v12, (uint16*)L"/W"))
-    dword_1009A80 = 1;
-  if ( dword_1009A80 != -1 )
-    goto LABEL_24;
+	v20 = hInstance;
+	v21 = a3;
+	dword_100A488 = RegisterWindowMessageW(L"commdlg_FindReplace");
+	if (!dword_100A488)
+		return 0;
+	dword_100A484 = RegisterWindowMessageW(L"commdlg_help");
+	if (!dword_100A484)
+		return 0;
+	hdc = GetDC(0);
+	if (!hdc)
+		return 0;
+	if (!sub_10040BA(hInstance))
+		return 0;
+	v4 = GetSystemMetrics(41);
+	dword_100AB88 = LoadCursorW(0, (LPCWSTR)(32513 - (v4 != 0)));
+	hCursor = LoadCursorW(0, (LPCWSTR)0x7F02);
+	v5 = LoadAcceleratorsW(hInstance, L"MainAcc");
+	hAccTable = v5;
+	if (!hCursor || !v5 || !a2 && !sub_10044D7(hInstance))
+		return 0;
+	::hInstance = hInstance;
+	stru_100A4A0.lStructSize = 84;
+	stru_100A4A0.hDevMode = 0;
+	stru_100A4A0.hDevNames = 0;
+	stru_100A4A0.hInstance = hInstance;
+	sub_100195D(v6);
+	sub_1003C92();
+	v7 = CreateWindowExW(0, ClassName, &WindowName, 0xCF0000u, X, Y, nWidth, nHeight, 0, 0, hInstance, 0);
+	hWndParent = v7;
+	stru_100A4A0.hwndOwner = v7;
+	if (!v7)
+		return 0;
+	if (nWidth != 0x80000000 && nHeight != 0x80000000)
+	{
+		memset(&wndpl, 0, sizeof(wndpl));
+		wndpl.rcNormalPosition.left = X;
+		wndpl.rcNormalPosition.right = nWidth + X;
+		wndpl.rcNormalPosition.top = Y;
+		wndpl.rcNormalPosition.bottom = nHeight + Y;
+		wndpl.length = 44;
+		SetWindowPlacement(v7, &wndpl);
+		v7 = hWndParent;
+	}
+	DragAcceptFiles(v7, 1);
+	GetClientRect(hWndParent, &Rect);
+	hWnd = CreateWindowExW(
+		0x200u,
+		L"Edit",
+		&WindowName,
+		dword_1009850 != 0 ? 1344274692 : 1345323268,
+		0,
+		0,
+		Rect.right,
+		Rect.bottom - 100,
+		hWndParent,
+		(HMENU)0xF,
+		v20,
+		0);
+	if (!hWnd)
+		return 0;
+	dword_1009834 = CreateStatusWindowW(
+		(*(_DWORD *)&dword_1009840 != 0 ? 0x10000000 : 0) | 0x44800000,
+		&WindowName,
+		hWndParent,
+		0x401u);
+	if (!dword_1009834)
+		return 0;
+	sub_1001C42(1);
+	GetClientRect(dword_1009834, &v18);
+	dword_100A6E0 = v18.bottom - v18.top;
+	lParam[1] = -1;
+	lParam[0] = 3 * (v18.right - v18.left) / 4;
+	SendMessageW(dword_1009834, 0x404u, 2u, (LPARAM)lParam);
+	SendMessageW(hWnd, 0xC8u, dword_1009850, 0);
+	if (dword_1009850)
+	{
+		v8 = GetMenu(hWndParent);
+		v9 = GetSubMenu(v8, 3);
+		EnableMenuItem(v9, 0x1Bu, 1u);
+	}
+	v10 = GetDeviceCaps(hdc, 90);
+	lf.lfHeight = -MulDiv(*(int *)&Data, v10, 720);
+	ho = CreateFontIndirectW(&lf);
+	h = SelectObject(hdc, ho);
+	GetTextFaceW(hdc, 32, Name);
+	SelectObject(hdc, h);
+	if (lstrcmpiW(Name, lf.lfFaceName))
+	{
+		EnumFontsW(hdc, lf.lfFaceName, Proc, (LPARAM)&lf);
+		DeleteObject(ho);
+		ho = CreateFontIndirectW(&lf);
+	}
+	SendMessageW(hWnd, 0x30u, (WPARAM)ho, 0);
+	ReleaseDC(0, hdc);
+	word_100A800 = 0;
+	hMem = LocalAlloc(0x42u, 2u);
+	PostMessageW(hWnd, 0xC5u, 0, 0);
+	sub_1002A55((LPCWSTR)dword_1009034[3]);
+	ShowWindow(hWndParent, nCmdShow);
+	SetCursor(dword_100AB88);
+	v11 = sub_100417A((WCHAR *)v21);
+	dword_1009A80 = -1;
+	v12 = v11;
+	if (!sub_1003F4C(v11, L"/A"))
+	{
+		dword_1009A80 = 0;
+	LABEL_24:
+		v12 = sub_100417A(v12 + 2);
+		goto LABEL_25;
+	}
+	if (!sub_1003F4C(v12, L"/W"))
+		dword_1009A80 = 1;
+	if (dword_1009A80 != -1)
+		goto LABEL_24;
 LABEL_25:
-  v13 = sub_100419E(v12);
-  if ( v13 )
-  {
-    if ( v13 == 2 )
-      return 0;
-LABEL_39:
-    sub_1004458(&word_100A5E0);
-    sub_1004458(&word_100A540);
-    memset(&stru_100A680, 0, sizeof(stru_100A680));
-    stru_100A680.hInstance = v20;
-    memset(&stru_100A500, 0, sizeof(stru_100A500));
-    stru_100A680.lStructSize = 88;
-    stru_100A680.hwndOwner = hWndParent;
-    stru_100A680.nMaxFile = 260;
-    stru_100A500.lStructSize = 40;
-    stru_100A500.hwndOwner = hWndParent;
-    SendMessageW(hWnd, 0xB0u, (WPARAM)&h, (LPARAM)&v21);
-    SendMessageW(hWnd, 0xB1u, (WPARAM)h, v21);
-    SendMessageW(hWnd, 0xB7u, 0, 0);
-    if ( ((unsigned __int16)GetKeyboardLayout(0) & 0x3FF) == 17 )
-      SendMessageW(hWnd, 0xD8u, 1u, 1);
-    return 1;
-  }
-  if ( !sub_10042F9((int)v12, nCmdShow) )
-  {
-    if ( *v12 )
-    {
-		sub_1003F99(sz, (WCHAR*)v12);
-      hFile = CreateFileW(sz, 0x80000000, 3u, 0, 3u, 0x80u, 0);
-      if ( hFile != (HANDLE)-1 )
-        goto LABEL_38;
-      if ( GetLastError() == 2 )
-      {
-        v15 = sub_1001F70(hWndParent, lpCaption, dword_1009038, sz, 0x33u);
-        if ( v15 == 2 )
-          return 0;
-        if ( v15 == 6 )
-          hFile = CreateFileW(sz, 0xC0000000, 3u, 0, 4u, 0x80u, 0);
-      }
-      else
-      {
-        sub_1004E20(sz);
-        sub_1002A55(lpString);
-        lstrcpyW(sz, lpString);
-      }
-      if ( hFile != (HANDLE)-1 )
-LABEL_38:
-        sub_1005179(sz, dword_1009A80);
-    }
-    goto LABEL_39;
-  }
-  PostMessageW(hWndParent, 0x10u, 0, 0);
-  return 1;
+	v13 = sub_100419E(v12);
+	if (v13)
+	{
+		if (v13 == 2)
+			return 0;
+	LABEL_39:
+		sub_1004458(&word_100A5E0);
+		sub_1004458(&word_100A540);
+		memset(&stru_100A680, 0, sizeof(stru_100A680));
+		stru_100A680.hInstance = v20;
+		memset(&stru_100A500, 0, sizeof(stru_100A500));
+		stru_100A680.lStructSize = 88;
+		stru_100A680.hwndOwner = hWndParent;
+		stru_100A680.nMaxFile = 260;
+		stru_100A500.lStructSize = 40;
+		stru_100A500.hwndOwner = hWndParent;
+		SendMessageW(hWnd, 0xB0u, (WPARAM)&h, (LPARAM)&v21);
+		SendMessageW(hWnd, 0xB1u, (WPARAM)h, v21);
+		SendMessageW(hWnd, 0xB7u, 0, 0);
+		if (((wchar_t)GetKeyboardLayout(0) & 0x3FF) == 17)
+			SendMessageW(hWnd, 0xD8u, 1u, 1);
+		return 1;
+	}
+	if (!sub_10042F9((int)v12, nCmdShow))
+	{
+		if (*v12)
+		{
+			sub_1003F99(sz, (WCHAR*)v12);
+			hFile = CreateFileW(sz, 0x80000000, 3u, 0, 3u, 0x80u, 0);
+			if (hFile != (HANDLE)-1)
+				goto LABEL_38;
+			if (GetLastError() == 2)
+			{
+				v15 = sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[1], sz, 0x33u);
+				if (v15 == 2)
+					return 0;
+				if (v15 == 6)
+					hFile = CreateFileW(sz, 0xC0000000, 3u, 0, 4u, 0x80u, 0);
+			}
+			else
+			{
+				sub_1004E20(sz);
+				sub_1002A55((LPCWSTR)dword_1009034[3]);
+				lstrcpyW(sz, (LPCWSTR)dword_1009034[3]);
+			}
+			if (hFile != (HANDLE)-1)
+			LABEL_38:
+			sub_1005179(sz, dword_1009A80);
+		}
+		goto LABEL_39;
+	}
+	PostMessageW(hWndParent, 0x10u, 0, 0);
+	return 1;
 }
 // 100465D: variable 'v6' is possibly undefined
 // 1001784: using guessed type wchar_t aW[3];
@@ -2903,569 +2923,566 @@ LABEL_38:
 // 100A6E0: using guessed type int dword_100A6E0;
 
 //----- (01004B65) --------------------------------------------------------
-void __stdcall sub_1004B65(_WORD *a1, _BYTE *a2, int a3)
+void __stdcall sub_1004B65(wchar_t *a1, _BYTE *a2, int a3)
 {
-  int i; // esi
-  __int16 v6; // bx
+	int i; // esi
+	__int16 v6; // bx
 
-  for ( i = a3; i; --i )
-  {
-    LOBYTE(v6) = 0;
-    HIBYTE(v6) = *a2;
-    *a1++ = v6 ^ (unsigned __int8)a2[1];
-    a2 += 2;
-  }
+	for (i = a3; i; --i)
+	{
+		LOBYTE(v6) = 0;
+		HIBYTE(v6) = *a2;
+		*a1++ = v6 ^ (unsigned __int8)a2[1];
+		a2 += 2;
+	}
 }
 
 //----- (01004B99) --------------------------------------------------------
 int __stdcall sub_1004B99(HANDLE hFile, UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar)
 {
-  int v6; // edi
-  HLOCAL v7; // eax
-  int v8; // esi
-  DWORD NumberOfBytesWritten; // [esp+4h] [ebp-10h] BYREF
-  char v10; // [esp+8h] [ebp-Ch] BYREF
-  LPCVOID lpBuffer; // [esp+Ch] [ebp-8h]
-  LPBOOL lpUsedDefaultChar; // [esp+10h] [ebp-4h]
+	int v6; // edi
+	HLOCAL v7; // eax
+	int v8; // esi
+	DWORD NumberOfBytesWritten; // [esp+4h] [ebp-10h] BYREF
+	char v10; // [esp+8h] [ebp-Ch] BYREF
+	LPCVOID lpBuffer; // [esp+Ch] [ebp-8h]
+	LPBOOL lpUsedDefaultChar; // [esp+10h] [ebp-4h]
 
-  if ( !cchWideChar )
-    return 1;
-  lpUsedDefaultChar = 0;
-  if ( CodePage != 65001 )
-    lpUsedDefaultChar = (LPBOOL)&v10;
-  v6 = WideCharToMultiByte(CodePage, dwFlags, lpWideCharStr, cchWideChar, 0, 0, 0, lpUsedDefaultChar);
-  if ( !v6 )
-    return 0;
-  v7 = LocalAlloc(0x40u, v6 + 1);
-  lpBuffer = v7;
-  if ( !v7 )
-  {
-    SetLastError(8u);
-    return 0;
-  }
-  v8 = WideCharToMultiByte(CodePage, dwFlags, lpWideCharStr, cchWideChar, (LPSTR)v7, v6, 0, lpUsedDefaultChar);
-  if ( v8 )
-    v8 = WriteFile(hFile, lpBuffer, v6, &NumberOfBytesWritten, 0);
-  LocalFree((HLOCAL)lpBuffer);
-  return v8;
+	if (!cchWideChar)
+		return 1;
+	lpUsedDefaultChar = 0;
+	if (CodePage != 65001)
+		lpUsedDefaultChar = (LPBOOL)&v10;
+	v6 = WideCharToMultiByte(CodePage, dwFlags, lpWideCharStr, cchWideChar, 0, 0, 0, lpUsedDefaultChar);
+	if (!v6)
+		return 0;
+	v7 = LocalAlloc(0x40u, v6 + 1);
+	lpBuffer = v7;
+	if (!v7)
+	{
+		SetLastError(8u);
+		return 0;
+	}
+	v8 = WideCharToMultiByte(CodePage, dwFlags, lpWideCharStr, cchWideChar, (LPSTR)v7, v6, 0, lpUsedDefaultChar);
+	if (v8)
+		v8 = WriteFile(hFile, lpBuffer, v6, &NumberOfBytesWritten, 0);
+	LocalFree((HLOCAL)lpBuffer);
+	return v8;
 }
 
 //----- (01004C49) --------------------------------------------------------
 LRESULT sub_1004C49()
 {
-  LRESULT result; // eax
+	LRESULT result; // eax
 
-  if ( dword_1009850 )
-  {
-    if ( *(_DWORD *)&dword_1009858 )
-    {
-      sub_1001B99(1);
-    }
-    else
-    {
-      SendMessageW(hWnd, 0xB0u, (WPARAM)&dword_1009A8C, (LPARAM)&dword_1009A88);
-      SendMessageW(hWnd, 0xB1u, 0, 0);
-    }
-    result = SendMessageW(hWnd, 0xC8u, 0, 0);
-  }
-  return result;
+	if (dword_1009850)
+	{
+		if (*(_DWORD *)&dword_1009858)
+		{
+			sub_1001B99(1);
+		}
+		else
+		{
+			SendMessageW(hWnd, 0xB0u, (WPARAM)&dword_1009A8C, (LPARAM)&dword_1009A88);
+			SendMessageW(hWnd, 0xB1u, 0, 0);
+		}
+		result = SendMessageW(hWnd, 0xC8u, 0, 0);
+	}
+	return result;
 }
 
 //----- (01004CAB) --------------------------------------------------------
 LRESULT sub_1004CAB()
 {
-  LRESULT result; // eax
+	LRESULT result; // eax
 
-  result = 0;
-  if ( dword_1009850 )
-  {
-    if ( *(_DWORD *)&dword_1009858 )
-    {
-      result = sub_1005B41(0x50200104u);
-    }
-    else
-    {
-      SendMessageW(hWnd, 0xC8u, 1u, 0);
-      result = SendMessageW(hWnd, 0xB1u, dword_1009A8C, dword_1009A88);
-    }
-  }
-  return result;
+	result = 0;
+	if (dword_1009850)
+	{
+		if (*(_DWORD *)&dword_1009858)
+		{
+			result = sub_1005B41(0x50200104u);
+		}
+		else
+		{
+			SendMessageW(hWnd, 0xC8u, 1u, 0);
+			result = SendMessageW(hWnd, 0xB1u, dword_1009A8C, dword_1009A88);
+		}
+	}
+	return result;
 }
 
 //----- (01004CFF) --------------------------------------------------------
 LRESULT __stdcall sub_1004CFF(int a1)
 {
-  LRESULT result; // eax
-  HLOCAL v2; // eax
+	LRESULT result; // eax
+	HLOCAL v2; // eax
 
-  if ( !a1 || (result = sub_100270F(0)) != 0 )
-  {
-    SendMessageW(hWnd, 0xCu, 0, (LPARAM)&WindowName);
-    dword_100901C = 1;
-    lstrcpyW(sz, lpString);
-    sub_1002A55(sz);
-    SendMessageW(hWnd, 0xB1u, 0, 0);
-    SendMessageW(hWnd, 0xB7u, 0, 0);
-    v2 = LocalReAlloc(hMem, 2u, 2u);
-    if ( v2 )
-      hMem = v2;
-    *(_WORD *)LocalLock(hMem) = 0;
-    LocalUnlock(hMem);
-    result = SendMessageW(hWnd, 0xBCu, (WPARAM)hMem, 0);
-    word_100A800 = 0;
-  }
-  return result;
-}
-// 100901C: using guessed type int dword_100901C;
+	if (!a1 || (result = sub_100270F(0)) != 0)
+	{
+		SendMessageW(hWnd, 0xCu, 0, (LPARAM)&WindowName);
+		dword_100901C = 1;
+		lstrcpyW(sz, (LPCWSTR)dword_1009034[3]);
+		sub_1002A55(sz);
+		SendMessageW(hWnd, 0xB1u, 0, 0);
+		SendMessageW(hWnd, 0xB7u, 0, 0);
+		v2 = LocalReAlloc(hMem, 2u, 2u);
+		if (v2)
+			hMem = v2;
+		*(WCHAR *)LocalLock(hMem) = 0;
+		LocalUnlock(hMem);
+		result = SendMessageW(hWnd, 0xBCu, (WPARAM)hMem, 0);
+		word_100A800 = 0;
+	}
+	return result;
+}// 100901C: using guessed type int dword_100901C;
 
 //----- (01004DCD) --------------------------------------------------------
 unsigned int __stdcall sub_1004DCD(LPCWSTR lpString)
 {
-  unsigned int result; // eax
-  const WCHAR *i; // ecx
-  int v3; // edx
+	unsigned int result; // eax
+	const WCHAR *i; // ecx
+	int v3; // edx
 
-  result = lstrlenW(lpString);
-  for ( i = &lpString[result]; ; --i )
-  {
-    v3 = *i;
-    if ( v3 == 46 || v3 == 92 || v3 == 58 || i <= lpString )
-      break;
-  }
-  if ( *i != 46 )
-  {
-    result += 5;
-    if ( result <= 0x104 )
-      result = (unsigned int)lstrcatW((LPWSTR)lpString, L".txt");
-  }
-  return result;
+	result = lstrlenW(lpString);
+	for (i = &lpString[result];; --i)
+	{
+		v3 = *i;
+		if (v3 == 46 || v3 == 92 || v3 == 58 || i <= lpString)
+			break;
+	}
+	if (*i != 46)
+	{
+		result += 5;
+		if (result <= 0x104)
+			result = (unsigned int)lstrcatW((LPWSTR)lpString, L".txt");
+	}
+	return result;
 }
 
 //----- (01004E20) --------------------------------------------------------
 int __stdcall sub_1004E20(LPCWSTR lpString)
 {
-  DWORD v1; // eax
-  int result; // eax
-  DWORD v3; // [esp-10h] [ebp-218h]
-  WCHAR Buffer[256]; // [esp+4h] [ebp-204h] BYREF
+	DWORD v1; // eax
+	int result; // eax
+	DWORD v3; // [esp-10h] [ebp-218h]
+	WCHAR Buffer[256]; // [esp+4h] [ebp-204h] BYREF
 
-  v3 = GetUserDefaultUILanguage();
-  v1 = GetLastError();
-  if ( FormatMessageW(0x1200u, 0, v1, v3, Buffer, 0x100u, 0) )
-    result = MessageBoxW(hWndParent, Buffer, lpCaption, 0x30u);
-  else
-    result = sub_1001F70(hWndParent, lpCaption, dword_1009034, lpString, 0x30u);
-  return result;
+	v3 = GetUserDefaultUILanguage();
+	v1 = GetLastError();
+	if (FormatMessageW(0x1200u, 0, v1, v3, Buffer, 0x100u, 0))
+		result = MessageBoxW(hWndParent, Buffer, (LPCWSTR)dword_1009034[8], 0x30u);
+	else
+		result = sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[0], lpString, 0x30u);
+	return result;
 }
 
 //----- (01004EAE) --------------------------------------------------------
 int __stdcall sub_1004EAE(HWND hWnd, LPCWSTR lpFileName, LPCWCH lpWideCharStr)
 {
-  HANDLE v3; // eax
-  int v5; // ebx
-  void *v6; // eax
-  BOOL *v7; // eax
-  DWORD v8; // edi
-  int v9; // eax
-  int v10; // eax
-  BOOL v11; // edi
-  BOOL v12; // [esp+4h] [ebp-14h]
-  BOOL UsedDefaultChar; // [esp+8h] [ebp-10h] BYREF
-  HLOCAL hMem; // [esp+Ch] [ebp-Ch]
-  UINT CodePage; // [esp+10h] [ebp-8h]
-  DWORD NumberOfBytesWritten; // [esp+14h] [ebp-4h] BYREF
-  WCHAR *lpWideCharStra; // [esp+28h] [ebp+10h]
+	HANDLE v3; // eax
+	int v5; // ebx
+	void *v6; // eax
+	BOOL *v7; // eax
+	DWORD v8; // edi
+	int v9; // eax
+	int v10; // eax
+	BOOL v11; // edi
+	BOOL v12; // [esp+4h] [ebp-14h]
+	BOOL UsedDefaultChar; // [esp+8h] [ebp-10h] BYREF
+	HLOCAL hMem; // [esp+Ch] [ebp-Ch]
+	UINT CodePage; // [esp+10h] [ebp-8h]
+	DWORD NumberOfBytesWritten; // [esp+14h] [ebp-4h] BYREF
+	WCHAR *lpWideCharStra; // [esp+28h] [ebp+10h]
 
-  UsedDefaultChar = 0;
-  if ( lpWideCharStr )
-    v3 = CreateFileW(lpFileName, 0xC0000000, 3u, 0, 4u, 0x80u, 0);
-  else
-    v3 = CreateFileW(lpFileName, 0xC0000000, 1u, 0, 4u, 0x80u, 0);
-  hFile = v3;
-  if ( v3 == (HANDLE)-1 || (v12 = GetLastError() != 183, hFile == (HANDLE)-1) )
-  {
-    sub_1001F70(hWnd, lpCaption, dword_1009068, lpFileName, 0x30u);
-    return 0;
-  }
-  if ( dword_1009850 )
-    sub_1004C49();
-  v5 = SendMessageW(::hWnd, 0xEu, 0, 0);
-  v6 = (void *)SendMessageW(::hWnd, 0xBDu, 0, 0);
-  hMem = v6;
-  if ( !v6 )
-    goto LABEL_29;
-  lpWideCharStra = (WCHAR *)LocalLock(v6);
-  if ( !lpWideCharStra )
-    goto LABEL_29;
-  if ( dword_100A528 == 1 )
-  {
-    WriteFile(hFile, &unk_10091E4, 2u, &NumberOfBytesWritten, 0);
-    v10 = WriteFile(hFile, lpWideCharStra, 2 * v5, &NumberOfBytesWritten, 0);
-  }
-  else
-  {
-    if ( dword_100A528 == 2 )
-    {
-      WriteFile(hFile, &unk_10091E8, 2u, &NumberOfBytesWritten, 0);
-	  sub_1004B65((uint16*)lpWideCharStra, (uint8*)lpWideCharStra, v5);
-      v11 = WriteFile(hFile, lpWideCharStra, 2 * v5, &NumberOfBytesWritten, 0);
-	  sub_1004B65((uint16*)lpWideCharStra, (uint8*)lpWideCharStra, v5);
-      goto LABEL_27;
-    }
-    if ( dword_100A528 == 3 )
-      WriteFile(hFile, &unk_10091E0, 3u, &NumberOfBytesWritten, 0);
-    if ( dword_100A528 == 3 )
-    {
-      v7 = 0;
-      CodePage = 65001;
-      v8 = 0;
-    }
-    else
-    {
-      CodePage = GetACP();
-      v7 = &UsedDefaultChar;
-      v8 = 1024;
-    }
-    v9 = WideCharToMultiByte(CodePage, v8, lpWideCharStra, v5, 0, 0, 0, v7);
-    if ( UsedDefaultChar || v5 && !v9 )
-    {
-      if ( sub_1001F70(hWnd, lpCaption, dword_10090A0, lpFileName, 0x31u) == 2 )
-      {
-LABEL_30:
-        SetCursor(dword_100AB88);
-        CloseHandle(hFile);
-        hFile = (HANDLE)-1;
-        if ( hMem )
-          LocalUnlock(hMem);
-        if ( v12 )
-          DeleteFileW(lpFileName);
-        if ( dword_1009850 )
-          sub_1004CAB();
-        return 0;
-      }
-      v8 = 0;
-    }
-    v10 = sub_1004B99(hFile, CodePage, v8, lpWideCharStra, v5);
-  }
-  v11 = v10;
+	UsedDefaultChar = 0;
+	if (lpWideCharStr)
+		v3 = CreateFileW(lpFileName, 0xC0000000, 3u, 0, 4u, 0x80u, 0);
+	else
+		v3 = CreateFileW(lpFileName, 0xC0000000, 1u, 0, 4u, 0x80u, 0);
+	hFile = v3;
+	if (v3 == (HANDLE)-1 || (v12 = GetLastError() != 183, hFile == (HANDLE)-1))
+	{
+		sub_1001F70(hWnd, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[13], lpFileName, 0x30u);
+		return 0;
+	}
+	if (dword_1009850)
+		sub_1004C49();
+	v5 = SendMessageW(::hWnd, 0xEu, 0, 0);
+	v6 = (void *)SendMessageW(::hWnd, 0xBDu, 0, 0);
+	hMem = v6;
+	if (!v6)
+		goto LABEL_29;
+	lpWideCharStra = (WCHAR *)LocalLock(v6);
+	if (!lpWideCharStra)
+		goto LABEL_29;
+	if (dword_100A528 == 1)
+	{
+		WriteFile(hFile, &unk_10091E4, 2u, &NumberOfBytesWritten, 0);
+		v10 = WriteFile(hFile, lpWideCharStra, 2 * v5, &NumberOfBytesWritten, 0);
+	}
+	else
+	{
+		if (dword_100A528 == 2)
+		{
+			WriteFile(hFile, &unk_10091E8, 2u, &NumberOfBytesWritten, 0);
+			sub_1004B65(lpWideCharStra, (BYTE *)lpWideCharStra, v5);
+			v11 = WriteFile(hFile, lpWideCharStra, 2 * v5, &NumberOfBytesWritten, 0);
+			sub_1004B65(lpWideCharStra, (BYTE *)lpWideCharStra, v5);
+			goto LABEL_27;
+		}
+		if (dword_100A528 == 3)
+			WriteFile(hFile, &unk_10091E0, 3u, &NumberOfBytesWritten, 0);
+		if (dword_100A528 == 3)
+		{
+			v7 = 0;
+			CodePage = 65001;
+			v8 = 0;
+		}
+		else
+		{
+			CodePage = GetACP();
+			v7 = &UsedDefaultChar;
+			v8 = 1024;
+		}
+		v9 = WideCharToMultiByte(CodePage, v8, lpWideCharStra, v5, 0, 0, 0, v7);
+		if (UsedDefaultChar || v5 && !v9)
+		{
+			if (sub_1001F70(hWnd, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[27], lpFileName, 0x31u) == 2)
+			{
+			LABEL_30:
+				SetCursor(dword_100AB88);
+				CloseHandle(hFile);
+				hFile = (HANDLE)-1;
+				if (hMem)
+					LocalUnlock(hMem);
+				if (v12)
+					DeleteFileW(lpFileName);
+				if (dword_1009850)
+					sub_1004CAB();
+				return 0;
+			}
+			v8 = 0;
+		}
+		v10 = sub_1004B99(hFile, CodePage, v8, lpWideCharStra, v5);
+	}
+	v11 = v10;
 LABEL_27:
-  if ( !v11 )
-  {
-    SetCursor(dword_100AB88);
-LABEL_29:
-    sub_1004E20(lpFileName);
-    goto LABEL_30;
-  }
-  SetEndOfFile(hFile);
-  dword_1009030 = dword_100A528;
-  SendMessageW(::hWnd, 0xB9u, 0, 0);
-  sub_1002A55(lpFileName);
-  dword_100901C = 0;
-  CloseHandle(hFile);
-  hFile = (HANDLE)-1;
-  LocalUnlock(hMem);
-  if ( dword_1009850 )
-    sub_1004CAB();
-  SetCursor(dword_100AB88);
-  return 1;
-}
-// 100901C: using guessed type int dword_100901C;
+	if (!v11)
+	{
+		SetCursor(dword_100AB88);
+	LABEL_29:
+		sub_1004E20(lpFileName);
+		goto LABEL_30;
+	}
+	SetEndOfFile(hFile);
+	dword_1009030 = dword_100A528;
+	SendMessageW(::hWnd, 0xB9u, 0, 0);
+	sub_1002A55(lpFileName);
+	dword_100901C = 0;
+	CloseHandle(hFile);
+	hFile = (HANDLE)-1;
+	LocalUnlock(hMem);
+	if (dword_1009850)
+		sub_1004CAB();
+	SetCursor(dword_100AB88);
+	return 1;
+}// 100901C: using guessed type int dword_100901C;
 // 100A528: using guessed type int dword_100A528;
 
 //----- (01005179) --------------------------------------------------------
 // @@Œ¥≥ı ºªØ
 int __stdcall sub_1005179(LPCWSTR lpString, int a2)
 {
-  BOOL v2; // eax
-  DWORD v3; // esi
-  CHAR *v4; // edi
-  HANDLE v5; // eax
-  int v6; // eax
-  int v7; // ebx
-  void (__stdcall *v8)(HWND, UINT, WPARAM, LPARAM); // esi
-  HLOCAL v9; // eax
-  bool v10; // zf
-  _WORD *v11; // eax
-  CHAR *v12; // esi
-  _WORD *v13; // eax
-  _WORD *v14; // ecx
-  int v15; // edx
-  __int16 v16; // cx
-  __int16 *v17; // eax
-  __int16 v18; // cx
-  __int16 *v19; // eax
-  __int16 v20; // cx
-  _WORD *v21; // eax
-  int v22; // eax
-  struct _BY_HANDLE_FILE_INFORMATION FileInformation; // [esp+Ch] [ebp-290h] BYREF
-  HANDLE hObject; // [esp+40h] [ebp-25Ch]
-  int v26; // [esp+44h] [ebp-258h]
-  int cbMultiByte; // [esp+48h] [ebp-254h]
-  int v28; // [esp+4Ch] [ebp-250h]
-  __int16 v29; // [esp+50h] [ebp-24Ch] BYREF
-  HLOCAL hMem; // [esp+54h] [ebp-248h]
-  LPCCH lpMultiByteStr; // [esp+58h] [ebp-244h]
-  LPCWSTR lpString2; // [esp+5Ch] [ebp-240h]
-  __int16 *v33; // [esp+60h] [ebp-23Ch]
-  BOOL v34; // [esp+64h] [ebp-238h]
-  _WORD *v35; // [esp+68h] [ebp-234h]
-  UINT CodePage; // [esp+6Ch] [ebp-230h]
-  int v37; // [esp+70h] [ebp-22Ch]
-  int cchWideChar = 0; // [esp+74h] [ebp-228h]
-  WCHAR String1[260]; // [esp+78h] [ebp-224h] BYREF
+	BOOL v2; // eax
+	DWORD v3; // esi
+	CHAR *v4; // edi
+	HANDLE v5; // eax
+	int v6; // eax
+	int v7; // ebx
+	void(__stdcall *v8)(HWND, UINT, WPARAM, LPARAM); // esi
+	HLOCAL v9; // eax
+	bool v10; // zf
+	WCHAR *v11; // eax
+	CHAR *v12; // esi
+	WCHAR *v13; // eax
+	WCHAR *v14; // ecx
+	int v15; // edx
+	__int16 v16; // cx
+	__int16 *v17; // eax
+	__int16 v18; // cx
+	__int16 *v19; // eax
+	__int16 v20; // cx
+	WCHAR *v21; // eax
+	int v22; // eax
+	struct _BY_HANDLE_FILE_INFORMATION FileInformation; // [esp+Ch] [ebp-290h] BYREF
+	HANDLE hObject; // [esp+40h] [ebp-25Ch]
+	int v26; // [esp+44h] [ebp-258h]
+	int cbMultiByte; // [esp+48h] [ebp-254h]
+	int v28; // [esp+4Ch] [ebp-250h]
+	__int16 v29; // [esp+50h] [ebp-24Ch] BYREF
+	HLOCAL hMem; // [esp+54h] [ebp-248h]
+	LPCCH lpMultiByteStr; // [esp+58h] [ebp-244h]
+	LPCWSTR lpString2; // [esp+5Ch] [ebp-240h]
+	__int16 *v33; // [esp+60h] [ebp-23Ch]
+	BOOL v34; // [esp+64h] [ebp-238h]
+	WCHAR *v35; // [esp+68h] [ebp-234h]
+	UINT CodePage; // [esp+6Ch] [ebp-230h]
+	int v37; // [esp+70h] [ebp-22Ch]
+	int cchWideChar = 0; // [esp+74h] [ebp-228h]
+	WCHAR String1[260]; // [esp+78h] [ebp-224h] BYREF
 
-  lpString2 = lpString;
-  v35 = 0;
-  v28 = 0;
-  v34 = 0;
-  hMem = 0;
-  CodePage = 0;
-  if ( hFile == (HANDLE)-1 )
-  {
-    sub_1004E20(lpString);
-    return 0;
-  }
-  v2 = GetFileInformationByHandle(hFile, &FileInformation);
-  v3 = FileInformation.nFileSizeLow;
-  cbMultiByte = FileInformation.nFileSizeLow;
-  if ( !v2 )
-  {
-    sub_1004E20(lpString);
-LABEL_78:
-    CloseHandle(hFile);
-    hFile = (HANDLE)-1;
-    return 0;
-  }
-  if ( FileInformation.nFileSizeLow >= 0x40000000 || FileInformation.nFileSizeHigh )
-  {
-    sub_1001F70(hWndParent, lpCaption, dword_1009050, lpString, 0x30u);
-    goto LABEL_78;
-  }
-  SetCursor(hCursor);
-  if ( v3 )
-  {
-    v4 = 0;
-    v33 = 0;
-    v5 = CreateFileMappingW(hFile, 0, 2u, 0, v3, 0);
-    hObject = v5;
-    if ( !v5 )
-      goto LABEL_12;
-    v33 = (__int16 *)MapViewOfFile(v5, 4u, 0, 0, v3);
-    CloseHandle(hObject);
-  }
-  else
-  {
-    v33 = &v29;
-    v29 = 0;
-  }
-  v4 = (CHAR *)v33;
+	lpString2 = lpString;
+	v35 = 0;
+	v28 = 0;
+	v34 = 0;
+	hMem = 0;
+	CodePage = 0;
+	if (hFile == (HANDLE)-1)
+	{
+		sub_1004E20(lpString);
+		return 0;
+	}
+	v2 = GetFileInformationByHandle(hFile, &FileInformation);
+	v3 = FileInformation.nFileSizeLow;
+	cbMultiByte = FileInformation.nFileSizeLow;
+	if (!v2)
+	{
+		sub_1004E20(lpString);
+	LABEL_78:
+		CloseHandle(hFile);
+		hFile = (HANDLE)-1;
+		return 0;
+	}
+	if (FileInformation.nFileSizeLow >= 0x40000000 || FileInformation.nFileSizeHigh)
+	{
+		sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[7], lpString, 0x30u);
+		goto LABEL_78;
+	}
+	SetCursor(hCursor);
+	if (v3)
+	{
+		v4 = 0;
+		v33 = 0;
+		v5 = CreateFileMappingW(hFile, 0, 2u, 0, v3, 0);
+		hObject = v5;
+		if (!v5)
+			goto LABEL_12;
+		v33 = (__int16 *)MapViewOfFile(v5, 4u, 0, 0, v3);
+		CloseHandle(hObject);
+	}
+	else
+	{
+		v33 = &v29;
+		v29 = 0;
+	}
+	v4 = (CHAR *)v33;
 LABEL_12:
-  CloseHandle(hFile);
-  hFile = (HANDLE)-1;
-  if ( !v4 )
-  {
-    SetCursor(dword_100AB88);
-    sub_1004E20(lpString2);
-    return 0;
-  }
-  lpMultiByteStr = v4;
-  if ( a2 != -1 )
-  {
-    switch ( a2 )
-    {
-      case 1:
-        v34 = 1;
-        v37 = 1;
-        v7 = v3 >> 1;
-        cchWideChar = v3 >> 1;
-        v10 = *(_WORD *)v4 == 0xFEFF;
-        break;
-      case 2:
-        v34 = 1;
-        v37 = 1;
-        v7 = v3 >> 1;
-        cchWideChar = v3 >> 1;
-        v10 = *(_WORD *)v4 == 0xFFFE;
-        break;
-      case 3:
-        v26 = 1;
-        CodePage = 65001;
-        v37 = 3;
-        if ( v3 <= 2 || *(_WORD *)v4 != 0xBBEF || v4[2] != -65 )
-          goto LABEL_29;
-        goto LABEL_43;
-      default:
-        goto LABEL_39;
-    }
-    if ( !v10 )
-      goto LABEL_30;
-    goto LABEL_47;
-  }
-  v6 = *(unsigned __int16 *)v4;
-  switch ( v6 )
-  {
-    case 48111:
-      if ( v3 <= 2 || v4[2] != -65 )
-        break;
-      v26 = 1;
-      CodePage = 65001;
-      v37 = 3;
-LABEL_43:
-      lpMultiByteStr = v4 + 3;
-      v3 -= 3;
-      cbMultiByte = v3;
-      goto LABEL_29;
-    case 65279:
-      v34 = 1;
-      v37 = 1;
-      goto LABEL_20;
-    case 65534:
-      v34 = 1;
-      v37 = 2;
-LABEL_20:
-      v7 = v3 >> 1;
-LABEL_47:
-      --v7;
-      goto LABEL_48;
-  }
-  v34 = sub_10070B1(v4, v3);
-  if ( !v34 )
-  {
-    v26 = sub_1007059((int)v4, v3);
-    if ( v26 )
-    {
-      v37 = 3;
-      CodePage = 65001;
-LABEL_29:
-      v7 = cchWideChar;
-      goto LABEL_30;
-    }
-LABEL_39:
-    v37 = 0;
-    CodePage = 0;
-    goto LABEL_29;
-  }
-  v37 = 1;
-  v7 = v3 >> 1;
+	CloseHandle(hFile);
+	hFile = (HANDLE)-1;
+	if (!v4)
+	{
+		SetCursor(dword_100AB88);
+		sub_1004E20(lpString2);
+		return 0;
+	}
+	lpMultiByteStr = v4;
+	if (a2 != -1)
+	{
+		switch (a2)
+		{
+		case 1:
+			v34 = 1;
+			v37 = 1;
+			v7 = v3 >> 1;
+			cchWideChar = v3 >> 1;
+			v10 = *(WCHAR *)v4 == 0xFEFF;
+			break;
+		case 2:
+			v34 = 1;
+			v37 = 1;
+			v7 = v3 >> 1;
+			cchWideChar = v3 >> 1;
+			v10 = *(WCHAR *)v4 == 0xFFFE;
+			break;
+		case 3:
+			v26 = 1;
+			CodePage = 65001;
+			v37 = 3;
+			if (v3 <= 2 || *(WCHAR *)v4 != 0xBBEF || v4[2] != -65)
+				goto LABEL_29;
+			goto LABEL_43;
+		default:
+			goto LABEL_39;
+		}
+		if (!v10)
+			goto LABEL_30;
+		goto LABEL_47;
+	}
+	v6 = *(wchar_t *)v4;
+	switch (v6)
+	{
+	case 48111:
+		if (v3 <= 2 || v4[2] != -65)
+			break;
+		v26 = 1;
+		CodePage = 65001;
+		v37 = 3;
+	LABEL_43:
+		lpMultiByteStr = v4 + 3;
+		v3 -= 3;
+		cbMultiByte = v3;
+		goto LABEL_29;
+	case 65279:
+		v34 = 1;
+		v37 = 1;
+		goto LABEL_20;
+	case 65534:
+		v34 = 1;
+		v37 = 2;
+	LABEL_20:
+		v7 = v3 >> 1;
+	LABEL_47:
+		--v7;
+		goto LABEL_48;
+	}
+	v34 = sub_10070B1(v4, v3);
+	if (!v34)
+	{
+		v26 = sub_1007059((int)v4, v3);
+		if (v26)
+		{
+			v37 = 3;
+			CodePage = 65001;
+		LABEL_29:
+			v7 = cchWideChar;
+			goto LABEL_30;
+		}
+	LABEL_39:
+		v37 = 0;
+		CodePage = 0;
+		goto LABEL_29;
+	}
+	v37 = 1;
+	v7 = v3 >> 1;
 LABEL_48:
-  cchWideChar = v7;
+	cchWideChar = v7;
 LABEL_30:
-  if ( !v34 )
-  {
-    v7 = MultiByteToWideChar(CodePage, 0, lpMultiByteStr, v3, 0, 0);
-    cchWideChar = v7;
-  }
-  v8 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
-  SendMessageW(hWnd, 0xBu, 0, 0);
-  SendMessageW(hWnd, 0xB1u, 0, 0);
-  SendMessageW(hWnd, 0xB7u, 0, 0);
-  v9 = LocalReAlloc(::hMem, 2 * v7 + 2, 2u);
-  hMem = v9;
-  if ( !v9 )
-  {
-    lstrcpyW(String1, lpString2);
-    sub_1004CFF(0);
-    SetCursor(dword_100AB88);
-    sub_1001F70(hWndParent, lpCaption, dword_1009050, String1, 0x30u);
-    if ( v4 != (CHAR *)&v29 )
-      UnmapViewOfFile(v4);
-    SendMessageW(hWnd, 0xBu, 0, 0);
-    return 0;
-  }
-  v11 = (uint16*)LocalLock(v9);
-  v35 = v11;
-  if ( v34 )
-  {
-    if ( *(_WORD *)v4 == 0xFEFF )
-    {
-      v12 = v4 + 2;
-    }
-    else
-    {
-      if ( *(_WORD *)v4 == 0xFFFE )
-      {
-        sub_1004B65(v11, (uint8*)v4 + 2, v7);
-        goto LABEL_57;
-      }
-      v12 = v4;
-    }
-    qmemcpy(v11, v12, 2 * v7);
-    v4 = (CHAR *)v33;
-    v8 = (void (__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
-  }
-  else
-  {
-    v7 = MultiByteToWideChar(CodePage, 0, lpMultiByteStr, cbMultiByte, (LPWSTR)v11, v7);
-    cchWideChar = v7;
-  }
+	if (!v34)
+	{
+		v7 = MultiByteToWideChar(CodePage, 0, lpMultiByteStr, v3, 0, 0);
+		cchWideChar = v7;
+	}
+	v8 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
+	SendMessageW(hWnd, 0xBu, 0, 0);
+	SendMessageW(hWnd, 0xB1u, 0, 0);
+	SendMessageW(hWnd, 0xB7u, 0, 0);
+	v9 = LocalReAlloc(::hMem, 2 * v7 + 2, 2u);
+	hMem = v9;
+	if (!v9)
+	{
+		lstrcpyW(String1, lpString2);
+		sub_1004CFF(0);
+		SetCursor(dword_100AB88);
+		sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[7], String1, 0x30u);
+		if (v4 != (CHAR *)&v29)
+			UnmapViewOfFile(v4);
+		SendMessageW(hWnd, 0xBu, 0, 0);
+		return 0;
+	}
+	v11 = (WCHAR *)LocalLock(v9);
+	v35 = v11;
+	if (v34)
+	{
+		if (*(WCHAR *)v4 == 0xFEFF)
+		{
+			v12 = v4 + 2;
+		}
+		else
+		{
+			if (*(WCHAR *)v4 == 0xFFFE)
+			{
+				sub_1004B65(v11, (uint8*)v4 + 2, v7);
+				goto LABEL_57;
+			}
+			v12 = v4;
+		}
+		qmemcpy(v11, v12, 2 * v7);
+		v4 = (CHAR *)v33;
+		v8 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
+	}
+	else
+	{
+		v7 = MultiByteToWideChar(CodePage, 0, lpMultiByteStr, cbMultiByte, (LPWSTR)v11, v7);
+		cchWideChar = v7;
+	}
 LABEL_57:
-  v13 = v35;
-  dword_1009030 = v37;
-  if ( v4 != (CHAR *)&v29 )
-  {
-    UnmapViewOfFile(v4);
-    v13 = v35;
-  }
-  if ( v13 )
-  {
-    v14 = v13;
-    if ( v7 )
-    {
-      v15 = v7;
-      do
-      {
-        if ( !*v14 )
-          *v14 = 32;
-        ++v14;
-        --v15;
-      }
-      while ( v15 );
-    }
-    v13[v7] = 0;
-    v16 = *v13;
-    v17 = (short *)v13 + 1;
-    if ( v16 != 46
-      || (v18 = *v17, v19 = v17 + 1, v18 != 76)
-	  || (v20 = *v19, v21 = (uint16*)v19 + 1, v20 != 79)
-      || (v10 = *v21 == 71, v28 = 1, !v10) )
-    {
-      v28 = 0;
-    }
-  }
-  if ( hMem )
-  {
-    LocalUnlock(hMem);
-    ::hMem = hMem;
-  }
-  lstrcpyW(sz, lpString2);
-  sub_1002A55(lpString2);
-  dword_100901C = 0;
-  dword_1009848 = 1;
-  v8(hWnd, 0xBCu, (WPARAM)::hMem, 0);
-  if ( dword_1009848 == 2 )
-  {
-    SetCursor(dword_100AB88);
-    dword_1009848 = 0;
-    sub_1001F70(hWndParent, lpCaption, dword_1009050, lpString2, 0x30u);
-    sub_1004CFF(0);
-    v8(hWnd, 0xBu, 1u, 0);
-    return 0;
-  }
-  dword_1009848 = 0;
-  PostMessageW(hWnd, 0xC5u, 0, 0);
-  if ( v28 )
-  {
-    v8(hWnd, 0xB1u, v7, v7);
-    v8(hWnd, 0xB7u, 0, 0);
-    sub_1006F10(1);
-  }
-  v22 = ((LRESULT (__stdcall *)(HWND, UINT, WPARAM, LPARAM))v8)(hWnd, 0x115u, 0xBEu, 0);
-  SetScrollPos(hWndParent, 1, v22, 1);
-  v8(hWnd, 0xBu, 1u, 0);
-  InvalidateRect(hWnd, 0, 1);
-  UpdateWindow(hWnd);
-  SetCursor(dword_100AB88);
-  return 1;
+	v13 = v35;
+	dword_1009030 = v37;
+	if (v4 != (CHAR *)&v29)
+	{
+		UnmapViewOfFile(v4);
+		v13 = v35;
+	}
+	if (v13)
+	{
+		v14 = v13;
+		if (v7)
+		{
+			v15 = v7;
+			do
+			{
+				if (!*v14)
+					*v14 = 32;
+				++v14;
+				--v15;
+			} while (v15);
+		}
+		v13[v7] = 0;
+		v16 = *v13;
+		v17 = (short *)v13 + 1;
+		if (v16 != 46
+			|| (v18 = *v17, v19 = v17 + 1, v18 != 76)
+			|| (v20 = *v19, v21 = (WCHAR *)v19 + 1, v20 != 79)
+			|| (v10 = *v21 == 71, v28 = 1, !v10))
+		{
+			v28 = 0;
+		}
+	}
+	if (hMem)
+	{
+		LocalUnlock(hMem);
+		::hMem = hMem;
+	}
+	lstrcpyW(sz, lpString2);
+	sub_1002A55(lpString2);
+	dword_100901C = 0;
+	dword_1009848 = 1;
+	v8(hWnd, 0xBCu, (WPARAM)::hMem, 0);
+	if (dword_1009848 == 2)
+	{
+		SetCursor(dword_100AB88);
+		dword_1009848 = 0;
+		sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[7], lpString2, 0x30u);
+		sub_1004CFF(0);
+		v8(hWnd, 0xBu, 1u, 0);
+		return 0;
+	}
+	dword_1009848 = 0;
+	PostMessageW(hWnd, 0xC5u, 0, 0);
+	if (v28)
+	{
+		v8(hWnd, 0xB1u, v7, v7);
+		v8(hWnd, 0xB7u, 0, 0);
+		sub_1006F10(1);
+	}
+	v22 = ((LRESULT(__stdcall *)(HWND, UINT, WPARAM, LPARAM))v8)(hWnd, 0x115u, 0xBEu, 0);
+	SetScrollPos(hWndParent, 1, v22, 1);
+	v8(hWnd, 0xBu, 1u, 0);
+	InvalidateRect(hWnd, 0, 1);
+	UpdateWindow(hWnd);
+	SetCursor(dword_100AB88);
+	return 1;
 }
 // 100901C: using guessed type int dword_100901C;
 // 1009848: using guessed type int dword_1009848;
@@ -3473,301 +3490,300 @@ LABEL_57:
 //----- (0100580B) --------------------------------------------------------
 const WCHAR *__stdcall sub_100580B(LPCWSTR a1, int a2, LPCWSTR lpString, int a4)
 {
-  const WCHAR *v5; // ebx
-  WCHAR v6; // ax
-  bool v7; // zf
-  bool v8; // zf
-  unsigned __int16 v10; // [esp+Ch] [ebp-8h]
-  unsigned __int16 v11; // [esp+10h] [ebp-4h]
-  LPCWSTR lpStringa; // [esp+24h] [ebp+10h]
+	const WCHAR *v5; // ebx
+	WCHAR v6; // ax
+	bool v7; // zf
+	bool v8; // zf
+	wchar_t v10; // [esp+Ch] [ebp-8h]
+	wchar_t v11; // [esp+10h] [ebp-4h]
+	LPCWSTR lpStringa; // [esp+24h] [ebp+10h]
 
-  v11 = (unsigned __int16)CharUpperW((LPWSTR)*lpString);
-  v10 = (unsigned __int16)CharLowerW((LPWSTR)*lpString);
-  v5 = (const WCHAR *)a2;
-  lpStringa = (LPCWSTR)lstrlenW(lpString);
-  if ( !a2 )
-    v5 = &a1[lstrlenW(a1)];
-  while ( 1 )
-  {
-    if ( v5 == a1 )
-      return 0;
-    v6 = *--v5;
-    if ( a4 )
-    {
-      v7 = v6 == *lpString;
-    }
-    else
-    {
-      if ( v6 == v11 )
-        goto LABEL_10;
-      v7 = v6 == v10;
-    }
-    if ( v7 )
-    {
-      if ( a4 )
-      {
-        v8 = wcsncmp(v5, lpString, (size_t)lpStringa) == 0;
-        goto LABEL_11;
-      }
-LABEL_10:
-      v8 = CompareStringW(0x400u, 0x10001001u, v5, (int)lpStringa, lpString, (int)lpStringa) == 2;
-LABEL_11:
-      if ( v8 )
-        return v5;
-    }
-  }
+	v11 = (wchar_t)CharUpperW((LPWSTR)*lpString);
+	v10 = (wchar_t)CharLowerW((LPWSTR)*lpString);
+	v5 = (const WCHAR *)a2;
+	lpStringa = (LPCWSTR)lstrlenW(lpString);
+	if (!a2)
+		v5 = &a1[lstrlenW(a1)];
+	while (1)
+	{
+		if (v5 == a1)
+			return 0;
+		v6 = *--v5;
+		if (a4)
+		{
+			v7 = v6 == *lpString;
+		}
+		else
+		{
+			if (v6 == v11)
+				goto LABEL_10;
+			v7 = v6 == v10;
+		}
+		if (v7)
+		{
+			if (a4)
+			{
+				v8 = wcsncmp(v5, lpString, (size_t)lpStringa) == 0;
+				goto LABEL_11;
+			}
+		LABEL_10:
+			v8 = CompareStringW(0x400u, 0x10001001u, v5, (int)lpStringa, lpString, (int)lpStringa) == 2;
+		LABEL_11:
+			if (v8)
+				return v5;
+		}
+	}
 }
 
 //----- (010058B8) --------------------------------------------------------
 unsigned int __stdcall sub_10058B8(wchar_t *String1, LPCWSTR lpString, int a3)
 {
-  int v4; // ebx
-  bool v6; // zf
-  wchar_t v7; // ax
-  unsigned __int16 v9; // [esp+Ch] [ebp-4h]
-  unsigned __int16 lpStringa; // [esp+1Ch] [ebp+Ch]
+	int v4; // ebx
+	bool v6; // zf
+	wchar_t v7; // ax
+	wchar_t v9; // [esp+Ch] [ebp-4h]
+	wchar_t lpStringa; // [esp+1Ch] [ebp+Ch]
 
-  v4 = lstrlenW(lpString);
-  lpStringa = (unsigned __int16)CharUpperW((LPWSTR)*lpString);
-  v9 = (unsigned __int16)CharLowerW((LPWSTR)*lpString);
-  while ( 1 )
-  {
-    v7 = *String1;
-    if ( !*String1 )
-      return *String1 != 0 ? (unsigned int)String1 : 0;
-    if ( a3 )
-    {
-      if ( v7 != *lpString )
-        goto LABEL_9;
-      v6 = wcsncmp(String1, lpString, v4) == 0;
-    }
-    else
-    {
-      if ( v7 != lpStringa && v7 != v9 )
-        goto LABEL_9;
-      v6 = CompareStringW(0x400u, 0x10001001u, String1, v4, lpString, v4) == 2;
-    }
-    if ( v6 )
-      return *String1 != 0 ? (unsigned int)String1 : 0;
-LABEL_9:
-    ++String1;
-  }
+	v4 = lstrlenW(lpString);
+	lpStringa = (wchar_t)CharUpperW((LPWSTR)*lpString);
+	v9 = (wchar_t)CharLowerW((LPWSTR)*lpString);
+	while (1)
+	{
+		v7 = *String1;
+		if (!*String1)
+			return *String1 != 0 ? (unsigned int)String1 : 0;
+		if (a3)
+		{
+			if (v7 != *lpString)
+				goto LABEL_9;
+			v6 = wcsncmp(String1, lpString, v4) == 0;
+		}
+		else
+		{
+			if (v7 != lpStringa && v7 != v9)
+				goto LABEL_9;
+			v6 = CompareStringW(0x400u, 0x10001001u, String1, v4, lpString, v4) == 2;
+		}
+		if (v6)
+			return *String1 != 0 ? (unsigned int)String1 : 0;
+	LABEL_9:
+		++String1;
+	}
 }
 
 //----- (0100594C) --------------------------------------------------------
 int __stdcall sub_100594C(LPCWSTR lpString)
 {
-  HMENU v2; // eax
-  void *v3; // eax
-  const WCHAR *v4; // edi
-  LRESULT v5; // eax
-  WPARAM i; // ecx
-  const WCHAR *v7; // ebx
-  HCURSOR v8; // edi
-  HWND v9; // eax
-  int v10; // eax
-  HMENU v11; // eax
-  HMENU hMenu; // [esp+4h] [ebp-24h]
-  HLOCAL hMem; // [esp+8h] [ebp-20h]
-  int v14; // [esp+Ch] [ebp-1Ch]
-  int v15; // [esp+10h] [ebp-18h]
-  int v16; // [esp+14h] [ebp-14h]
-  LPARAM lParam; // [esp+18h] [ebp-10h] BYREF
-  int v18; // [esp+1Ch] [ebp-Ch]
-  WPARAM v19; // [esp+20h] [ebp-8h]
-  WPARAM wParam; // [esp+24h] [ebp-4h] BYREF
+	HMENU v2; // eax
+	void *v3; // eax
+	const WCHAR *v4; // edi
+	LRESULT v5; // eax
+	WPARAM i; // ecx
+	const WCHAR *v7; // ebx
+	HCURSOR v8; // edi
+	HWND v9; // eax
+	int v10; // eax
+	HMENU v11; // eax
+	HMENU hMenu; // [esp+4h] [ebp-24h]
+	HLOCAL hMem; // [esp+8h] [ebp-20h]
+	int v14; // [esp+Ch] [ebp-1Ch]
+	int v15; // [esp+10h] [ebp-18h]
+	int v16; // [esp+14h] [ebp-14h]
+	LPARAM lParam; // [esp+18h] [ebp-10h] BYREF
+	int v18; // [esp+1Ch] [ebp-Ch]
+	WPARAM v19; // [esp+20h] [ebp-8h]
+	WPARAM wParam; // [esp+24h] [ebp-4h] BYREF
 
-  v15 = 0;
-  v16 = 0;
-  if ( !*lpString )
-    return 0;
-  SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
-  hMenu = GetMenu(hWndParent);
-  v2 = GetSubMenu(hMenu, 1);
-  if ( GetMenuState(v2, 0x19u, 0) == 1 )
-  {
-    v16 = 1;
-    lParam = 0;
-    wParam = 0;
-  }
-  v3 = (void *)SendMessageW(hWnd, 0xBDu, 0, 0);
-  hMem = v3;
-  if ( !v3 )
-    return 0;
-  v4 = (const WCHAR *)LocalLock(v3);
-  if ( !v4 )
-    return 0;
-  if ( dword_1009A94 )
-  {
-    v19 = SendMessageW(hWnd, 0xC9u, wParam, 0);
-    v5 = SendMessageW(hWnd, 0xBBu, v19, 0);
-    for ( i = wParam; ; i = v14 )
-    {
-      v18 = v5;
-      v7 = sub_100580B(&v4[v5], (int)&v4[i], lpString, dword_1009A90);
-      if ( v7 )
-        break;
-      v14 = v18;
-      if ( !v19 )
-        break;
-      v5 = SendMessageW(hWnd, 0xBBu, --v19, 0);
-    }
-  }
-  else
-  {
-    v7 = (const WCHAR *)sub_10058B8((wchar_t *)&v4[lParam], lpString, dword_1009A90);
-  }
-  LocalUnlock(hMem);
-  if ( v7 )
-  {
-    wParam = v7 - v4;
-    v10 = lstrlenW(lpString);
-    SendMessageW(hWnd, 0xB1u, wParam, wParam + v10);
-    if ( v16 )
-    {
-      v11 = GetSubMenu(hMenu, 1);
-      EnableMenuItem(v11, 0x19u, 0);
-    }
-    if ( (stru_100A500.Flags & 0x20) == 0 )
-    {
-      SendMessageW(hWnd, 0xB7u, 0, 0);
-      sub_1001C42(1);
-    }
-    v15 = 1;
-  }
-  else if ( (stru_100A500.Flags & 0x20) == 0 )
-  {
-    v8 = SetCursor(dword_100AB88);
-    v9 = hDlg;
-    if ( !hDlg )
-      v9 = hWndParent;
-    sub_1001F70(v9, lpCaption, dword_1009048, &word_100A800, 0x40u);
-    SetCursor(v8);
-  }
-  return v15;
-}
-// 1009A94: using guessed type int dword_1009A94;
+	v15 = 0;
+	v16 = 0;
+	if (!*lpString)
+		return 0;
+	SendMessageW(hWnd, 0xB0u, (WPARAM)&wParam, (LPARAM)&lParam);
+	hMenu = GetMenu(hWndParent);
+	v2 = GetSubMenu(hMenu, 1);
+	if (GetMenuState(v2, 0x19u, 0) == 1)
+	{
+		v16 = 1;
+		lParam = 0;
+		wParam = 0;
+	}
+	v3 = (void *)SendMessageW(hWnd, 0xBDu, 0, 0);
+	hMem = v3;
+	if (!v3)
+		return 0;
+	v4 = (const WCHAR *)LocalLock(v3);
+	if (!v4)
+		return 0;
+	if (dword_1009A94)
+	{
+		v19 = SendMessageW(hWnd, 0xC9u, wParam, 0);
+		v5 = SendMessageW(hWnd, 0xBBu, v19, 0);
+		for (i = wParam;; i = v14)
+		{
+			v18 = v5;
+			v7 = sub_100580B(&v4[v5], (int)&v4[i], lpString, dword_1009A90);
+			if (v7)
+				break;
+			v14 = v18;
+			if (!v19)
+				break;
+			v5 = SendMessageW(hWnd, 0xBBu, --v19, 0);
+		}
+	}
+	else
+	{
+		v7 = (const WCHAR *)sub_10058B8((wchar_t *)&v4[lParam], lpString, dword_1009A90);
+	}
+	LocalUnlock(hMem);
+	if (v7)
+	{
+		wParam = v7 - v4;
+		v10 = lstrlenW(lpString);
+		SendMessageW(hWnd, 0xB1u, wParam, wParam + v10);
+		if (v16)
+		{
+			v11 = GetSubMenu(hMenu, 1);
+			EnableMenuItem(v11, 0x19u, 0);
+		}
+		if ((stru_100A500.Flags & 0x20) == 0)
+		{
+			SendMessageW(hWnd, 0xB7u, 0, 0);
+			sub_1001C42(1);
+		}
+		v15 = 1;
+	}
+	else if ((stru_100A500.Flags & 0x20) == 0)
+	{
+		v8 = SetCursor(dword_100AB88);
+		v9 = hDlg;
+		if (!hDlg)
+			v9 = hWndParent;
+		sub_1001F70(v9, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[5], &word_100A800, 0x40u);
+		SetCursor(v8);
+	}
+	return v15;
+}// 1009A94: using guessed type int dword_1009A94;
 
 //----- (01005B41) --------------------------------------------------------
 int __stdcall sub_1005B41(DWORD dwStyle)
 {
-  LONG v1; // eax
-  struct tagRECT Rect; // [esp+Ch] [ebp-38h] BYREF
-  struct tagRECT v4; // [esp+1Ch] [ebp-28h] BYREF
-  WPARAM wParam; // [esp+2Ch] [ebp-18h]
-  LPARAM lParam; // [esp+30h] [ebp-14h]
-  LRESULT v7; // [esp+34h] [ebp-10h]
-  DWORD v8; // [esp+38h] [ebp-Ch]
-  HCURSOR hCursor; // [esp+3Ch] [ebp-8h]
-  HLOCAL hMem; // [esp+40h] [ebp-4h]
-  HWND dwStylea; // [esp+4Ch] [ebp+8h]
+	LONG v1; // eax
+	struct tagRECT Rect; // [esp+Ch] [ebp-38h] BYREF
+	struct tagRECT v4; // [esp+1Ch] [ebp-28h] BYREF
+	WPARAM wParam; // [esp+2Ch] [ebp-18h]
+	LPARAM lParam; // [esp+30h] [ebp-14h]
+	LRESULT v7; // [esp+34h] [ebp-10h]
+	DWORD v8; // [esp+38h] [ebp-Ch]
+	HCURSOR hCursor; // [esp+3Ch] [ebp-8h]
+	HLOCAL hMem; // [esp+40h] [ebp-4h]
+	HWND dwStylea; // [esp+4Ch] [ebp+8h]
 
-  v8 = (dwStyle >> 20) & 1;
-  hCursor = SetCursor(::hCursor);
-  if ( v8 )
-  {
-    sub_1001B99(1);
-    SendMessageW(hWnd, 0xC8u, 0, 0);
-  }
-  wParam = SendMessageW(hWnd, 0xB8u, 0, 0) != 0;
-  v7 = SendMessageW(hWnd, 0xEu, 0, 0);
-  hMem = LocalAlloc(2u, 2 * v7 + 2);
-  if ( !hMem )
-  {
-    if ( v8 )
-      SendMessageW(hWnd, 0xC8u, 1u, 0);
-    SetCursor(hCursor);
-    return 0;
-  }
-  GetClientRect(hWndParent, &Rect);
-  lParam = (LPARAM)LocalLock(hMem);
-  SendMessageW(hWnd, 0xDu, v7 + 1, lParam);
-  dwStylea = CreateWindowExW(
-               0x200u,
-               L"Edit",
-               &WindowName,
-               dwStyle,
-               0,
-               0,
-               Rect.right,
-               Rect.bottom,
-               hWndParent,
-               (HMENU)0xF,
-               hInstance,
-               0);
-  if ( !dwStylea )
-  {
-    SetCursor(hCursor);
-    if ( v8 )
-      SendMessageW(hWnd, 0xC8u, 1u, 0);
-LABEL_14:
-    LocalUnlock(hMem);
-    LocalFree(hMem);
-    return 0;
-  }
-  v1 = GetWindowLongW(hWnd, -20);
-  SetWindowLongW(dwStylea, -20, v1 | 0x200);
-  SendMessageW(dwStylea, 0x30u, (WPARAM)ho, 1);
-  if ( !SendMessageW(dwStylea, 0xCu, 0, lParam) )
-  {
-    SetCursor(hCursor);
-    if ( v8 )
-      SendMessageW(hWnd, 0xC8u, 1u, 0);
-    DestroyWindow(dwStylea);
-    goto LABEL_14;
-  }
-  LocalUnlock(hMem);
-  DestroyWindow(hWnd);
-  hWnd = dwStylea;
-  if ( ::hMem )
-    LocalFree(::hMem);
-  ::hMem = hMem;
-  PostMessageW(hWnd, 0xC5u, 0, 0);
-  ShowWindow(hWndParent, 5);
-  SendMessageW(hWnd, 0xB9u, wParam, 0);
-  SetFocus(hWnd);
-  SetCursor(hCursor);
-  if ( *(_DWORD *)&dword_1009840 )
-  {
-    GetClientRect(hWndParent, &v4);
-    sub_10019E0(v4.right - v4.left, v4.bottom - v4.top);
-    sub_1001C42(1);
-    ShowWindow(dword_1009834, 5);
-  }
-  return 1;
+	v8 = (dwStyle >> 20) & 1;
+	hCursor = SetCursor(::hCursor);
+	if (v8)
+	{
+		sub_1001B99(1);
+		SendMessageW(hWnd, 0xC8u, 0, 0);
+	}
+	wParam = SendMessageW(hWnd, 0xB8u, 0, 0) != 0;
+	v7 = SendMessageW(hWnd, 0xEu, 0, 0);
+	hMem = LocalAlloc(2u, 2 * v7 + 2);
+	if (!hMem)
+	{
+		if (v8)
+			SendMessageW(hWnd, 0xC8u, 1u, 0);
+		SetCursor(hCursor);
+		return 0;
+	}
+	GetClientRect(hWndParent, &Rect);
+	lParam = (LPARAM)LocalLock(hMem);
+	SendMessageW(hWnd, 0xDu, v7 + 1, lParam);
+	dwStylea = CreateWindowExW(
+		0x200u,
+		L"Edit",
+		&WindowName,
+		dwStyle,
+		0,
+		0,
+		Rect.right,
+		Rect.bottom,
+		hWndParent,
+		(HMENU)0xF,
+		hInstance,
+		0);
+	if (!dwStylea)
+	{
+		SetCursor(hCursor);
+		if (v8)
+			SendMessageW(hWnd, 0xC8u, 1u, 0);
+	LABEL_14:
+		LocalUnlock(hMem);
+		LocalFree(hMem);
+		return 0;
+	}
+	v1 = GetWindowLongW(hWnd, -20);
+	SetWindowLongW(dwStylea, -20, v1 | 0x200);
+	SendMessageW(dwStylea, 0x30u, (WPARAM)ho, 1);
+	if (!SendMessageW(dwStylea, 0xCu, 0, lParam))
+	{
+		SetCursor(hCursor);
+		if (v8)
+			SendMessageW(hWnd, 0xC8u, 1u, 0);
+		DestroyWindow(dwStylea);
+		goto LABEL_14;
+	}
+	LocalUnlock(hMem);
+	DestroyWindow(hWnd);
+	hWnd = dwStylea;
+	if (::hMem)
+		LocalFree(::hMem);
+	::hMem = hMem;
+	PostMessageW(hWnd, 0xC5u, 0, 0);
+	ShowWindow(hWndParent, 5);
+	SendMessageW(hWnd, 0xB9u, wParam, 0);
+	SetFocus(hWnd);
+	SetCursor(hCursor);
+	if (*(_DWORD *)&dword_1009840)
+	{
+		GetClientRect(hWndParent, &v4);
+		sub_10019E0(v4.right - v4.left, v4.bottom - v4.top);
+		sub_1001C42(1);
+		ShowWindow(dword_1009834, 5);
+	}
+	return 1;
 }
 
 //----- (01005DA3) --------------------------------------------------------
 BOOL __stdcall proc(HDC a1, int a2)
 {
-  struct tagMSG Msg; // [esp+4h] [ebp-1Ch] BYREF
+	struct tagMSG Msg; // [esp+4h] [ebp-1Ch] BYREF
 
-  while ( !dword_100A134 && PeekMessageW(&Msg, 0, 0, 0, 1u) )
-  {
-    if ( !dword_100A138 || !IsDialogMessageW(dword_100A138, &Msg) )
-    {
-      TranslateMessage(&Msg);
-      DispatchMessageW(&Msg);
-    }
-  }
-  return dword_100A134 == 0;
+	while (!dword_100A134 && PeekMessageW(&Msg, 0, 0, 0, 1u))
+	{
+		if (!dword_100A138 || !IsDialogMessageW(dword_100A138, &Msg))
+		{
+			TranslateMessage(&Msg);
+			DispatchMessageW(&Msg);
+		}
+	}
+	return dword_100A134 == 0;
 }
 // 100A134: using guessed type int dword_100A134;
 
 //----- (01005E0C) --------------------------------------------------------
 int __stdcall sub_1005E0C(HDC hdc)
 {
-  int result; // eax
+	int result; // eax
 
-  dword_1009AE8 = GetDeviceCaps(hdc, 8);
-  dword_1009AE4 = GetDeviceCaps(hdc, 10);
-  dword_1009AE0 = GetDeviceCaps(hdc, 90);
-  dword_1009ADC = GetDeviceCaps(hdc, 110);
-  y = GetDeviceCaps(hdc, 111);
-  dword_1009AD4 = GetDeviceCaps(hdc, 112);
-  result = GetDeviceCaps(hdc, 113);
-  dword_1009AD0 = result;
-  return result;
+	dword_1009AE8 = GetDeviceCaps(hdc, 8);
+	dword_1009AE4 = GetDeviceCaps(hdc, 10);
+	dword_1009AE0 = GetDeviceCaps(hdc, 90);
+	dword_1009ADC = GetDeviceCaps(hdc, 110);
+	y = GetDeviceCaps(hdc, 111);
+	dword_1009AD4 = GetDeviceCaps(hdc, 112);
+	result = GetDeviceCaps(hdc, 113);
+	dword_1009AD0 = result;
+	return result;
 }
 // 1009AD0: using guessed type int dword_1009AD0;
 // 1009AD4: using guessed type int dword_1009AD4;
@@ -3778,454 +3794,448 @@ int __stdcall sub_1005E0C(HDC hdc)
 //----- (01005E6D) --------------------------------------------------------
 int sub_1005E6D()
 {
-  HGLOBAL v0; // edx
-  int v1; // edi
-  struct tagPDEXW pPD; // [esp+Ch] [ebp-54h] BYREF
+	HGLOBAL v0; // edx
+	int v1; // edi
+	struct tagPDEXW pPD; // [esp+Ch] [ebp-54h] BYREF
 
-  v0 = stru_100A4A0.hDevNames;
-  if ( !stru_100A4A0.hDevNames )
-  {
-    LOWORD(stru_100A4A0.Flags) |= 0x480u;
-    PageSetupDlgW(&stru_100A4A0);
-    stru_100A4A0.Flags &= 0xFFFFFB7F;
-    v0 = stru_100A4A0.hDevNames;
-  }
-  memset(&pPD, 0, sizeof(pPD));
-  pPD.hwndOwner = hWndParent;
-  v1 = -1;
-  pPD.lStructSize = 84;
-  pPD.nStartPage = -1;
-  pPD.Flags = 8651020;
-  if ( stru_100A4A0.hDevMode )
-    pPD.hDevMode = stru_100A4A0.hDevMode;
-  if ( v0 )
-    pPD.hDevNames = v0;
-  if ( !PrintDlgExW(&pPD) )
-  {
-    if ( pPD.dwResultAction == 1 )
-    {
-      v1 = (int)pPD.hDC;
-    }
-    else if ( pPD.dwResultAction != 2 )
-    {
-      return v1;
-    }
-    if ( !stru_100A4A0.hDevMode )
-    {
-      LOWORD(stru_100A4A0.Flags) |= 0x480u;
-      PageSetupDlgW(&stru_100A4A0);
-      stru_100A4A0.Flags &= 0xFFFFFB7F;
-    }
-    stru_100A4A0.hDevMode = pPD.hDevMode;
-    stru_100A4A0.hDevNames = pPD.hDevNames;
-  }
-  return v1;
+	v0 = stru_100A4A0.hDevNames;
+	if (!stru_100A4A0.hDevNames)
+	{
+		LOWORD(stru_100A4A0.Flags) |= 0x480u;
+		PageSetupDlgW(&stru_100A4A0);
+		stru_100A4A0.Flags &= 0xFFFFFB7F;
+		v0 = stru_100A4A0.hDevNames;
+	}
+	memset(&pPD, 0, sizeof(pPD));
+	pPD.hwndOwner = hWndParent;
+	v1 = -1;
+	pPD.lStructSize = 84;
+	pPD.nStartPage = -1;
+	pPD.Flags = 8651020;
+	if (stru_100A4A0.hDevMode)
+		pPD.hDevMode = stru_100A4A0.hDevMode;
+	if (v0)
+		pPD.hDevNames = v0;
+	if (!PrintDlgExW(&pPD))
+	{
+		if (pPD.dwResultAction == 1)
+		{
+			v1 = (int)pPD.hDC;
+		}
+		else if (pPD.dwResultAction != 2)
+		{
+			return v1;
+		}
+		if (!stru_100A4A0.hDevMode)
+		{
+			LOWORD(stru_100A4A0.Flags) |= 0x480u;
+			PageSetupDlgW(&stru_100A4A0);
+			stru_100A4A0.Flags &= 0xFFFFFB7F;
+		}
+		stru_100A4A0.hDevMode = pPD.hDevMode;
+		stru_100A4A0.hDevNames = pPD.hDevNames;
+	}
+	return v1;
 }
 
 //----- (01005F3C) --------------------------------------------------------
 BOOL sub_1005F3C()
 {
-  BOOL result; // eax
+	BOOL result; // eax
 
-  EnableWindow(hWndParent, 1);
-  result = DestroyWindow(dword_100A138);
-  dword_100A138 = 0;
-  return result;
+	EnableWindow(hWndParent, 1);
+	result = DestroyWindow(dword_100A138);
+	dword_100A138 = 0;
+	return result;
 }
 
 //----- (01005F63) --------------------------------------------------------
 int __stdcall sub_1005F63(HWND hDlg, int a2, HWND hWnd, int a4)
 {
-  int v4; // edi
-  const WCHAR *v5; // ebx
-  HWND v7; // esi
-  int v8; // eax
-  int v9; // eax
-  int v10; // edi
-  WCHAR *v11; // esi
-  struct tagPOINT Point; // [esp+8h] [ebp-8h] BYREF
+	int v4; // edi
+	const WCHAR *v5; // ebx
+	HWND v7; // esi
+	int v8; // eax
+	int v9; // eax
+	int v10; // edi
+	WCHAR *v11; // esi
+	struct tagPOINT Point; // [esp+8h] [ebp-8h] BYREF
 
-  switch ( a2 )
-  {
-    case 2:
-      v10 = 30;
-      v11 = &word_100A340;
-      do
-      {
-        GetDlgItemTextW(hDlg, v10, v11, 40);
-        v11 += 40;
-        ++v10;
-      }
-      while ( (int)v11 <= (int)&word_100A390 );
-      return 0;
-    case 83:
-      v9 = GetDlgCtrlID(*(HWND *)(a4 + 12));
-      if ( v9 < 30 || v9 > 33 )
-        return 0;
-      WinHelpW(*(HWND *)(a4 + 12), lpszHelp, 0xCu, (ULONG_PTR)dword_100180C);
-      return 1;
-    case 123:
-      v7 = hWnd;
-      if ( hDlg == hWnd )
-      {
-        GetCursorPos(&Point);
-        ScreenToClient(hDlg, &Point);
-        v7 = ChildWindowFromPoint(hDlg, Point);
-      }
-      v8 = GetDlgCtrlID(v7);
-      if ( v8 < 30 || v8 > 33 )
-        return 0;
-      WinHelpW(v7, lpszHelp, 0xAu, (ULONG_PTR)dword_100180C);
-      return 1;
-  }
-  if ( a2 != 272 )
-    return 0;
-  v4 = 30;
-  v5 = (const WCHAR *)&word_100A3E0;
-  do
-  {
-    SendDlgItemMessageW(hDlg, v4, 0xC5u, 0x27u, 0);
-    SetDlgItemTextW(hDlg, v4, v5);
-    v5 += 40;
-    ++v4;
-  }
-  while ( (int)v5 <= (int)&word_100A430 );
-  SendDlgItemMessageW(hDlg, 30, 0xB1u, 0, 2555904);
-  return 1;
-}
-// 100180C: using guessed type int dword_100180C[10];
+	switch (a2)
+	{
+	case 2:
+		v10 = 30;
+		v11 = &word_100A340;
+		do
+		{
+			GetDlgItemTextW(hDlg, v10, v11, 40);
+			v11 += 40;
+			++v10;
+		} while ((int)v11 <= (int)&word_100A390);
+		return 0;
+	case 83:
+		v9 = GetDlgCtrlID(*(HWND *)(a4 + 12));
+		if (v9 < 30 || v9 > 33)
+			return 0;
+		WinHelpW(*(HWND *)(a4 + 12), (LPCWSTR)dword_1009034[16], 0xCu, (ULONG_PTR)dword_100180C);
+		return 1;
+	case 123:
+		v7 = hWnd;
+		if (hDlg == hWnd)
+		{
+			GetCursorPos(&Point);
+			ScreenToClient(hDlg, &Point);
+			v7 = ChildWindowFromPoint(hDlg, Point);
+		}
+		v8 = GetDlgCtrlID(v7);
+		if (v8 < 30 || v8 > 33)
+			return 0;
+		WinHelpW(v7, (LPCWSTR)dword_1009034[16], 0xAu, (ULONG_PTR)dword_100180C);
+		return 1;
+	}
+	if (a2 != 272)
+		return 0;
+	v4 = 30;
+	v5 = word_100A3E0;
+	do
+	{
+		SendDlgItemMessageW(hDlg, v4, 0xC5u, 0x27u, 0);
+		SetDlgItemTextW(hDlg, v4, v5);
+		v5 += 40;
+		++v4;
+	} while ((int)v5 <= (int)&word_100A430);
+	SendDlgItemMessageW(hDlg, 30, 0xB1u, 0, 2555904);
+	return 1;
+}// 100180C: using guessed type int dword_100180C[10];
 
 //----- (01006091) --------------------------------------------------------
 int *__stdcall sub_1006091(wchar_t *a1)
 {
-  int v1; // esi
-  wchar_t v2; // cx
-  _WORD *v3; // eax
-  int *v4; // edx
-  int v5; // edi
-  __int16 v6; // cx
-  int *v7; // ecx
-  int v8; // edx
-  bool v9; // sf
-  int v10; // edi
-  int v11; // edx
-  int v12; // eax
-  int *v13; // edi
-  int v14; // ecx
-  int v15; // eax
-  int v16; // ecx
-  int v17; // eax
-  wchar_t *v18; // eax
-  int v19; // edi
-  int *v20; // edi
-  int v21; // ecx
-  int *result; // eax
-  __time32_t Time; // [esp+Ch] [ebp-224h] BYREF
-  int v24[3]; // [esp+10h] [ebp-220h] BYREF
-  int v25; // [esp+1Ch] [ebp-214h]
-  wchar_t *v26; // [esp+20h] [ebp-210h]
-  WCHAR String[260]; // [esp+24h] [ebp-20Ch] BYREF
+	int v1; // esi
+	wchar_t v2; // cx
+	WCHAR *v3; // eax
+	int *v4; // edx
+	int v5; // edi
+	__int16 v6; // cx
+	int *v7; // ecx
+	int v8; // edx
+	bool v9; // sf
+	int v10; // edi
+	int v11; // edx
+	int v12; // eax
+	int *v13; // edi
+	int v14; // ecx
+	int v15; // eax
+	int v16; // ecx
+	int v17; // eax
+	wchar_t *v18; // eax
+	int v19; // edi
+	int *v20; // edi
+	int v21; // ecx
+	int *result; // eax
+	time_t Time; // [esp+Ch] [ebp-224h] BYREF
+	int v24[3]; // [esp+10h] [ebp-220h] BYREF
+	int v25; // [esp+1Ch] [ebp-214h]
+	wchar_t *v26; // [esp+20h] [ebp-210h]
+	WCHAR String[260]; // [esp+24h] [ebp-20Ch] BYREF
 
-  v26 = a1;
-  v1 = 1;
-  v24[0] = 0;
-  v24[1] = 0;
-  v24[2] = 0;
-  time((time_t *)&Time);
-  localtime((time_t *)&Time);
-  v2 = *a1;
-  if ( *a1 )
-  {
-    v3 = (_WORD *)dword_1009080;
-    while ( 1 )
-    {
-      if ( v2 )
-        goto LABEL_3;
-      if ( *v26 == 38 )
-        break;
-LABEL_47:
-      v2 = *v26;
-      if ( !*v26 )
-        goto LABEL_48;
-LABEL_3:
-      if ( v2 == 38 )
-        break;
-      ++v26;
-      v4 = &v24[v1];
-      v5 = *v4;
-      Destination[260 * v1 + *v4] = v2;
-      v2 = *v26;
-      *v4 = v5 + 1;
-    }
-    v6 = *++v26;
-    if ( *v26 == *v3 || v6 == v3[1] )
-    {
-      if ( dword_100901C )
-        lstrcpyW(String, lpString);
-      else
-        GetFileTitleW(sz, String, 0x104u);
-      v13 = &v24[v1];
-      if ( *v13 + lstrlenW(String) >= 260 )
-        goto LABEL_45;
-      lstrcpyW((LPWSTR)(2 * (*v13 + 260 * v1) + 16816896), String);
-      v17 = *v13 + lstrlenW(String);
-      goto LABEL_44;
-    }
-    if ( v6 == v3[2] || v6 == v3[3] )
-    {
-      v18 = ++v26;
-      v19 = 0;
-      if ( *v26 == 43 )
-      {
-        while ( 1 )
-        {
-          v26 = v18 + 1;
-          if ( !iswctype(v18[1], 4u) )
-            break;
-          v18 = v26;
-          v19 = *v26 + 10 * v19 - 48;
-        }
-      }
-      wsprintfW(String, L"%d", v19 + dword_1009ABC);
-      v20 = &v24[v1];
-      if ( *v20 + lstrlenW(String) < 260 )
-      {
-        lstrcpyW((LPWSTR)(2 * (*v20 + 260 * v1) + 16816896), String);
-        *v20 += lstrlenW(String);
-      }
-      --v26;
-      goto LABEL_45;
-    }
-    if ( v6 == v3[4] || v6 == v3[5] )
-    {
-      v15 = lstrlenW(aY);
-      v13 = &v24[v1];
-      v16 = *v13;
-      v25 = *v13 + v15;
-      if ( v25 < 260 )
-      {
-        wcsncpy((wchar_t *)(2 * (v16 + 260 * v1) + 16816896), aY, v15);
-        goto LABEL_31;
-      }
-    }
-    else
-    {
-      if ( v6 != v3[6] && v6 != v3[7] )
-      {
-        if ( v6 == 38 )
-        {
-          v7 = &v24[v1];
-          v8 = *v7;
-          v9 = *v7 - 259 < 0;
-          v25 = *v7 + 1;
-          if ( v9 != __OFSUB__(v25, 260) )
-          {
-            v10 = v8 + 260 * v1;
-            v11 = v25;
-            Destination[v10] = 38;
-            *v7 = v11;
-          }
-        }
-        else if ( v6 == v3[8] || v6 == v3[9] )
-        {
-          v1 = 1;
-        }
-        else if ( v6 == v3[10] || v6 == v3[11] )
-        {
-          v1 = 2;
-        }
-        else if ( v6 == v3[12] || v6 == v3[13] )
-        {
-          v1 = 0;
-        }
-        goto LABEL_46;
-      }
-      v12 = lstrlenW(aY_0);
-      v13 = &v24[v1];
-      v14 = *v13;
-      v25 = *v13 + v12;
-      if ( v25 < 260 )
-      {
-        wcsncpy((wchar_t *)(2 * (v14 + 260 * v1) + 16816896), aY_0, v12);
-LABEL_31:
-        v17 = v25;
-LABEL_44:
-        *v13 = v17;
-        goto LABEL_45;
-      }
-    }
-LABEL_45:
-    v3 = (_WORD *)dword_1009080;
-LABEL_46:
-    ++v26;
-    goto LABEL_47;
-  }
+	v26 = a1;
+	v1 = 1;
+	v24[0] = 0;
+	v24[1] = 0;
+	v24[2] = 0;
+	time(&Time);
+	localtime(&Time);
+	v2 = *a1;
+	if (*a1)
+	{
+		v3 = (WCHAR *)dword_1009034[19];
+		while (1)
+		{
+			if (v2)
+				goto LABEL_3;
+			if (*v26 == 38)
+				break;
+		LABEL_47:
+			v2 = *v26;
+			if (!*v26)
+				goto LABEL_48;
+		LABEL_3:
+			if (v2 == 38)
+				break;
+			++v26;
+			v4 = &v24[v1];
+			v5 = *v4;
+			Destination[260 * v1 + *v4] = v2;
+			v2 = *v26;
+			*v4 = v5 + 1;
+		}
+		v6 = *++v26;
+		if (*v26 == *v3 || v6 == v3[1])
+		{
+			if (dword_100901C)
+				lstrcpyW(String, (LPCWSTR)dword_1009034[3]);
+			else
+				GetFileTitleW(sz, String, 0x104u);
+			v13 = &v24[v1];
+			if (*v13 + lstrlenW(String) >= 260)
+				goto LABEL_45;
+			lstrcpyW((LPWSTR)(2 * (*v13 + 260 * v1) + 16816896), String);
+			v17 = *v13 + lstrlenW(String);
+			goto LABEL_44;
+		}
+		if (v6 == v3[2] || v6 == v3[3])
+		{
+			v18 = ++v26;
+			v19 = 0;
+			if (*v26 == 43)
+			{
+				while (1)
+				{
+					v26 = v18 + 1;
+					if (!iswctype(v18[1], 4u))
+						break;
+					v18 = v26;
+					v19 = *v26 + 10 * v19 - 48;
+				}
+			}
+			wsprintfW(String, L"%d", v19 + dword_1009ABC);
+			v20 = &v24[v1];
+			if (*v20 + lstrlenW(String) < 260)
+			{
+				lstrcpyW((LPWSTR)(2 * (*v20 + 260 * v1) + 16816896), String);
+				*v20 += lstrlenW(String);
+			}
+			--v26;
+			goto LABEL_45;
+		}
+		if (v6 == v3[4] || v6 == v3[5])
+		{
+			v15 = lstrlenW(aY);
+			v13 = &v24[v1];
+			v16 = *v13;
+			v25 = *v13 + v15;
+			if (v25 < 260)
+			{
+				wcsncpy((wchar_t *)(2 * (v16 + 260 * v1) + 16816896), aY, v15);
+				goto LABEL_31;
+			}
+		}
+		else
+		{
+			if (v6 != v3[6] && v6 != v3[7])
+			{
+				if (v6 == 38)
+				{
+					v7 = &v24[v1];
+					v8 = *v7;
+					v9 = *v7 - 259 < 0;
+					v25 = *v7 + 1;
+					if (v9 != __OFSUB__(v25, 260))
+					{
+						v10 = v8 + 260 * v1;
+						v11 = v25;
+						Destination[v10] = 38;
+						*v7 = v11;
+					}
+				}
+				else if (v6 == v3[8] || v6 == v3[9])
+				{
+					v1 = 1;
+				}
+				else if (v6 == v3[10] || v6 == v3[11])
+				{
+					v1 = 2;
+				}
+				else if (v6 == v3[12] || v6 == v3[13])
+				{
+					v1 = 0;
+				}
+				goto LABEL_46;
+			}
+			v12 = lstrlenW(aY_0);
+			v13 = &v24[v1];
+			v14 = *v13;
+			v25 = *v13 + v12;
+			if (v25 < 260)
+			{
+				wcsncpy((wchar_t *)(2 * (v14 + 260 * v1) + 16816896), aY_0, v12);
+			LABEL_31:
+				v17 = v25;
+			LABEL_44:
+				*v13 = v17;
+				goto LABEL_45;
+			}
+		}
+	LABEL_45:
+		v3 = (WCHAR *)dword_1009034[19];
+	LABEL_46:
+		++v26;
+		goto LABEL_47;
+	}
 LABEL_48:
-  v21 = 0;
-  result = v24;
-  do
-  {
-    Destination[v21 + *result] = 0;
-    v21 += 260;
-    ++result;
-  }
-  while ( v21 <= 520 );
-  return result;
-}
-// 100901C: using guessed type int dword_100901C;
+	v21 = 0;
+	result = v24;
+	do
+	{
+		Destination[v21 + *result] = 0;
+		v21 += 260;
+		++result;
+	} while (v21 <= 520);
+	return result;
+}// 100901C: using guessed type int dword_100901C;
 // 1009080: using guessed type int dword_1009080;
 // 1009ABC: using guessed type int dword_1009ABC;
 
 //----- (01006428) --------------------------------------------------------
 int sub_1006428()
 {
-  int result; // eax
-  unsigned __int16 *v1; // esi
-  const DEVMODEW *v2; // eax
-  HDC v3; // edi
+	int result; // eax
+	wchar_t *v1; // esi
+	const DEVMODEW *v2; // eax
+	HDC v3; // edi
 
-  if ( stru_100A4A0.hDevNames
-    || (BYTE1(stru_100A4A0.Flags) |= 4u,
-        PageSetupDlgW(&stru_100A4A0),
-        BYTE1(stru_100A4A0.Flags) &= 0xFBu,
-        stru_100A4A0.hDevNames) )
-  {
-    v1 = (unsigned __int16 *)GlobalLock(stru_100A4A0.hDevNames);
-    v2 = 0;
-    if ( stru_100A4A0.hDevMode )
-      v2 = (const DEVMODEW *)GlobalLock(stru_100A4A0.hDevMode);
-    v3 = CreateDCW((LPCWSTR)&v1[*v1], (LPCWSTR)&v1[v1[1]], 0, v2);
-    GlobalUnlock(stru_100A4A0.hDevNames);
-    if ( stru_100A4A0.hDevMode )
-      GlobalUnlock(stru_100A4A0.hDevMode);
-    if ( v3 )
-    {
-      result = (int)v3;
-    }
-    else
-    {
-      MessageBoxW(hWndParent, dword_1009098, lpCaption, 0x30u);
-      result = -1;
-    }
-  }
-  else
-  {
-    MessageBoxW(hWndParent, dword_1009098, lpCaption, 0x30u);
-    result = -1;
-  }
-  return result;
+	if (stru_100A4A0.hDevNames
+		|| (BYTE1(stru_100A4A0.Flags) |= 4u,
+		PageSetupDlgW(&stru_100A4A0),
+		BYTE1(stru_100A4A0.Flags) &= 0xFBu,
+		stru_100A4A0.hDevNames))
+	{
+		v1 = (wchar_t *)GlobalLock(stru_100A4A0.hDevNames);
+		v2 = 0;
+		if (stru_100A4A0.hDevMode)
+			v2 = (const DEVMODEW *)GlobalLock(stru_100A4A0.hDevMode);
+		v3 = CreateDCW(&v1[*v1], &v1[v1[1]], 0, v2);
+		GlobalUnlock(stru_100A4A0.hDevNames);
+		if (stru_100A4A0.hDevMode)
+			GlobalUnlock(stru_100A4A0.hDevMode);
+		if (v3)
+		{
+			result = (int)v3;
+		}
+		else
+		{
+			MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[25], (LPCWSTR)dword_1009034[8], 0x30u);
+			result = -1;
+		}
+	}
+	else
+	{
+		MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[25], (LPCWSTR)dword_1009034[8], 0x30u);
+		result = -1;
+	}
+	return result;
 }
+
 
 //----- (010064F3) --------------------------------------------------------
 int sub_10064F3()
 {
-  LPCWSTR *v1; // esi
-  HDC v2; // edi
-  DWORD pcbNeeded; // [esp+8h] [ebp-8h] BYREF
-  HANDLE phPrinter; // [esp+Ch] [ebp-4h] BYREF
+	LPCWSTR *v1; // esi
+	HDC v2; // edi
+	DWORD pcbNeeded; // [esp+8h] [ebp-8h] BYREF
+	HANDLE phPrinter; // [esp+Ch] [ebp-4h] BYREF
 
-  if ( !OpenPrinterW((LPWSTR)&pPrinterName, &phPrinter, 0) )
-    return -1;
-  GetPrinterDriverW(phPrinter, 0, 1u, 0, 0, &pcbNeeded);
-  v1 = (LPCWSTR *)LocalAlloc(0x40u, pcbNeeded);
-  if ( !v1 )
-    goto LABEL_4;
-  if ( !GetPrinterDriverW(phPrinter, 0, 1u, (LPBYTE)v1, pcbNeeded, &pcbNeeded) )
-  {
-    LocalFree(v1);
-LABEL_4:
-    ClosePrinter(phPrinter);
-    return -1;
-  }
-  BYTE1(stru_100A4A0.Flags) |= 4u;
-  PageSetupDlgW(&stru_100A4A0);
-  BYTE1(stru_100A4A0.Flags) &= 0xFBu;
-  v2 = CreateDCW(*v1,(LPCWSTR) &pPrinterName, 0, 0);
-  LocalFree(v1);
-  ClosePrinter(phPrinter);
-  if ( !v2 )
-  {
-    MessageBoxW(hWndParent, dword_1009098, lpCaption, 0x30u);
-    return -1;
-  }
-  return (int)v2;
+	if (!OpenPrinterW(pPrinterName, &phPrinter, 0))
+		return -1;
+	GetPrinterDriverW(phPrinter, 0, 1u, 0, 0, &pcbNeeded);
+	v1 = (LPCWSTR *)LocalAlloc(0x40u, pcbNeeded);
+	if (!v1)
+		goto LABEL_4;
+	if (!GetPrinterDriverW(phPrinter, 0, 1u, (LPBYTE)v1, pcbNeeded, &pcbNeeded))
+	{
+		LocalFree(v1);
+	LABEL_4:
+		ClosePrinter(phPrinter);
+		return -1;
+	}
+	BYTE1(stru_100A4A0.Flags) |= 4u;
+	PageSetupDlgW(&stru_100A4A0);
+	BYTE1(stru_100A4A0.Flags) &= 0xFBu;
+	v2 = CreateDCW(*v1, pPrinterName, 0, 0);
+	LocalFree(v1);
+	ClosePrinter(phPrinter);
+	if (!v2)
+	{
+		MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[25], (LPCWSTR)dword_1009034[8], 0x30u);
+		return -1;
+	}
+	return (int)v2;
 }
-
 //----- (010065CB) --------------------------------------------------------
 INT_PTR __stdcall sub_10065CB(HWND hWnd, UINT a2, WPARAM a3, LPARAM a4)
 {
-  LPCWSTR v5; // eax
+	const WCHAR *v5; // eax
 
-  switch ( a2 )
-  {
-    case 0x110u:
-      dword_1009A98 = GetSystemMenu(hWnd, 0);
-      if ( dword_100901C )
-        v5 = lpString;
-      else
-        v5 = sub_1001D2B(sz);
-      SetDlgItemTextW(hWnd, 20, v5);
-      SetFocus(hWnd);
-      break;
-    case 0x111u:
-      dword_100A134 = 1;
-      sub_1005F3C();
-      break;
-    case 0x116u:
-      EnableMenuItem(dword_1009A98, 0xF060u, 1u);
-      break;
-    default:
-      return 0;
-  }
-  return 1;
-}
-// 100901C: using guessed type int dword_100901C;
+	switch (a2)
+	{
+	case 0x110u:
+		dword_1009A98 = GetSystemMenu(hWnd, 0);
+		if (dword_100901C)
+			v5 = (const WCHAR *)dword_1009034[3];
+		else
+			v5 = sub_1001D2B(sz);
+		SetDlgItemTextW(hWnd, 20, v5);
+		SetFocus(hWnd);
+		break;
+	case 0x111u:
+		dword_100A134 = 1;
+		sub_1005F3C();
+		break;
+	case 0x116u:
+		EnableMenuItem(dword_1009A98, 0xF060u, 1u);
+		break;
+	default:
+		return 0;
+	}
+	return 1;
+}// 100901C: using guessed type int dword_100901C;
 // 100A134: using guessed type int dword_100A134;
 
 //----- (01006657) --------------------------------------------------------
 int __stdcall sub_1006657(HDC hdc, int y)
 {
-  int v3; // eax
-  int v4; // eax
-  int v5; // eax
-  int v6; // edi
-  int v7; // eax
-  int v8; // eax
-  int v9; // edi
-  int v10; // eax
-  struct tagSIZE psizl; // [esp+8h] [ebp-8h] BYREF
-  int ya; // [esp+1Ch] [ebp+Ch]
+	int v3; // eax
+	int v4; // eax
+	int v5; // eax
+	int v6; // edi
+	int v7; // eax
+	int v8; // eax
+	int v9; // edi
+	int v10; // eax
+	struct tagSIZE psizl; // [esp+8h] [ebp-8h] BYREF
+	int ya; // [esp+1Ch] [ebp+Ch]
 
-  if ( !word_100A3E0[40 * y] )
-    return 0;
-  sub_1006091(&word_100A3E0[40 * y]);
-  if ( y )
-    v3 = dword_1009AE4 - dword_100A130 - dword_1009AC8;
-  else
-    v3 = dword_1009ACC;
-  ya = v3;
-  if ( Destination[0] )
-  {
-    v4 = lstrlenW(Destination);
-    TextOutW(hdc, x, ya, Destination, v4);
-  }
-  if ( word_1009D08 )
-  {
-    v5 = lstrlenW(&word_1009D08);
-    GetTextExtentPoint32W(hdc, &word_1009D08, v5, &psizl);
-    v6 = (x + dword_1009AE8 - dword_1009AC0) / 2 - psizl.cx / 2;
-    v7 = lstrlenW(&word_1009D08);
-    TextOutW(hdc, v6, ya, &word_1009D08, v7);
-  }
-  if ( word_1009F10 )
-  {
-    v8 = lstrlenW(&word_1009F10);
-    GetTextExtentPoint32W(hdc, &word_1009F10, v8, &psizl);
-    v9 = dword_1009AE8 - dword_1009AC0 - psizl.cx;
-    v10 = lstrlenW(&word_1009F10);
-    TextOutW(hdc, v9, ya, &word_1009F10, v10);
-  }
-  return 1;
+	if (!word_100A3E0[40 * y])
+		return 0;
+	sub_1006091(&word_100A3E0[40 * y]);
+	if (y)
+		v3 = dword_1009AE4 - dword_100A130 - dword_1009AC8;
+	else
+		v3 = dword_1009ACC;
+	ya = v3;
+	if (Destination[0])
+	{
+		v4 = lstrlenW(Destination);
+		TextOutW(hdc, x, ya, Destination, v4);
+	}
+	if (word_1009D08)
+	{
+		v5 = lstrlenW(&word_1009D08);
+		GetTextExtentPoint32W(hdc, &word_1009D08, v5, &psizl);
+		v6 = (x + dword_1009AE8 - dword_1009AC0) / 2 - psizl.cx / 2;
+		v7 = lstrlenW(&word_1009D08);
+		TextOutW(hdc, v6, ya, &word_1009D08, v7);
+	}
+	if (word_1009F10)
+	{
+		v8 = lstrlenW(&word_1009F10);
+		GetTextExtentPoint32W(hdc, &word_1009F10, v8, &psizl);
+		v9 = dword_1009AE8 - dword_1009AC0 - psizl.cx;
+		v10 = lstrlenW(&word_1009F10);
+		TextOutW(hdc, v9, ya, &word_1009F10, v10);
+	}
+	return 1;
 }
 // 1009AC0: using guessed type int dword_1009AC0;
 // 1009AC8: using guessed type int dword_1009AC8;
@@ -4237,203 +4247,202 @@ int __stdcall sub_1006657(HDC hdc, int y)
 //----- (01006773) --------------------------------------------------------
 int __stdcall sub_1006773(HDC a1)
 {
-  HFONT v1; // eax
-  HGDIOBJ v2; // eax
-  HFONT v3; // eax
-  int v4; // eax
-  int v5; // esi
-  void *v6; // eax
-  int v7; // ebx
-  HDC v8; // esi
-  int result; // eax
-  struct tagTEXTMETRICW tm; // [esp+Ch] [ebp-3C8h] BYREF
-  struct tagDRAWTEXTPARAMS dtp; // [esp+48h] [ebp-38Ch] BYREF
-  DOCINFOW v12; // [esp+5Ch] [ebp-378h] BYREF
-  struct tagRECT rc; // [esp+70h] [ebp-364h] BYREF
-  HLOCAL hMem; // [esp+80h] [ebp-354h]
-  int v15; // [esp+84h] [ebp-350h]
-  HGDIOBJ ho; // [esp+88h] [ebp-34Ch]
-  LCID Locale; // [esp+8Ch] [ebp-348h]
-  int v18; // [esp+90h] [ebp-344h]
-  HGDIOBJ h; // [esp+94h] [ebp-340h]
-  LPCWSTR lpString; // [esp+98h] [ebp-33Ch]
-  HDC hdc; // [esp+9Ch] [ebp-338h]
-  LOGFONTW lf; // [esp+A0h] [ebp-334h] BYREF
-  WCHAR String[260]; // [esp+FCh] [ebp-2D8h] BYREF
-  wchar_t Buffer[102]; // [esp+304h] [ebp-D0h] BYREF
+	HFONT v1; // eax
+	HGDIOBJ v2; // eax
+	HFONT v3; // eax
+	int v4; // eax
+	int v5; // esi
+	void *v6; // eax
+	int v7; // ebx
+	HDC v8; // esi
+	int result; // eax
+	struct tagTEXTMETRICW tm; // [esp+Ch] [ebp-3C8h] BYREF
+	struct tagDRAWTEXTPARAMS dtp; // [esp+48h] [ebp-38Ch] BYREF
+	DOCINFOW v12; // [esp+5Ch] [ebp-378h] BYREF
+	struct tagRECT rc; // [esp+70h] [ebp-364h] BYREF
+	HLOCAL hMem; // [esp+80h] [ebp-354h]
+	int v15; // [esp+84h] [ebp-350h]
+	HGDIOBJ ho; // [esp+88h] [ebp-34Ch]
+	LCID Locale; // [esp+8Ch] [ebp-348h]
+	int v18; // [esp+90h] [ebp-344h]
+	HGDIOBJ h; // [esp+94h] [ebp-340h]
+	LPCWSTR lpString; // [esp+98h] [ebp-33Ch]
+	HDC hdc; // [esp+9Ch] [ebp-338h]
+	LOGFONTW lf; // [esp+A0h] [ebp-334h] BYREF
+	WCHAR String[260]; // [esp+FCh] [ebp-2D8h] BYREF
+	wchar_t Buffer[102]; // [esp+304h] [ebp-D0h] BYREF
 
-  hdc = a1;
-  hMem = 0;
-  h = 0;
-  v18 = 0;
-  v15 = 0;
-  lpString = 0;
-  dword_100A134 = 0;
-  dword_100A138 = 0;
-  SetCursor(hCursor);
-  sub_1005E0C(a1);
-  GetLocalTime(&Time);
-  Locale = GetUserDefaultLCID();
-  GetDateFormatW(Locale, 2u, &Time, 0, aY_0, 260);
-  GetTimeFormatW(Locale, 0, &Time, 0, aY, 260);
-  qmemcpy(&lf, &::lf, sizeof(lf));
-  lf.lfWidth = 0;
-  lf.lfHeight = *(_DWORD *)&Data * dword_1009AE0 / -720;
-  SetMapMode(a1, 8);
-  SetViewportExtEx(a1, dword_1009ADC, y, 0);
-  SetWindowExtEx(a1, stru_100A4A0.ptPaperSize.x, stru_100A4A0.ptPaperSize.y, 0);
-  pt = *(struct tagPOINT *)&stru_100A4A0.rtMargin.left;
-  *((_DWORD *)&pt + 2) = stru_100A4A0.rtMargin.right;
-  *((_DWORD *)&pt + 3) = stru_100A4A0.rtMargin.bottom;
-  LPtoDP(hdc, &pt, 2);
-  SetMapMode(hdc, 1);
-  v1 = CreateFontIndirectW(&lf);
-  ho = v1;
-  if ( !v1 )
-    goto LABEL_26;
-  h = SelectObject(hdc, v1);
-  if ( !h )
-    goto LABEL_26;
-  SetBkMode(hdc, 1);
-  if ( !GetTextMetricsW(hdc, &tm) )
-    goto LABEL_26;
-  if ( (tm.tmPitchAndFamily & 6) == 0 )
-  {
-    v2 = SelectObject(hdc, h);
-    DeleteObject(v2);
-    memset(lf.lfFaceName, 0, sizeof(lf.lfFaceName));
-    v3 = CreateFontIndirectW(&lf);
-    ho = v3;
-    if ( !v3 )
-      goto LABEL_26;
-    h = SelectObject(hdc, v3);
-    if ( !h || !GetTextMetricsW(hdc, &tm) )
-      goto LABEL_26;
-  }
-  dword_100A13C = 8 * tm.tmAveCharWidth;
-  dword_100A130 = tm.tmHeight + tm.tmExternalLeading;
-  x = pt.x - dword_1009AD4;
-  if ( pt.x - dword_1009AD4 <= 0 )
-    x = 0;
-  dword_1009AC0 = dword_100A128 + dword_1009AE8 - dword_1009ADC + dword_1009AD4;
-  if ( dword_100A128 + dword_1009AE8 - dword_1009ADC + dword_1009AD4 <= 0 )
-    dword_1009AC0 = 0;
-  dword_1009ACC = pt.y - dword_1009AD0;
-  if ( pt.y - dword_1009AD0 <= 0 )
-    dword_1009ACC = 0;
-  dword_1009AC8 = dword_100A12C + dword_1009AE4 - y + dword_1009AD0;
-  if ( dword_100A12C + dword_1009AE4 - y + dword_1009AD0 <= 0 )
-    dword_1009AC8 = 0;
-  v4 = (dword_1009AE4 - dword_1009AC8 - dword_1009ACC) / (tm.tmHeight + tm.tmExternalLeading);
-  if ( word_100A3E0[0] )
-    --v4;
-  if ( word_100A430 )
-    --v4;
-  if ( v4 <= 0 )
-  {
-LABEL_51:
-    MessageBoxW(hWndParent, dword_10090A4, lpCaption, 0x30u);
-    SetLastError(0);
-LABEL_26:
-    v5 = GetLastError();
-    goto LABEL_40;
-  }
-  v5 = SetAbortProc(hdc, proc);
-  if ( v5 < 0 )
-    goto LABEL_40;
-  v6 = (void *)SendMessageW(hWnd, 0xBDu, 0, 0);
-  hMem = v6;
-  if ( !v6 )
-    goto LABEL_26;
-  lpString = (LPCWSTR)LocalLock(v6);
-  if ( !lpString )
-    goto LABEL_26;
-  GetWindowTextW(hWndParent, String, 260);
-  EnableWindow(hWndParent, 0);
-  dword_100A138 = CreateDialogParamW(hInstance, (LPCWSTR)0xB, hWndParent, sub_10065CB, 0);
-  if ( !dword_100A138 )
-    goto LABEL_26;
-  v12.cbSize = 20;
-  v12.lpszDocName = String;
-  v12.lpszOutput = 0;
-  v12.lpszDatatype = 0;
-  v12.fwType = 0;
-  SetLastError(0);
-  if ( StartDocW(hdc, &v12) <= 0 )
-    goto LABEL_26;
-  v15 = 1;
-  dword_1009ABC = 1;
-  rc.left = x;
-  rc.right = dword_1009AE8 - dword_1009AC0;
-  rc.top = dword_1009ACC;
-  Locale = 0;
-  v18 = 0;
-  rc.bottom = dword_1009AE4 - dword_1009AC8;
-  if ( word_100A3E0[0] )
-    rc.top += dword_100A130;
-  if ( word_100A430 )
-    rc.bottom = dword_1009AE4 - dword_1009AC8 - dword_100A130;
-  v7 = lstrlenW(lpString);
-  if ( (GetWindowLongW(hWnd, -20) & 0x2000) != 0 )
-    Locale = 131074;
-  for ( ; !dword_100A134; lpString += dtp.uiLengthDrawn )
-  {
-    if ( v7 <= 0 )
-      break;
-    _snwprintf_s(Buffer, 0x64u, dword_10090C4, dword_1009ABC);
-    SetDlgItemTextW(dword_100A138, 21, Buffer);
-    v8 = hdc;
-    sub_1006657(hdc, 0);
-    dtp.iLeftMargin = 0;
-    dtp.iRightMargin = 0;
-    dtp.uiLengthDrawn = 0;
-    dtp.cbSize = 20;
-    dtp.iTabLength = dword_100A13C;
-    if ( StartPage(v8) <= 0 )
-      goto LABEL_26;
-    v18 = 1;
-    DrawTextExW(v8, (LPWSTR)lpString, v7, &rc, Locale | 0x2850, &dtp);
-    sub_1006657(v8, 1);
-    if ( EndPage(v8) <= 0 )
-      goto LABEL_26;
-    v18 = 0;
-    ++dword_1009ABC;
-    if ( !dtp.uiLengthDrawn )
-      goto LABEL_51;
-    v7 -= dtp.uiLengthDrawn;
-  }
-  v5 = 0;
+	hdc = a1;
+	hMem = 0;
+	h = 0;
+	v18 = 0;
+	v15 = 0;
+	lpString = 0;
+	dword_100A134 = 0;
+	dword_100A138 = 0;
+	SetCursor(hCursor);
+	sub_1005E0C(a1);
+	GetLocalTime(&Time);
+	Locale = GetUserDefaultLCID();
+	GetDateFormatW(Locale, 2u, &Time, 0, aY_0, 260);
+	GetTimeFormatW(Locale, 0, &Time, 0, aY, 260);
+	qmemcpy(&lf, &::lf, sizeof(lf));
+	lf.lfWidth = 0;
+	lf.lfHeight = *(_DWORD *)&Data * dword_1009AE0 / -720;
+	SetMapMode(a1, 8);
+	SetViewportExtEx(a1, dword_1009ADC, y, 0);
+	SetWindowExtEx(a1, stru_100A4A0.ptPaperSize.x, stru_100A4A0.ptPaperSize.y, 0);
+	pt = *(struct tagPOINT *)&stru_100A4A0.rtMargin.left;
+	*((_DWORD *)&pt + 2) = stru_100A4A0.rtMargin.right;
+	*((_DWORD *)&pt + 3) = stru_100A4A0.rtMargin.bottom;
+	LPtoDP(hdc, &pt, 2);
+	SetMapMode(hdc, 1);
+	v1 = CreateFontIndirectW(&lf);
+	ho = v1;
+	if (!v1)
+		goto LABEL_26;
+	h = SelectObject(hdc, v1);
+	if (!h)
+		goto LABEL_26;
+	SetBkMode(hdc, 1);
+	if (!GetTextMetricsW(hdc, &tm))
+		goto LABEL_26;
+	if ((tm.tmPitchAndFamily & 6) == 0)
+	{
+		v2 = SelectObject(hdc, h);
+		DeleteObject(v2);
+		memset(lf.lfFaceName, 0, sizeof(lf.lfFaceName));
+		v3 = CreateFontIndirectW(&lf);
+		ho = v3;
+		if (!v3)
+			goto LABEL_26;
+		h = SelectObject(hdc, v3);
+		if (!h || !GetTextMetricsW(hdc, &tm))
+			goto LABEL_26;
+	}
+	dword_100A13C = 8 * tm.tmAveCharWidth;
+	dword_100A130 = tm.tmHeight + tm.tmExternalLeading;
+	x = pt.x - dword_1009AD4;
+	if (pt.x - dword_1009AD4 <= 0)
+		x = 0;
+	dword_1009AC0 = dword_100A128 + dword_1009AE8 - dword_1009ADC + dword_1009AD4;
+	if (dword_100A128 + dword_1009AE8 - dword_1009ADC + dword_1009AD4 <= 0)
+		dword_1009AC0 = 0;
+	dword_1009ACC = pt.y - dword_1009AD0;
+	if (pt.y - dword_1009AD0 <= 0)
+		dword_1009ACC = 0;
+	dword_1009AC8 = dword_100A12C + dword_1009AE4 - y + dword_1009AD0;
+	if (dword_100A12C + dword_1009AE4 - y + dword_1009AD0 <= 0)
+		dword_1009AC8 = 0;
+	v4 = (dword_1009AE4 - dword_1009AC8 - dword_1009ACC) / (tm.tmHeight + tm.tmExternalLeading);
+	if (word_100A3E0[0])
+		--v4;
+	if (word_100A430)
+		--v4;
+	if (v4 <= 0)
+	{
+	LABEL_51:
+		MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[28], (LPCWSTR)dword_1009034[8], 0x30u);
+		SetLastError(0);
+	LABEL_26:
+		v5 = GetLastError();
+		goto LABEL_40;
+	}
+	v5 = SetAbortProc(hdc, proc);
+	if (v5 < 0)
+		goto LABEL_40;
+	v6 = (void *)SendMessageW(hWnd, 0xBDu, 0, 0);
+	hMem = v6;
+	if (!v6)
+		goto LABEL_26;
+	lpString = (LPCWSTR)LocalLock(v6);
+	if (!lpString)
+		goto LABEL_26;
+	GetWindowTextW(hWndParent, String, 260);
+	EnableWindow(hWndParent, 0);
+	dword_100A138 = CreateDialogParamW(hInstance, (LPCWSTR)0xB, hWndParent, sub_10065CB, 0);
+	if (!dword_100A138)
+		goto LABEL_26;
+	v12.cbSize = 20;
+	v12.lpszDocName = String;
+	v12.lpszOutput = 0;
+	v12.lpszDatatype = 0;
+	v12.fwType = 0;
+	SetLastError(0);
+	if (StartDocW(hdc, &v12) <= 0)
+		goto LABEL_26;
+	v15 = 1;
+	dword_1009ABC = 1;
+	rc.left = x;
+	rc.right = dword_1009AE8 - dword_1009AC0;
+	rc.top = dword_1009ACC;
+	Locale = 0;
+	v18 = 0;
+	rc.bottom = dword_1009AE4 - dword_1009AC8;
+	if (word_100A3E0[0])
+		rc.top += dword_100A130;
+	if (word_100A430)
+		rc.bottom = dword_1009AE4 - dword_1009AC8 - dword_100A130;
+	v7 = lstrlenW(lpString);
+	if ((GetWindowLongW(hWnd, -20) & 0x2000) != 0)
+		Locale = 131074;
+	for (; !dword_100A134; lpString += dtp.uiLengthDrawn)
+	{
+		if (v7 <= 0)
+			break;
+		_snwprintf_s(Buffer, 0x64u, (const wchar_t *)dword_1009034[36], dword_1009ABC);
+		SetDlgItemTextW(dword_100A138, 21, Buffer);
+		v8 = hdc;
+		sub_1006657(hdc, 0);
+		dtp.iLeftMargin = 0;
+		dtp.iRightMargin = 0;
+		dtp.uiLengthDrawn = 0;
+		dtp.cbSize = 20;
+		dtp.iTabLength = dword_100A13C;
+		if (StartPage(v8) <= 0)
+			goto LABEL_26;
+		v18 = 1;
+		DrawTextExW(v8, (LPWSTR)lpString, v7, &rc, Locale | 0x2850, &dtp);
+		sub_1006657(v8, 1);
+		if (EndPage(v8) <= 0)
+			goto LABEL_26;
+		v18 = 0;
+		++dword_1009ABC;
+		if (!dtp.uiLengthDrawn)
+			goto LABEL_51;
+		v7 -= dtp.uiLengthDrawn;
+	}
+	v5 = 0;
 LABEL_40:
-  if ( h )
-  {
-    SelectObject(hdc, h);
-    DeleteObject(ho);
-  }
-  if ( lpString )
-    LocalUnlock(hMem);
-  if ( v18 && EndPage(hdc) <= 0 && !v5 )
-    v5 = GetLastError();
-  if ( v15 )
-  {
-    if ( dword_100A134 )
-    {
-      AbortDoc(hdc);
-    }
-    else if ( EndDoc(hdc) <= 0 && !v5 )
-    {
-      v5 = GetLastError();
-    }
-  }
-  DeleteDC(hdc);
-  sub_1005F3C();
-  SetCursor(dword_100AB88);
-  if ( dword_100A134 )
-    result = -3;
-  else
-    result = v5;
-  return result;
-}
-// 1009ABC: using guessed type int dword_1009ABC;
+	if (h)
+	{
+		SelectObject(hdc, h);
+		DeleteObject(ho);
+	}
+	if (lpString)
+		LocalUnlock(hMem);
+	if (v18 && EndPage(hdc) <= 0 && !v5)
+		v5 = GetLastError();
+	if (v15)
+	{
+		if (dword_100A134)
+		{
+			AbortDoc(hdc);
+		}
+		else if (EndDoc(hdc) <= 0 && !v5)
+		{
+			v5 = GetLastError();
+		}
+	}
+	DeleteDC(hdc);
+	sub_1005F3C();
+	SetCursor(dword_100AB88);
+	if (dword_100A134)
+		result = -3;
+	else
+		result = v5;
+	return result;
+}// 1009ABC: using guessed type int dword_1009ABC;
 // 1009AC0: using guessed type int dword_1009AC0;
 // 1009AC8: using guessed type int dword_1009AC8;
 // 1009ACC: using guessed type int dword_1009ACC;
@@ -4451,199 +4460,197 @@ LABEL_40:
 //----- (01006DF7) --------------------------------------------------------
 int __stdcall sub_1006DF7(int a1)
 {
-  HDC v1; // eax
+	HDC v1; // eax
 
-  SetCursor(hCursor);
-  if ( a1 )
-  {
-    if ( a1 == 2 )
-      v1 = (HDC)sub_10064F3();
-    else
-      v1 = (HDC)sub_1006428();
-  }
-  else
-  {
-    v1 = (HDC)sub_1005E6D();
-  }
-  if ( v1 != (HDC)-1 )
-    return sub_1006773(v1);
-  SetCursor(dword_100AB88);
-  return 0;
+	SetCursor(hCursor);
+	if (a1)
+	{
+		if (a1 == 2)
+			v1 = (HDC)sub_10064F3();
+		else
+			v1 = (HDC)sub_1006428();
+	}
+	else
+	{
+		v1 = (HDC)sub_1005E6D();
+	}
+	if (v1 != (HDC)-1)
+		return sub_1006773(v1);
+	SetCursor(dword_100AB88);
+	return 0;
 }
 
 //----- (01006E4B) --------------------------------------------------------
 int __stdcall sub_1006E4B(int a1)
 {
-  int result; // eax
-  DWORD v2; // esi
-  LANGID v3; // ax
-  DWORD v4; // eax
-  WCHAR *v5; // ecx
-  const WCHAR *v6; // eax
-  WCHAR Buffer[400]; // [esp+4h] [ebp-324h] BYREF
+	int result; // eax
+	DWORD v2; // esi
+	LANGID v3; // ax
+	DWORD v4; // eax
+	WCHAR *v5; // ecx
+	const WCHAR *v6; // eax
+	WCHAR Buffer[400]; // [esp+4h] [ebp-324h] BYREF
 
-  result = sub_1006DF7(a1);
-  v2 = result;
-  if ( result && result != -2 && result != -3 )
-  {
-    if ( result == -4 )
-      v2 = 112;
-    if ( v2 == -5 )
-      v2 = 14;
-    if ( v2 == -1 )
-    {
-      result = GetLastError();
-      v2 = result;
-    }
-    if ( v2 )
-    {
-      v3 = GetUserDefaultUILanguage();
-      v4 = FormatMessageW(0x1200u, 0, v2, v3, Buffer, 0x190u, 0);
-      v5 = (WCHAR *)dword_1009060;
-      if ( v4 )
-        v5 = Buffer;
-      v6 = lpString;
-      if ( !dword_100901C )
-        v6 = sz;
-      result = sub_1001F70(hWndParent, lpCaption, v5, v6, 0x30u);
-    }
-  }
-  return result;
+	result = sub_1006DF7(a1);
+	v2 = result;
+	if (result && result != -2 && result != -3)
+	{
+		if (result == -4)
+			v2 = 112;
+		if (v2 == -5)
+			v2 = 14;
+		if (v2 == -1)
+		{
+			result = GetLastError();
+			v2 = result;
+		}
+		if (v2)
+		{
+			v3 = GetUserDefaultUILanguage();
+			v4 = FormatMessageW(0x1200u, 0, v2, v3, Buffer, 0x190u, 0);
+			v5 = (WCHAR *)dword_1009034[11];
+			if (v4)
+				v5 = Buffer;
+			v6 = (const WCHAR *)dword_1009034[3];
+			if (!dword_100901C)
+				v6 = sz;
+			result = sub_1001F70(hWndParent, (LPCWSTR)dword_1009034[8], v5, v6, 0x30u);
+		}
+	}
+	return result;
 }
 // 100901C: using guessed type int dword_100901C;
 
 //----- (01006F10) --------------------------------------------------------
 LRESULT __stdcall sub_1006F10(int a1)
 {
-  int v1; // esi
-  DWORD v2; // edi
-  __int16 v3; // ax
-  struct _SYSTEMTIME SystemTime; // [esp+Ch] [ebp-3E8h] BYREF
-  WCHAR DateStr[80]; // [esp+1Ch] [ebp-3D8h] BYREF
-  WCHAR TimeStr[80]; // [esp+BCh] [ebp-338h] BYREF
-  WCHAR String1; // [esp+15Ch] [ebp-298h] BYREF
-  char v9[656]; // [esp+15Eh] [ebp-296h] BYREF
-  __int16 v10; // [esp+3EEh] [ebp-6h]
+	int v1; // esi
+	DWORD v2; // edi
+	__int16 v3; // ax
+	struct _SYSTEMTIME SystemTime; // [esp+Ch] [ebp-3E8h] BYREF
+	WCHAR DateStr[80]; // [esp+1Ch] [ebp-3D8h] BYREF
+	WCHAR TimeStr[80]; // [esp+BCh] [ebp-338h] BYREF
+	WCHAR String1; // [esp+15Ch] [ebp-298h] BYREF
+	char v9[656]; // [esp+15Eh] [ebp-296h] BYREF
+	__int16 v10; // [esp+3EEh] [ebp-6h]
 
-  String1 = 0;
-  memset(v9, 0, sizeof(v9));
-  v10 = 0;
-  v1 = 1;
-  v2 = 1;
-  v3 = GetUserDefaultLCID() & 0x3FF;
-  if ( v3 != 1 && v3 != 13 )
-    v1 = 0;
-  GetLocalTime(&SystemTime);
-  if ( v1 )
-  {
-    if ( (GetWindowLongW(hWnd, -20) & 0x2000) != 0 )
-    {
-      v2 = 33;
-      lstrcatW(&String1, (LPCWSTR)&dword_1001844);
-    }
-    else
-    {
-      v2 = 17;
-      lstrcatW(&String1, &word_1001840);
-    }
-  }
-  GetDateFormatW(0x400u, v2, &SystemTime, 0, DateStr, 80);
-  GetTimeFormatW(0x400u, 2u, &SystemTime, 0, TimeStr, 80);
-  if ( a1 )
-    lstrcatW(&String1, L"\r\n");
-  lstrcatW(&String1, TimeStr);
-  lstrcatW(&String1, &word_1001834);
-  lstrcatW(&String1, DateStr);
-  if ( a1 )
-    lstrcatW(&String1, L"\r\n");
-  return SendMessageW(hWnd, 0xC2u, 1u, (LPARAM)&String1);
+	String1 = 0;
+	memset(v9, 0, sizeof(v9));
+	v10 = 0;
+	v1 = 1;
+	v2 = 1;
+	v3 = GetUserDefaultLCID() & 0x3FF;
+	if (v3 != 1 && v3 != 13)
+		v1 = 0;
+	GetLocalTime(&SystemTime);
+	if (v1)
+	{
+		if ((GetWindowLongW(hWnd, -20) & 0x2000) != 0)
+		{
+			v2 = 33;
+			lstrcatW(&String1, (LPCWSTR)&dword_1001844);
+		}
+		else
+		{
+			v2 = 17;
+			lstrcatW(&String1, &word_1001840);
+		}
+	}
+	GetDateFormatW(0x400u, v2, &SystemTime, 0, DateStr, 80);
+	GetTimeFormatW(0x400u, 2u, &SystemTime, 0, TimeStr, 80);
+	if (a1)
+		lstrcatW(&String1, L"\r\n");
+	lstrcatW(&String1, TimeStr);
+	lstrcatW(&String1, &word_1001834);
+	lstrcatW(&String1, DateStr);
+	if (a1)
+		lstrcatW(&String1, L"\r\n");
+	return SendMessageW(hWnd, 0xC2u, 1u, (LPARAM)&String1);
 }
 // 1001844: using guessed type int dword_1001844;
 
 //----- (01007059) --------------------------------------------------------
 int __stdcall sub_1007059(int a1, int a2)
 {
-  int v2; // ecx
-  int v3; // esi
-  int v4; // edx
-  char v5; // al
-  int result; // eax
+	int v2; // ecx
+	int v3; // esi
+	int v4; // edx
+	char v5; // al
+	int result; // eax
 
-  v2 = 0;
-  v3 = 1;
-  v4 = 0;
-  if ( a2 <= 0 )
-    goto LABEL_14;
-  do
-  {
-    v5 = *(_BYTE *)(v2 + a1);
-    if ( v5 < 0 )
-      v3 = 0;
-    if ( v4 )
-    {
-      if ( (v5 & 0xC0) != 0x80 )
-        goto LABEL_14;
-      --v4;
-    }
-    else if ( (unsigned __int8)v5 >= 0x80u )
-    {
-      do
-      {
-        v5 *= 2;
-        ++v4;
-      }
-      while ( v5 < 0 );
-      if ( !--v4 )
-        goto LABEL_14;
-    }
-    ++v2;
-  }
-  while ( v2 < a2 );
-  if ( v4 || v3 )
-LABEL_14:
-    result = 0;
-  else
-    result = 1;
-  return result;
+	v2 = 0;
+	v3 = 1;
+	v4 = 0;
+	if (a2 <= 0)
+		goto LABEL_14;
+	do
+	{
+		v5 = *(_BYTE *)(v2 + a1);
+		if (v5 < 0)
+			v3 = 0;
+		if (v4)
+		{
+			if ((v5 & 0xC0) != 0x80)
+				goto LABEL_14;
+			--v4;
+		}
+		else if ((unsigned __int8)v5 >= 0x80u)
+		{
+			do
+			{
+				v5 *= 2;
+				++v4;
+			} while (v5 < 0);
+			if (!--v4)
+				goto LABEL_14;
+		}
+		++v2;
+	} while (v2 < a2);
+	if (v4 || v3)
+	LABEL_14:
+	result = 0;
+	else
+		result = 1;
+	return result;
 }
 
 //----- (010070B1) --------------------------------------------------------
 BOOL __stdcall sub_10070B1(void *lpv, int iSize)
 {
-  int iResult; // [esp+0h] [ebp-4h] BYREF
+	int iResult; // [esp+0h] [ebp-4h] BYREF
 
-  iResult = -1;
-  return IsTextUnicode(lpv, iSize, &iResult);
+	iResult = -1;
+	return IsTextUnicode(lpv, iSize, &iResult);
 }
 
 //----- (010070D4) --------------------------------------------------------
 int sub_10070D4()
 {
-  uintptr_t v0; // eax
-  DWORD v1; // esi
-  DWORD v2; // esi
-  DWORD v3; // esi
-  int result; // eax
-  LARGE_INTEGER PerformanceCount; // [esp+0h] [ebp-10h] BYREF
-  struct _FILETIME SystemTimeAsFileTime; // [esp+8h] [ebp-8h] BYREF
+	uintptr_t v0; // eax
+	DWORD v1; // esi
+	DWORD v2; // esi
+	DWORD v3; // esi
+	int result; // eax
+	LARGE_INTEGER PerformanceCount; // [esp+0h] [ebp-10h] BYREF
+	struct _FILETIME SystemTimeAsFileTime; // [esp+8h] [ebp-8h] BYREF
 
-  v0 = __security_cookie;
-  if ( !__security_cookie || __security_cookie == 47936 )
-  {
-    GetSystemTimeAsFileTime(&SystemTimeAsFileTime);
-    v1 = SystemTimeAsFileTime.dwLowDateTime ^ SystemTimeAsFileTime.dwHighDateTime;
-    v2 = GetCurrentProcessId() ^ v1;
-    v3 = GetCurrentThreadId() ^ v2;
-    LOWORD(v3) = GetTickCount() ^ v3;
-    QueryPerformanceCounter(&PerformanceCount);
-    v0 = (unsigned __int16)(v3 ^ LOWORD(PerformanceCount.LowPart) ^ WORD2(PerformanceCount.QuadPart));
-    if ( !((unsigned __int16)v3 ^ (unsigned __int16)(LOWORD(PerformanceCount.LowPart) ^ WORD2(PerformanceCount.QuadPart))) )
-      v0 = 47936;
-    __security_cookie = v0;
-  }
-  result = ~v0;
-  dword_1009600 = result;
-  return result;
+	v0 = __security_cookie;
+	if (!__security_cookie || __security_cookie == 47936)
+	{
+		GetSystemTimeAsFileTime(&SystemTimeAsFileTime);
+		v1 = SystemTimeAsFileTime.dwLowDateTime ^ SystemTimeAsFileTime.dwHighDateTime;
+		v2 = GetCurrentProcessId() ^ v1;
+		v3 = GetCurrentThreadId() ^ v2;
+		LOWORD(v3) = GetTickCount() ^ v3;
+		QueryPerformanceCounter(&PerformanceCount);
+		v0 = (wchar_t)(v3 ^ LOWORD(PerformanceCount.LowPart) ^ WORD2(PerformanceCount.QuadPart));
+		if (!((wchar_t)v3 ^ (wchar_t)(LOWORD(PerformanceCount.LowPart) ^ WORD2(PerformanceCount.QuadPart))))
+			v0 = 47936;
+		__security_cookie = v0;
+	}
+	result = ~v0;
+	dword_1009600 = result;
+	return result;
 }
 // 1009600: using guessed type int dword_1009600;
 
@@ -4651,63 +4658,63 @@ int sub_10070D4()
 BOOL __usercall sub_1007147(BOOL result, int a2, int a3, int a4, int a5, int a6, int a7)
 {
 	throw "∏¥‘”¥ÌŒÛ";
-  //unsigned int v7; // kr00_4
-  //HANDLE v8; // eax
-  //_DWORD v9[22]; // [esp-334h] [ebp-334h] BYREF
-  //int v10; // [esp-2DCh] [ebp-2DCh] BYREF
-  //__int16 v11; // [esp-250h] [ebp-250h]
-  //__int16 v12; // [esp-24Ch] [ebp-24Ch]
-  //__int16 v13; // [esp-248h] [ebp-248h]
-  //__int16 v14; // [esp-244h] [ebp-244h]
-  //int v15; // [esp-240h] [ebp-240h]
-  //int v16; // [esp-23Ch] [ebp-23Ch]
-  //int v17; // [esp-238h] [ebp-238h]
-  //int v18; // [esp-234h] [ebp-234h]
-  //int v19; // [esp-230h] [ebp-230h]
-  //BOOL v20; // [esp-22Ch] [ebp-22Ch]
-  //int v21; // [esp-228h] [ebp-228h]
-  //void *v22; // [esp-224h] [ebp-224h]
-  //__int16 v23; // [esp-220h] [ebp-220h]
-  //unsigned int v24; // [esp-21Ch] [ebp-21Ch]
-  //void **v25; // [esp-218h] [ebp-218h]
-  //__int16 v26; // [esp-214h] [ebp-214h]
-  //struct _EXCEPTION_POINTERS v27; // [esp-Ch] [ebp-Ch] BYREF
-  //int v28; // [esp-4h] [ebp-4h]
-  //void *retaddr; // [esp+0h] [ebp+0h] BYREF
+	//unsigned int v7; // kr00_4
+	//HANDLE v8; // eax
+	//_DWORD v9[22]; // [esp-334h] [ebp-334h] BYREF
+	//int v10; // [esp-2DCh] [ebp-2DCh] BYREF
+	//__int16 v11; // [esp-250h] [ebp-250h]
+	//__int16 v12; // [esp-24Ch] [ebp-24Ch]
+	//__int16 v13; // [esp-248h] [ebp-248h]
+	//__int16 v14; // [esp-244h] [ebp-244h]
+	//int v15; // [esp-240h] [ebp-240h]
+	//int v16; // [esp-23Ch] [ebp-23Ch]
+	//int v17; // [esp-238h] [ebp-238h]
+	//int v18; // [esp-234h] [ebp-234h]
+	//int v19; // [esp-230h] [ebp-230h]
+	//BOOL v20; // [esp-22Ch] [ebp-22Ch]
+	//int v21; // [esp-228h] [ebp-228h]
+	//void *v22; // [esp-224h] [ebp-224h]
+	//__int16 v23; // [esp-220h] [ebp-220h]
+	//unsigned int v24; // [esp-21Ch] [ebp-21Ch]
+	//void **v25; // [esp-218h] [ebp-218h]
+	//__int16 v26; // [esp-214h] [ebp-214h]
+	//struct _EXCEPTION_POINTERS v27; // [esp-Ch] [ebp-Ch] BYREF
+	//int v28; // [esp-4h] [ebp-4h]
+	//void *retaddr; // [esp+0h] [ebp+0h] BYREF
 
-  //if ( a3 != __security_cookie || (a3 & 0xFFFF0000) != 0 )
-  //{
-  //  v28 = a5;
-  //  v20 = result;
-  //  v19 = a3;
-  //  v18 = a2;
-  //  v17 = a4;
-  //  v16 = a7;
-  //  v15 = a6;
-  //  v26 = __SS__;
-  //  v23 = __CS__;
-  //  v14 = __DS__;
-  //  v13 = __ES__;
-  //  v12 = __FS__;
-  //  v11 = __GS__;
-  //  v7 = __readeflags();
-  //  v24 = v7;
-  //  v10 = 65537;
-  //  v22 = retaddr;
-  //  v25 = &retaddr;
-  //  v21 = v28;
-  //  memset(v9, 0, 0x50u);
-  //  v9[0] = -1073740791;
-  //  v9[3] = retaddr;
-  //  v27.ExceptionRecord = (PEXCEPTION_RECORD)v9;
-  //  v27.ContextRecord = (PCONTEXT)&v10;
-  //  v9[21] = dword_1009600;
-  //  SetUnhandledExceptionFilter(0);
-  //  UnhandledExceptionFilter(&v27);
-  //  v8 = GetCurrentProcess();
-  //  result = TerminateProcess(v8, 0x502u);
-  //}
-  //return result;
+	//if ( a3 != __security_cookie || (a3 & 0xFFFF0000) != 0 )
+	//{
+	//  v28 = a5;
+	//  v20 = result;
+	//  v19 = a3;
+	//  v18 = a2;
+	//  v17 = a4;
+	//  v16 = a7;
+	//  v15 = a6;
+	//  v26 = __SS__;
+	//  v23 = __CS__;
+	//  v14 = __DS__;
+	//  v13 = __ES__;
+	//  v12 = __FS__;
+	//  v11 = __GS__;
+	//  v7 = __readeflags();
+	//  v24 = v7;
+	//  v10 = 65537;
+	//  v22 = retaddr;
+	//  v25 = &retaddr;
+	//  v21 = v28;
+	//  memset(v9, 0, 0x50u);
+	//  v9[0] = -1073740791;
+	//  v9[3] = retaddr;
+	//  v27.ExceptionRecord = (PEXCEPTION_RECORD)v9;
+	//  v27.ContextRecord = (PCONTEXT)&v10;
+	//  v9[21] = dword_1009600;
+	//  SetUnhandledExceptionFilter(0);
+	//  UnhandledExceptionFilter(&v27);
+	//  v8 = GetCurrentProcess();
+	//  result = TerminateProcess(v8, 0x502u);
+	//}
+	//return result;
 }
 // 1007147: could not find valid save-restore pair for ebp
 // 1009600: using guessed type int dword_1009600;
@@ -4715,53 +4722,53 @@ BOOL __usercall sub_1007147(BOOL result, int a2, int a3, int a4, int a5, int a6,
 //----- (0100725F) --------------------------------------------------------
 int __stdcall sub_100725F(LPBYTE lpData)
 {
-  int v1; // esi
-  DWORD cbData; // [esp+4h] [ebp-8h] BYREF
-  HKEY phkResult; // [esp+8h] [ebp-4h] BYREF
+	int v1; // esi
+	DWORD cbData; // [esp+4h] [ebp-8h] BYREF
+	HKEY phkResult; // [esp+8h] [ebp-4h] BYREF
 
-  v1 = 0;
-  if ( RegOpenKeyExA(
-         HKEY_CLASSES_ROOT,
-         "CLSID\\{ADB880A6-D8FF-11CF-9377-00AA003B7A11}\\InprocServer32",
-         0,
-         0x20019u,
-         &phkResult) )
-  {
-    return 0;
-  }
-  cbData = 260;
-  if ( !RegQueryValueExA(phkResult, ValueName, 0, 0, lpData, &cbData) )
-    v1 = 1;
-  RegCloseKey(phkResult);
-  return v1;
+	v1 = 0;
+	if (RegOpenKeyExA(
+		HKEY_CLASSES_ROOT,
+		"CLSID\\{ADB880A6-D8FF-11CF-9377-00AA003B7A11}\\InprocServer32",
+		0,
+		0x20019u,
+		&phkResult))
+	{
+		return 0;
+	}
+	cbData = 260;
+	if (!RegQueryValueExA(phkResult, ValueName, 0, 0, lpData, &cbData))
+		v1 = 1;
+	RegCloseKey(phkResult);
+	return v1;
 }
 
 //----- (010072C3) --------------------------------------------------------
 int __stdcall sub_10072C3(int a1, int a2, int a3, int a4)
 {
-  HMODULE v4; // ecx
-  FARPROC v5; // eax
-  CHAR LibFileName[260]; // [esp+Ch] [ebp-108h] BYREF
+	HMODULE v4; // ecx
+	FARPROC v5; // eax
+	CHAR LibFileName[260]; // [esp+Ch] [ebp-108h] BYREF
 
-  v4 = hModule;
-  if ( hModule || (HMODULE)dword_1009AA4 != hModule )
-    goto LABEL_13;
-  if ( sub_100725F((LPBYTE)LibFileName) )
-    hModule = LoadLibraryA(LibFileName);
-  v4 = hModule;
-  if ( hModule || (v4 = LoadLibraryA("hhctrl.ocx"), (hModule = v4) != 0) )
-  {
-LABEL_13:
-    v5 = (FARPROC)dword_1009A9C;
-    if ( dword_1009A9C )
-      return ((int (__stdcall *)(int, int, int, int))v5)(a1, a2, a3, a4);
-    v5 = GetProcAddress(v4, (LPCSTR)0xE);
-    dword_1009A9C = (int)v5;
-    if ( v5 )
-      return ((int (__stdcall *)(int, int, int, int))v5)(a1, a2, a3, a4);
-  }
-  dword_1009AA4 = 1;
-  return 0;
+	v4 = hModule;
+	if (hModule || (HMODULE)dword_1009AA4 != hModule)
+		goto LABEL_13;
+	if (sub_100725F((LPBYTE)LibFileName))
+		hModule = LoadLibraryA(LibFileName);
+	v4 = hModule;
+	if (hModule || (v4 = LoadLibraryA("hhctrl.ocx"), (hModule = v4) != 0))
+	{
+	LABEL_13:
+		v5 = (FARPROC)dword_1009A9C;
+		if (dword_1009A9C)
+			return ((int(__stdcall *)(int, int, int, int))v5)(a1, a2, a3, a4);
+		v5 = GetProcAddress(v4, (LPCSTR)0xE);
+		dword_1009A9C = (int)v5;
+		if (v5)
+			return ((int(__stdcall *)(int, int, int, int))v5)(a1, a2, a3, a4);
+	}
+	dword_1009AA4 = 1;
+	return 0;
 }
 // 1009A9C: using guessed type int dword_1009A9C;
 // 1009AA4: using guessed type int dword_1009AA4;
@@ -4771,13 +4778,13 @@ LABEL_13:
 unsigned int sub_10075DD()
 {
 	throw "∏¥‘”¥ÌŒÛ";
-  // return _controlfp_s(0x10000u, 0x30000u);
+	// return _controlfp_s(0x10000u, 0x30000u);
 }
 
 //----- (010075F4) --------------------------------------------------------
 int __cdecl UserMathErrorFunction()
 {
-  return 0;
+	return 0;
 }
 
 // nfuncs=87 queued=78 decompiled=78 lumina nreq=0 worse=0 better=0

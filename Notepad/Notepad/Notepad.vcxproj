@@ -89,6 +89,7 @@
     <ResourceCompile Include="notepad.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Text.txt" />
     <Text Include="原来的资源代码.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -13,13 +13,12 @@ HWND __stdcall sub_1001C42(int a1);
 void __stdcall pfnWinEventProc(HWINEVENTHOOK hWinEventHook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD idEventThread, DWORD dwmsEventTime); // idb
 const WCHAR *__stdcall sub_1001D2B(LPCWSTR lpsz);
 DWORD __stdcall sub_1001D73(HWND hWndNewOwner);
-int __stdcall sub_1001F02(_WORD *a1, _WORD *a2, _WORD *a3);
+int __stdcall sub_1001F02(WCHAR *a1, WCHAR *a2, WCHAR *a3);
 int __stdcall sub_1001F70(HWND hWnd, LPCWSTR lpCaption, LPCWSTR lpText, LPCWSTR lpString, UINT uType); // idb
 DWORD sub_1001FF0();
 void *__stdcall sub_100207F(int a1);
 INT_PTR __stdcall DialogFunc(HWND, UINT, WPARAM, LPARAM); // idb
 int __stdcall sub_100239D(void *lpv, int iSize); // idb
-int __stdcall sub_1002409(_WORD *a1, int a2, _WORD *a3);
 int __stdcall sub_1002452(HWND hDlg, int, HWND hWnd, int); // idb
 BOOL __stdcall sub_100270F(int a1);
 BOOL __stdcall sub_1002A55(LPCWSTR lpString1);
@@ -37,14 +36,14 @@ LSTATUS sub_1003C92();
 LPCWSTR __stdcall sub_1003F99(LPWSTR lpString1, LPCWSTR lpString2);
 WCHAR *__stdcall sub_1004047(HINSTANCE hInstance);
 int __stdcall sub_10040BA(HINSTANCE hInstance); // idb
-_WORD *__stdcall sub_100417A(_WORD *a1);
+WCHAR *__stdcall sub_100417A(WCHAR *a1);
 int __stdcall sub_100419E(unsigned __int16 *a1);
 int __stdcall sub_10042F9(int, int nCmdShow); // idb
 int __stdcall sub_1004458(LPWSTR lpString1); // idb
 int __stdcall Proc(const LOGFONTW *, const TEXTMETRICW *, DWORD, LPARAM); // idb
 // BOOL __usercall sub_10044D7@<eax>(HINSTANCE a1@<esi>);
 int __stdcall sub_1004565(HINSTANCE hInstance, int, int, int nCmdShow); // idb
-void __stdcall sub_1004B65(_WORD *a1, _BYTE *a2, int a3);
+void __stdcall sub_1004B65(WCHAR *a1, _BYTE *a2, int a3);
 int __stdcall sub_1004B99(HANDLE hFile, UINT CodePage, DWORD dwFlags, LPCWCH lpWideCharStr, int cchWideChar); // idb
 LRESULT sub_1004C49();
 LRESULT sub_1004CAB();
