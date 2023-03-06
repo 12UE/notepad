@@ -34,7 +34,6 @@ LSTATUS sub_1003A39();
 LSTATUS sub_1003C92();
 // int __usercall sub_1003F4C@<eax>(unsigned __int16 *a1@<eax>, unsigned __int16 *a2@<ecx>);
 LPCWSTR __stdcall sub_1003F99(LPWSTR lpString1, LPCWSTR lpString2);
-WCHAR *__stdcall sub_1004047(HINSTANCE hInstance);
 int __stdcall sub_10040BA(HINSTANCE hInstance); // idb
 WCHAR *__stdcall sub_100417A(WCHAR *a1);
 int __stdcall sub_100419E(unsigned __int16 *a1);
