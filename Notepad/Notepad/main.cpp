@@ -1010,7 +1010,7 @@ const TCHAR *__stdcall sub_1001D2B(LPCWSTR lpsz)
 }
 
 //----- (01001D73) --------------------------------------------------------
-DWORD __stdcall sub_1001D73(HWND hWndNewOwner)
+DWORD __stdcall OnInitMenu(HWND hWndNewOwner)
 {
 	HMENU v1; // ebx
 	HMENU v2; // eax
@@ -1977,18 +1977,130 @@ LRESULT __stdcall OnClose()
 	return 0;
 }
 
-//----- (01003429) --------------------------------------------------------
-LRESULT __stdcall MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+LRESULT __stdcall OnActivateApp(WPARAM wParam, LPARAM lParam)
 {
 	WPARAM v5; // eax
 	LPARAM v6; // ecx
 	void(__stdcall *v7)(HWND, UINT, WPARAM, LPARAM); // edi
+	if (wParam)
+	{
+		v5 = ::wParam;
+		v6 = dword_1009860;
+		if (!::wParam && !dword_1009860)
+			return 0;
+		v7 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
+	}
+	else
+	{
+		v7 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
+		SendMessageW(g_hWndMain, 0xB0u, (WPARAM)&::wParam, (LPARAM)&dword_1009860);
+		v5 = ::wParam;
+		v6 = dword_1009860;
+		if (::wParam == dword_1009860)
+		{
+			::wParam = 0;
+			dword_1009860 = 0;
+			return 0;
+		}
+	}
+	v7(g_hWndMain, 0xB1u, v5, v6);
+	v7(g_hWndMain, 0xB7u, 0, 0);
+	return 0;
+}
+
+LRESULT __stdcall OnSize(HWND hWnd, WPARAM wParam, LPARAM lParam)
+{
+	LPARAM var_8[2]; // [esp+8h] [ebp-8h] BYREF
+	if (wParam)
+	{
+		if (wParam == 1)
+			return DefWindowProcW(hWnd, 5u, 1u, lParam);
+		if (wParam != 2)
+			return 0;
+	}
+	SendMessageW(dword_1009834, 5u, 0, 0);
+	var_8[1] = -1;
+	var_8[0] = 3 * (__int16)lParam / 4;
+	SendMessageW(dword_1009834, 0x404u, 2u, (LPARAM)var_8);
+	sub_10019E0((__int16)lParam, SHIWORD(lParam));
+	return 0;
+}
+
+LRESULT __stdcall OnMainWndProcLabel49(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	LPARAM v12; // [esp-4h] [ebp-14h]
 	unsigned int v8; // ecx
 	void(__stdcall *v9)(HCURSOR); // esi
+
+LABEL_49:
+	if (msg == g_commdlg_FindReplace)
+	{
+		v8 = *(_DWORD *)(lParam + 12);
+		dword_1009A94 = (v8 & 1) == 0;
+		dword_1009A90 = (v8 >> 2) & 1;
+		if ((v8 & WM_KILLFOCUS) != 0)
+		{
+			v9 = (void(__stdcall *)(HCURSOR))SetCursor;
+			SetCursor(hCursor);
+		}
+		else
+		{
+			if ((v8 & 0x10) == 0)
+			{
+				if ((v8 & 0x20) != 0)
+				{
+					if ((v8 & 1) == 0)
+						dword_1009A94 = 0;
+					SetCursor(hCursor);
+					SendMessageW(g_hWndMain, 0xB1u, 0, 0);
+					do
+					sub_100207F(0);
+					while (sub_100594C(&word_100A800));
+					SetCursor(dword_100AB88);
+					SendMessageW(g_hWndMain, 0xB1u, 0, 0);
+					SendMessageW(g_hWndMain, 0xB7u, 0, 0);
+					sub_1001C42(1);
+				}
+				else if ((v8 & 0x40) != 0)
+				{
+					hDlg = 0;
+				}
+				return 0;
+			}
+			v9 = (void(__stdcall *)(HCURSOR))SetCursor;
+			SetCursor(hCursor);
+			sub_100207F(1);
+		}
+		sub_100594C(&word_100A800);
+		v9(dword_100AB88);
+		return 0;
+	}
+	v12 = lParam;
+	return DefWindowProcW(hWnd, msg, wParam, v12);
+}
+
+LRESULT __stdcall OnCommand(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	if ((HWND)lParam == g_hWndMain && (HIWORD(wParam) == 1280 || HIWORD(wParam) == 1281))
+	{
+		if (dword_1009848 == 1)
+			dword_1009848 = 2;
+		else
+			MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[6], (LPCWSTR)dword_1009034[8], 0x1010u);
+		return 0;
+	}
+	if (!sub_1002B87(hWnd, wParam, lParam))
+	{
+		return DefWindowProcW(hWnd, msg, wParam, lParam);
+	}
+	return 0;
+}
+
+//----- (01003429) --------------------------------------------------------
+LRESULT __stdcall MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
 	BOOL v10; // esi
 	HWND v11; // [esp-4h] [ebp-14h]
-	LPARAM v12; // [esp-4h] [ebp-14h]
-	LPARAM var_8[2]; // [esp+8h] [ebp-8h] BYREF
 
 	switch (msg)
 	{
@@ -1997,7 +2109,7 @@ LRESULT __stdcall MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 			DefWindowProcW(hWnd, 0x112u, wParam, lParam);
 		return 0;
 	case WM_INITMENU:
-		sub_1001D73(hWnd);
+		OnInitMenu(hWnd);
 		return 0;
 	case WM_INITMENUPOPUP:
 		if (dword_100984C && HIWORD(lParam))
@@ -2007,30 +2119,7 @@ LRESULT __stdcall MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		sub_10033DC((HDROP)wParam, hWnd);
 		return 0;
 	case WM_ACTIVATEAPP:
-		if (wParam)
-		{
-			v5 = ::wParam;
-			v6 = dword_1009860;
-			if (!::wParam && !dword_1009860)
-				return 0;
-			v7 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
-		}
-		else
-		{
-			v7 = (void(__stdcall *)(HWND, UINT, WPARAM, LPARAM))SendMessageW;
-			SendMessageW(g_hWndMain, 0xB0u, (WPARAM)&::wParam, (LPARAM)&dword_1009860);
-			v5 = ::wParam;
-			v6 = dword_1009860;
-			if (::wParam == dword_1009860)
-			{
-				::wParam = 0;
-				dword_1009860 = 0;
-				return 0;
-			}
-		}
-		v7(g_hWndMain, 0xB1u, v5, v6);
-		v7(g_hWndMain, 0xB7u, 0, 0);
-		return 0;
+		return OnActivateApp(wParam, lParam);
 	case WM_KILLFOCUS:
 		SendMessageW(g_hWndMain, WM_KILLFOCUS, wParam, lParam);
 		return 0;
@@ -2038,19 +2127,7 @@ LRESULT __stdcall MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		PostQuitMessage(0);
 		return 0;
 	case WM_SIZE:
-		if (wParam)
-		{
-			if (wParam == 1)
-				return DefWindowProcW(hWnd, 5u, 1u, lParam);
-			if (wParam != 2)
-				return 0;
-		}
-		SendMessageW(dword_1009834, 5u, 0, 0);
-		var_8[1] = -1;
-		var_8[0] = 3 * (__int16)lParam / 4;
-		SendMessageW(dword_1009834, 0x404u, 2u, (LPARAM)var_8);
-		sub_10019E0((__int16)lParam, SHIWORD(lParam));
-		return 0;
+		return OnSize(hWnd, wParam, lParam);
 	case WM_ACTIVATE:
 		if (((_WORD)wParam == 1 || (_WORD)wParam == 2) && !IsIconic(hWndParent) && GetForegroundWindow() == hWndParent)
 		{
@@ -2070,97 +2147,26 @@ LRESULT __stdcall MainWndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		v10 = ((unsigned __int16)GetKeyboardLayout(0) & 0x3FF) == 17;
 		SendMessageW(g_hWndMain, 0xD8u, 1u, v10);
 		return 0;
-	}
-	if (msg > WM_ACTIVATEAPP)
-	{
-		if (msg != WM_COMMAND)
+	case WM_COMMAND:
+		return OnCommand(hWnd, msg, wParam, lParam);
+	case WM_APPCOMMAND:
+		if ((HIWORD(lParam) & 0xFFF) == 5)
 		{
-			
-			if (msg != WM_APPCOMMAND)
-			{
-			LABEL_49:
-				if (msg == g_commdlg_FindReplace)
-				{
-					v8 = *(_DWORD *)(lParam + 12);
-					dword_1009A94 = (v8 & 1) == 0;
-					dword_1009A90 = (v8 >> 2) & 1;
-					if ((v8 & WM_KILLFOCUS) != 0)
-					{
-						v9 = (void(__stdcall *)(HCURSOR))SetCursor;
-						SetCursor(hCursor);
-					}
-					else
-					{
-						if ((v8 & 0x10) == 0)
-						{
-							if ((v8 & 0x20) != 0)
-							{
-								if ((v8 & 1) == 0)
-									dword_1009A94 = 0;
-								SetCursor(hCursor);
-								SendMessageW(g_hWndMain, 0xB1u, 0, 0);
-								do
-								sub_100207F(0);
-								while (sub_100594C(&word_100A800));
-								SetCursor(dword_100AB88);
-								SendMessageW(g_hWndMain, 0xB1u, 0, 0);
-								SendMessageW(g_hWndMain, 0xB7u, 0, 0);
-								sub_1001C42(1);
-							}
-							else if ((v8 & 0x40) != 0)
-							{
-								hDlg = 0;
-							}
-							return 0;
-						}
-						v9 = (void(__stdcall *)(HCURSOR))SetCursor;
-						SetCursor(hCursor);
-						sub_100207F(1);
-					}
-					sub_100594C(&word_100A800);
-					v9(dword_100AB88);
-					return 0;
-				}
-				v12 = lParam;
-				return DefWindowProcW(hWnd, msg, wParam, v12);
-			}
-			if ((HIWORD(lParam) & 0xFFF) == 5)
-			{
-				sub_1002B87(hWnd, 21, 0);
-				return 0;
-			}
-		}
-		if ((HWND)lParam == g_hWndMain && (HIWORD(wParam) == 1280 || HIWORD(wParam) == 1281))
-		{
-			if (dword_1009848 == 1)
-				dword_1009848 = 2;
-			else
-				MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[6], (LPCWSTR)dword_1009034[8], 0x1010u);
+			sub_1002B87(hWnd, 21, 0);
 			return 0;
 		}
-		if (!sub_1002B87(hWnd, wParam, lParam))
+		return OnCommand(hWnd, msg, wParam, lParam);
+	case WM_QUERYENDSESSION:
+		if (dword_1009854)
 		{
-			v12 = lParam;
-			return DefWindowProcW(hWnd, msg, wParam, v12);
+			MessageBeep(0);
+			MessageBeep(0);
+			MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[24], (LPCWSTR)dword_1009034[8], 0x1000u);
+			return 0;
 		}
-		return 0;
+		return sub_100270F(1);
 	}
-	if (msg <= WM_KILLFOCUS)
-	{
-		goto LABEL_49;
-	}
-	if (msg != WM_QUERYENDSESSION)
-	{
-		goto LABEL_49;
-	}
-	if (dword_1009854)
-	{
-		MessageBeep(0);
-		MessageBeep(0);
-		MessageBoxW(hWndParent, (LPCWSTR)dword_1009034[24], (LPCWSTR)dword_1009034[8], 0x1000u);
-		return 0;
-	}
-	return sub_100270F(1);
+	return OnMainWndProcLabel49(hWnd, msg, wParam, lParam);
 }
 
 //----- (0100393A) --------------------------------------------------------

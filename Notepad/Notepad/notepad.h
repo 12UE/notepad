@@ -11,7 +11,7 @@ LRESULT __stdcall sub_1001B99(int a1);
 HWND __stdcall sub_1001C42(int a1);
 void __stdcall pfnWinEventProc(HWINEVENTHOOK hWinEventHook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD idEventThread, DWORD dwmsEventTime); // idb
 const WCHAR *__stdcall sub_1001D2B(LPCWSTR lpsz);
-DWORD __stdcall sub_1001D73(HWND hWndNewOwner);
+DWORD __stdcall OnInitMenu(HWND hWndNewOwner);
 int __stdcall sub_1001F02(WCHAR *a1, WCHAR *a2, WCHAR *a3);
 int __stdcall sub_1001F70(HWND hWnd, LPCWSTR lpCaption, LPCWSTR lpText, LPCWSTR lpString, UINT uType); // idb
 DWORD sub_1001FF0();
