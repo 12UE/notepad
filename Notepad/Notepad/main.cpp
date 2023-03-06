@@ -778,7 +778,7 @@ HACCEL hAccTable; // idb
 HMENU hMenu; // idb
 int dword_100A6E0; // weak
 _UNKNOWN unk_100A700; // weak
-TCHAR word_100A800; // idb
+WCHAR word_100A800[128];
 TCHAR sz[272]; // idb
 LOGFONTW lf; // idb
 HGDIOBJ ho; // idb
@@ -1606,7 +1606,7 @@ BOOL __stdcall sub_1002A55(LPCWSTR lpString1)
 }
 
 //----- (01002B87) --------------------------------------------------------
-int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
+int __stdcall sub_1002B87(HWND hWnd, __int16 id, int a3)
 {
 	int v4; // ebx
 	HANDLE v5; // edi
@@ -1637,21 +1637,21 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 	memset(&String1[1], 0, 0x204u);
 	String1[259] = 0;
 	v26 = hWnd;
-	if ((wchar_t)a2 > 0x40u)
+	if (id > 0x40u)
 	{
-		if (a2 == 65)
+		if (id == 65)
 		{
 			v21 = LoadIcon(hInstance, (LPCWSTR)2);
 			ShellAbout(hWndParent, (LPCWSTR)dword_1009034[8], &WindowName, v21);
 			return 1;
 		}
-		if ((wchar_t)a2 <= 0x2FFu)
+		if (id <= 0x2FFu)
 			return 0;
-		if ((wchar_t)a2 > 0x301u)
+		if (id > 0x301u)
 		{
-			if (a2 == 770)
+			if (id == 770)
 				goto LABEL_91;
-			if (a2 != 771)
+			if (id != 771)
 				return 0;
 		}
 		SendMessage(::g_hWndMain, 0xB0u, (WPARAM)&v26, (LPARAM)&lParam);
@@ -1660,20 +1660,20 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 	LABEL_91:
 		v20 = GetFocus();
 		if (v20 == ::g_hWndMain || v20 == hWndParent)
-			PostMessage(::g_hWndMain, (wchar_t)a2, 0, 0);
+			PostMessage(::g_hWndMain, id, 0, 0);
 		return 1;
 	}
-	if (a2 == 64)
+	if (id == 64)
 	{
 		v19 = GetDesktopWindow();
 		sub_10072C3((int)v19, (int)"notepad.chm", 0, 0);
 		return 1;
 	}
-	if ((wchar_t)a2 > 0x15u)
+	if (id > 0x15u)
 	{
-		if ((wchar_t)a2 > 0x1Au)
+		if (id > 0x1Au)
 		{
-			if (a2 == 27)
+			if (id == 27)
 			{
 				GetClientRect(hWndParent, &Rect);
 				if (dword_1009840)
@@ -1691,9 +1691,9 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 				}
 				return 1;
 			}
-			if (a2 != 32)
+			if (id != 32)
 			{
-				if (a2 != 33)
+				if (id != 33)
 					return 0;
 				v12 = GetDC(0);
 				if (v12)
@@ -1754,7 +1754,7 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 		}
 		else
 		{
-			switch (a2)
+			switch (id)
 			{
 			case 26:
 				sub_1006F10(0);
@@ -1762,7 +1762,7 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 			case 22:
 				if (word_100A800)
 				{
-					sub_100594C(&word_100A800);
+					sub_100594C(word_100A800);
 					return 1;
 				}
 			LABEL_61:
@@ -1772,7 +1772,7 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 					stru_100A500.Flags = 65537;
 					stru_100A500.lpstrReplaceWith = 0;
 					stru_100A500.wReplaceWithLen = 0;
-					stru_100A500.lpstrFindWhat = &word_100A800;
+					stru_100A500.lpstrFindWhat = word_100A800;
 					stru_100A500.wFindWhatLen = 128;
 					v11 = FindText(&stru_100A500);
 					goto LABEL_58;
@@ -1785,7 +1785,7 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 					stru_100A500.Flags = 65552;
 					stru_100A500.lpstrReplaceWith = (LPWSTR)&unk_100A700;
 					stru_100A500.wReplaceWithLen = 128;
-					stru_100A500.lpstrFindWhat = &word_100A800;
+					stru_100A500.lpstrFindWhat = word_100A800;
 					stru_100A500.wFindWhatLen = 128;
 					v11 = ReplaceText(&stru_100A500);
 				LABEL_58:
@@ -1800,7 +1800,7 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 					sub_1001B99(dword_100AB94);
 				return 1;
 			}
-			if (a2 != 25)
+			if (id != 25)
 				return 0;
 			v7 = GetMenu(hWndParent);
 			v8 = SendMessage(::g_hWndMain, 0xEu, 0, 0);
@@ -1812,28 +1812,28 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 		EnableMenuItem(v9, v22, 1u);
 		return 1;
 	}
-	if (a2 == 21)
+	if (id == 21)
 		goto LABEL_61;
-	if ((wchar_t)a2 > 5u)
+	if (id > 5u)
 	{
-		if (a2 == 6)
+		if (id == 6)
 		{
 			sub_1006E4B(0);
 		}
-		else if (a2 == 7)
+		else if (id == 7)
 		{
 			PostMessage(hWnd, 0x10u, 0, 0);
 		}
-		else if (a2 != 15)
+		else if (id != 15)
 		{
-			if (a2 != 16)
+			if (id != 16)
 				return 0;
 			SendMessage(::g_hWndMain, 0xC7u, 0, 0);
 		}
 	}
 	else
 	{
-		switch (a2)
+		switch (id)
 		{
 		case 5:
 			while (!PageSetupDlg(&stru_100A4A0))
@@ -2055,7 +2055,7 @@ LABEL_49:
 					SendMessageW(g_hWndMain, 0xB1u, 0, 0);
 					do
 					sub_100207F(0);
-					while (sub_100594C(&word_100A800));
+					while (sub_100594C(word_100A800));
 					SetCursor(dword_100AB88);
 					SendMessageW(g_hWndMain, 0xB1u, 0, 0);
 					SendMessageW(g_hWndMain, 0xB7u, 0, 0);
@@ -2071,7 +2071,7 @@ LABEL_49:
 			SetCursor(hCursor);
 			sub_100207F(1);
 		}
-		sub_100594C(&word_100A800);
+		sub_100594C(word_100A800);
 		v9(dword_100AB88);
 		return 0;
 	}
@@ -2779,7 +2779,7 @@ int __stdcall sub_1004565(HINSTANCE hInstance, int a2, int a3, int nCmdShow)
 	}
 	SendMessage(g_hWndMain, 0x30u, (WPARAM)ho, 0);
 	ReleaseDC(0, hdc);
-	word_100A800 = 0;
+	word_100A800[0] = 0;
 	hMem = LocalAlloc(0x42u, 2u);
 	PostMessage(g_hWndMain, 0xC5u, 0, 0);
 	sub_1002A55((LPCWSTR)dword_1009034[3]);
@@ -2971,7 +2971,7 @@ LRESULT __stdcall sub_1004CFF(int a1)
 		*(TCHAR *)LocalLock(hMem) = 0;
 		LocalUnlock(hMem);
 		result = SendMessage(g_hWndMain, 0xBCu, (WPARAM)hMem, 0);
-		word_100A800 = 0;
+		word_100A800[0] = 0;
 	}
 	return result;
 }// 100901C: using guessed type int dword_100901C;
@@ -3597,7 +3597,7 @@ int __stdcall sub_100594C(LPCWSTR lpString)
 		v9 = hDlg;
 		if (!hDlg)
 			v9 = hWndParent;
-		sub_1001F70(v9, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[5], &word_100A800, 0x40u);
+		sub_1001F70(v9, (LPCWSTR)dword_1009034[8], (LPCWSTR)dword_1009034[5], word_100A800, 0x40u);
 		SetCursor(v8);
 	}
 	return v15;
