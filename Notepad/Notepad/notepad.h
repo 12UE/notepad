@@ -8,7 +8,6 @@ LONG __thiscall sub_100195D(void *self);
 BOOL __stdcall sub_10019E0(int nWidth, int a2);
 int __stdcall sub_1001A28(HWND hDlg, int, HWND hWnd, int); // idb
 LRESULT __stdcall sub_1001B99(int a1);
-const WCHAR *__stdcall sub_1001BE8(LPCWSTR lpsz);
 HWND __stdcall sub_1001C42(int a1);
 void __stdcall pfnWinEventProc(HWINEVENTHOOK hWinEventHook, DWORD event, HWND hwnd, LONG idObject, LONG idChild, DWORD idEventThread, DWORD dwmsEventTime); // idb
 const WCHAR *__stdcall sub_1001D2B(LPCWSTR lpsz);
@@ -28,7 +27,7 @@ void __stdcall sub_10033DC(HDROP hDrop, HWND hWnd);
 LRESULT __stdcall sub_1003429(HWND hWnd, UINT Msg, WPARAM wParam, LPARAM a4);
 LSTATUS __stdcall sub_100393A(HKEY hKey, LPCWSTR lpValueName, BYTE Data);
 LSTATUS __stdcall sub_100395E(HKEY hKey, LPCWSTR lpValueName, LPCWSTR lpString);
-int __stdcall sub_100398D(HKEY hKey, LPCWSTR lpValueName, int); // idb
+int __stdcall QueryRegistryIntegerValue(HKEY hKey, LPCWSTR lpValueName, int); // idb
 LSTATUS __stdcall sub_10039E2(HKEY hKey, LPCWSTR lpValueName, int a3, LPBYTE lpData, DWORD cbData);
 LSTATUS sub_1003A39();
 LSTATUS sub_1003C92();
