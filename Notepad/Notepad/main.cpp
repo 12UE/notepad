@@ -709,7 +709,7 @@ HWND hWndParent; // idb
 HWND dword_1009834; // idb
 HWND g_hWndMain; // idb
 HWND hDlg; // idb
-BYTE dword_1009840; // idb
+int dword_1009840; // idb
 int dword_1009844; // weak
 int dword_1009848; // weak
 int dword_100984C; // weak
@@ -841,7 +841,7 @@ LONG __thiscall sub_100195D(void *self)
 BOOL __stdcall sub_10019E0(int nWidth, int a2)
 {
 	InvalidateRect(g_hWndMain, 0, 1);
-	return MoveWindow(g_hWndMain, 0, 0, nWidth, a2 - (*(_DWORD *)&dword_1009840 != 0 ? dword_100A6E0 : 0), 1);
+	return MoveWindow(g_hWndMain, 0, 0, nWidth, a2 - (dword_1009840 != 0 ? dword_100A6E0 : 0), 1);
 }
 // 100A6E0: using guessed type int dword_100A6E0;
 
@@ -1083,7 +1083,7 @@ DWORD __stdcall OnInitMenu(HWND hWndNewOwner)
 	v23 = dword_1009850 != 0 ? 8 : 0;
 	v12 = GetSubMenu(v1, 2);
 	CheckMenuItem(v12, 0x20u, v23);
-	v24 = *(_DWORD *)&dword_1009840 != 0 ? 8 : 0;
+	v24 = dword_1009840 != 0 ? 8 : 0;
 	v13 = GetSubMenu(v1, 3);
 	return CheckMenuItem(v13, 0x1Bu, v24);
 }
@@ -1676,15 +1676,15 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 			if (a2 == 27)
 			{
 				GetClientRect(hWndParent, &Rect);
-				if (*(_DWORD *)&dword_1009840)
+				if (dword_1009840)
 				{
-					*(_DWORD *)&dword_1009840 = 0;
+					dword_1009840 = 0;
 					ShowWindow(dword_1009834, 0);
 					sub_10019E0(Rect.right - Rect.left, Rect.bottom - Rect.top);
 				}
 				else
 				{
-					*(_DWORD *)&dword_1009840 = 1;
+					dword_1009840 = 1;
 					sub_10019E0(Rect.right - Rect.left, Rect.bottom - Rect.top);
 					sub_1001C42(1);
 					ShowWindow(dword_1009834, 5);
@@ -1743,8 +1743,8 @@ int __stdcall sub_1002B87(HWND hWnd, __int16 a2, int a3)
 					SendMessage(v26, 0x111u, 0x1Bu, 0);
 				return 1;
 			}
-			dword_1009844 = *(_DWORD *)&dword_1009840;
-			if (*(_DWORD *)&dword_1009840)
+			dword_1009844 = dword_1009840;
+			if (dword_1009840)
 				SendMessage(v26, 0x111u, 0x1Bu, 0);
 			v15 = GetMenu(hWndParent);
 			v16 = GetSubMenu(v15, 3);
@@ -2302,7 +2302,7 @@ LSTATUS sub_1003C92()
 	sub_10039E2(phkResult, L"lfFaceName", (int)L"Lucida Console", (LPBYTE)lf.lfFaceName, 0x20u);
 	*(_DWORD *)&Data = QueryRegistryIntegerValue(phkResult, L"iPointSize", 100);
 	dword_1009850 = QueryRegistryIntegerValue(phkResult, L"fWrap", 0);
-	*(_DWORD *)&dword_1009840 = QueryRegistryIntegerValue(phkResult, L"StatusBar", 0);
+	dword_1009840 = QueryRegistryIntegerValue(phkResult, L"StatusBar", 0);
 	*(_DWORD *)&dword_1009A84 = QueryRegistryIntegerValue(phkResult, L"fSaveWindowPositions", 0);
 	sub_10039E2(phkResult, L"szHeader", (int)word_100A3E0, (LPBYTE)word_100A3E0, 0x28u);
 	sub_10039E2(phkResult, L"szTrailer", (int)&word_100A430, (LPBYTE)&word_100A430, 0x28u);
@@ -2746,7 +2746,7 @@ int __stdcall sub_1004565(HINSTANCE hInstance, int a2, int a3, int nCmdShow)
 	if (!g_hWndMain)
 		return 0;
 	dword_1009834 = CreateStatusWindow(
-		(*(_DWORD *)&dword_1009840 != 0 ? 0x10000000 : 0) | 0x44800000,
+		(dword_1009840 != 0 ? 0x10000000 : 0) | 0x44800000,
 		&WindowName,
 		hWndParent,
 		0x401u);
@@ -2883,7 +2883,7 @@ int __stdcall sub_1004B99(HANDLE hFile, UINT CodePage, DWORD dwFlags, LPCWCH lpW
 	HLOCAL v7; // eax
 	int v8; // esi
 	DWORD NumberOfBytesWritten; // [esp+4h] [ebp-10h] BYREF
-	char v10; // [esp+8h] [ebp-Ch] BYREF
+	char v10[4]; // [esp+8h] [ebp-Ch] BYREF
 	LPCVOID lpBuffer; // [esp+Ch] [ebp-8h]
 	LPBOOL lpUsedDefaultChar; // [esp+10h] [ebp-4h]
 
@@ -2891,7 +2891,7 @@ int __stdcall sub_1004B99(HANDLE hFile, UINT CodePage, DWORD dwFlags, LPCWCH lpW
 		return 1;
 	lpUsedDefaultChar = 0;
 	if (CodePage != 65001)
-		lpUsedDefaultChar = (LPBOOL)&v10;
+		lpUsedDefaultChar = (LPBOOL)v10;
 	v6 = WideCharToMultiByte(CodePage, dwFlags, lpWideCharStr, cchWideChar, 0, 0, 0, lpUsedDefaultChar);
 	if (!v6)
 		return 0;
@@ -3682,7 +3682,7 @@ int __stdcall sub_1005B41(DWORD dwStyle)
 	SendMessage(g_hWndMain, 0xB9u, wParam, 0);
 	SetFocus(g_hWndMain);
 	SetCursor(hCursor);
-	if (*(_DWORD *)&dword_1009840)
+	if (dword_1009840)
 	{
 		GetClientRect(hWndParent, &v4);
 		sub_10019E0(v4.right - v4.left, v4.bottom - v4.top);
@@ -4465,17 +4465,15 @@ LRESULT __stdcall sub_1006F10(int a1)
 {
 	int v1; // esi
 	DWORD v2; // edi
-	__int16 v3; // ax
+	WCHAR v3; // ax
 	struct _SYSTEMTIME SystemTime; // [esp+Ch] [ebp-3E8h] BYREF
-	TCHAR DateStr[80]; // [esp+1Ch] [ebp-3D8h] BYREF
-	TCHAR TimeStr[80]; // [esp+BCh] [ebp-338h] BYREF
-	TCHAR String1; // [esp+15Ch] [ebp-298h] BYREF
-	char v9[656]; // [esp+15Eh] [ebp-296h] BYREF
-	__int16 v10; // [esp+3EEh] [ebp-6h]
+	WCHAR DateStr[80]; // [esp+1Ch] [ebp-3D8h] BYREF
+	WCHAR TimeStr[80]; // [esp+BCh] [ebp-338h] BYREF
+	WCHAR String1[330]; // [esp+15Ch] [ebp-298h] BYREF
 
-	String1 = 0;
-	memset(v9, 0, sizeof(v9));
-	v10 = 0;
+	String1[0] = 0;
+	memset(&String1[1], 0, 0x290u);
+	String1[329] = 0;
 	v1 = 1;
 	v2 = 1;
 	v3 = GetUserDefaultLCID() & 0x3FF;
@@ -4484,29 +4482,28 @@ LRESULT __stdcall sub_1006F10(int a1)
 	GetLocalTime(&SystemTime);
 	if (v1)
 	{
-		if ((GetWindowLong(g_hWndMain, -20) & 0x2000) != 0)
+		if ((GetWindowLongW(g_hWndMain, -20) & 0x2000) != 0)
 		{
 			v2 = 33;
-			lstrcat(&String1, (LPCWSTR)&dword_1001844);
+			lstrcatW(String1, (LPCWSTR)&dword_1001844);
 		}
 		else
 		{
 			v2 = 17;
-			lstrcat(&String1, &word_1001840);
+			lstrcatW(String1, &word_1001840);
 		}
 	}
-	GetDateFormat(0x400u, v2, &SystemTime, 0, DateStr, 80);
-	GetTimeFormat(0x400u, 2u, &SystemTime, 0, TimeStr, 80);
+	GetDateFormatW(0x400u, v2, &SystemTime, 0, DateStr, 80);
+	GetTimeFormatW(0x400u, 2u, &SystemTime, 0, TimeStr, 80);
 	if (a1)
-		lstrcat(&String1, L"\r\n");
-	lstrcat(&String1, TimeStr);
-	lstrcat(&String1, &word_1001834);
-	lstrcat(&String1, DateStr);
+		lstrcatW(String1, L"\r\n");
+	lstrcatW(String1, TimeStr);
+	lstrcatW(String1, &word_1001834);
+	lstrcatW(String1, DateStr);
 	if (a1)
-		lstrcat(&String1, L"\r\n");
-	return SendMessage(g_hWndMain, 0xC2u, 1u, (LPARAM)&String1);
-}
-// 1001844: using guessed type int dword_1001844;
+		lstrcatW(String1, L"\r\n");
+	return SendMessageW(g_hWndMain, 0xC2u, 1u, (LPARAM)String1);
+}// 1001844: using guessed type int dword_1001844;
 
 //----- (01007059) --------------------------------------------------------
 int __stdcall sub_1007059(int a1, int a2)
